@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h2>Enquiry</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+    <!-- <div>
+        <h2>enquires</h2>
+        {% for i in enquiry_list %}
+        <p>Name:{{i.user.first_name}}</p>
+        <p>Title:{{i.title}}</p>
+        <p>Discription:{{i.description}}</p>
+        <script>
+            $(document).ready(function(){
+                Date.prototype.yyyyMdd = function() {
+                var yyyy = this.getFullYear().toString();
+                var mm = (this.getMonth()+1).toString(); // getMonth() is zero-based
+                var dd  = this.getDate().toString();
+                return yyyy + "/" + (mm[1]?mm:"0"+mm[0]) + "/" + (dd[1]?dd:"0"+dd[0]); // padding
+                };
+                var date = new Date();
+                var time = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                console.log( date.yyyyMdd(),time );
+            });
+        </script>
+        <p>Status:</p>
+        <p>Posted on:{{i.created_on}}</p>
+        {% endfor %}
+    </div> -->
+</body>
+</html>

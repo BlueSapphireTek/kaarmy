@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <label for="uploadimg">Upload front</label>
+            <input type="file" id="uploadimg" name="uploadimg" value="{{view.front_img}}"><br><br>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{view.name}}"><br><br>
+            <label for="service">service</label>
+            <input type="text" name="service" id="service" value="{{view.services}}"><br><br>
+            <label for="mobile">Mobile no</label>
+            <input type="number" name="mobile" id="mobile" value="{{view.mobile}}"><br><br>
+            <label for="whatsup">whatsup no</label>
+            <input type="number" name="whatsup" id="whatsup" value="{{view.whatsup}}"><br><br>
+            <label for="cmp_name">Complany name</label>
+            <input type="text" name="cmp_name" id="cmp_name" value="{{view.company_name}}"><br><br>
+            <label for="Website">Website</label>
+            <input type="text" name="Website" id="Website" value="{{view.website}}"><br><br>
+            <label for="email">email</label>
+            <input type="text" name="email" id="email" value="{{view.email}}"><br><br>
+            <label for="location">location</label>
+            <input type="text" name="location" id="location" value="{{view.location}}"><br><br>
+            <label for="cmplocation">Company location</label>
+            <input type="text" name="cmplocation" id="cmplocation" value="{{view.company_location}}"><br><br>
+            <label for="uploadback">Upload back</label>
+            <input type="file" id="uploadback" name="uploadback" value="{{view.back_img}}"><br><br>
+            <label for="detail">Other Details</label>
+            <input type="text" name="detail" id="detail" value="{{view.details}}"><br><br>
+            <input type="submit">
+        </form>
+    </body>
+</html>

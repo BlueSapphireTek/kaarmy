@@ -1,0 +1,2515 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block top %}
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<title>Profile-Company-Edit</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <!--<link href="css/mdb.min.css" rel="stylesheet" type="text/css">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/byhand-all.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/byhand-all.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery-3.5.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" media="all" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.8/js/select2.min.js" defer></script>
+</head>
+<body>
+
+{% endblock %}
+
+
+{% block down%}
+<!-- <nav class="navbar navbar-expand-sm navbar-light bg-gradient-blue d-flex fixed-top">
+  <div class="col-xl-8 col-lg-8 col-md-7 col-sm-6 col-12 d-flex">
+    <div class="mt-2">
+      <button class="btn btn-outline-info btn-sm openbtn" onclick="myFunction()" id="menu-toggle"> <span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span> </button>
+    </div>
+    <div class="navbar-brand"><img src="img/logoresize.png" alt="">
+      <p class="text-blue">Work is Worship</p>
+    </div>
+    <form action="#" method="post">
+      <div class="container row">
+        <div class="input-group search">
+          <input class="form-control py-2 border-right-0 border" type="search" id="search-input" placeholder="Search">
+          <span class="input-group-append">
+          <button class="btn btn-outline-secondary border-left-0 border bg-white" id="btn-icon" type="button"> <i class="fa fa-search text-blue"></i></button>
+          </span> </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-xl-2 col-lg-2 col-md-5 col-sm-6 col-12 float-right d-flex">
+    <button class="navbar-toggler navv" type="button" data-toggle="collapse" data-target="#navbarSupportedContents"
+            aria-controls="navbarSupportedContents" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContents">
+      <ul class="navbar-nav disp">
+        <li class="nav-item dropdown drop-noti d-flex"> <a href="#" class="btn btn-clean notification-btn" data-toggle="tooltip" title="chat"><span class="badge badge-danger badge-chat" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-comment text-blue"></i> </a> <a href="#" class="btn btn-clean notification-btn" data-toggle="tooltip" title="certificate notification"><span class="badge badge-danger badge-certificate" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-file-alt text-blue"></i> </a> <a href="#" class="btn btn-clean notification-btn"  data-toggle="tooltip" title="notification"> <span class="badge badge-danger badge-corner" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-bell text-blue"></i> </a> </li>
+        <div class="d-flex">
+          <div class="timeline-headernav-profile"> <img src="img/g1.jpg" alt="" class="rounded-circle"> </div>
+          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle mr-5" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item text-blue logout-dropbox" href=" #">Annie Fab</a> <a class="dropdown-item logout-dropbox" href=" #">View Profile</a> <a class="dropdown-item logout-dropbox" href="#">Help</a> <a class="dropdown-item logout-dropbox" href="#">Logout</a> </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="d-flex w-100" style="margin-top: 5rem;"  id="wrapper"> 
+  <!-- Sidebar -->
+  <!-- <div class="sidepanel" id="sidebar-wrapper">
+    <div class="col-12 my-profile mt-4">
+      <div class="avatar"> <img src="img/g1.jpg" alt="" class="rounded-circle" width="50" height="50" style="border-radius: 50%;"> </div>
+      <div class="dropdown show leftside-dropdown"> <a class="btn btn-secondary dropdown-toggle border-0 text-dark btn-outline-light" style="background-color: transparent;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Annie Fab </a>
+        <div class="dropdown-menu text-left" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="#">View Profile</a> <a class="dropdown-item" href="#">Help</a> <a class="dropdown-item" href="#">Logout</a> </div>
+      </div>
+    </div>
+    <div class="notify-left col-12">
+      <div class="nav-item dropdown drop-noti d-flex"> <a href="#" class="btn btn-clean notification-btn text-dark" data-toggle="tooltip" title="chat"><span class="badge badge-danger badge-chat" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-comment text-blue"></i> </a> <a href="#" class="btn btn-clean notification-btn text-dark " data-toggle="tooltip" title="certificate notification"><span class="badge badge-danger badge-certificate" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-file-alt text-blue"></i> </a> <a href="#" class="btn btn-clean notification-btn text-dark"  data-toggle="tooltip" title="notification"> <span class="badge badge-danger badge-corner" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-bell text-blue"></i> </a> </div>
+    </div>
+    <div class="input-group search-leftnav p-2">
+      <input class="form-control py-2 border-right-0  search2 border-blue" type="search" id="search-input1" placeholder="Search" >
+      <span class="input-group-append">
+      <button class="btn btn-outline-secondary border-left-0 border-blue bg-white scrhbtn" id="btn-icon1" type="button"> <i class="fa fa-search text-blue"></i></button>
+      </span> </div>
+    <div class="list-group list-group-flush mt-4 left-nav"> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3570.png" alt="" > <span class="px-4 py-1
+		items ">Home</span> </a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3571.png" alt="" > <span class="px-4 py-1 items ">Profile</span></a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3572.png" alt="" > <span class="px-4 py-1  items ">Activities</span></a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3573.png" alt="" > <span class="px-4 py-1 items">Settings</span> </a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3569.png" alt="" > <span class="px-4 py-1 items ">Verifications</span></a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3578.png" alt="" > <span class="px-4 py-1 items ">Share</span></a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3575.png" alt="" > <span class="px-4 py-1 items">Help</span> </a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3576.png" alt="" > <span class="px-4 py-1 items">FAQ</span> </a>
+      <div class="dropdown show leftside-dropdown feature"> <a class="btn btn-secondary dropdown-toggle border-0 text-dark btn-outline-light text-left" style="background-color: transparent;" href="#" role="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/Group 4056.png" alt=""><span class="px-4 py-1 items font-weight-bold">Features</span></a>
+        <div class="dropdown-menu text-left" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="#"><img src="img/Group 4052.png" alt="" ><span class="px-4 py-1 items">Alerts</span></a> <a class="dropdown-item" href="#"><img src="img/Group 4053.png" alt="" ><span class="px-4 py-1 items">My Team</span></a> <a class="dropdown-item" href="#"><img src="img/Group 4054.png" alt="" ><span class="px-4 py-1 items">Services</span></a> <a class="dropdown-item" href="#"><img src="img/Group 4055.png" alt="" ><span class="px-4 py-1 items">Counter</span></a> </div>
+      </div>
+    </div>
+  </div> -->
+  <div class="d-flex w-100" id="page-content-wrapper"> 
+    <!-- Sidebar -->
+    <div class="container-fluid">
+      <div class="row m-0">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 pt-3 p-0">
+          <div class="row m-0">
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 py-3 text-center profile bg-border mb-1"> <img class="rounded-circle border p-1" src="{{request.user.bio.profile_pic}}" alt="" height="100" width="100"> <span class="float-right"><i class="fa fa-edit pt-1 pr-1 text-blue" data-toggle="modal" data-target="#editProfilePicture"></i> </span>
+              <div class="pt-3 text-center profile-address">
+                <h5>{{request.user.first_name}}</h5>
+                <h5 class="text-blue">{% if userextend.group %}{{userextend.group}}{%endif%}</h5>
+                <p>{% if userextend.profession %}{{ userextend.profession }}{%endif%}</p>
+                <a href="{% url 'searchprofile_full_view' request.user.id %}">
+                <button type="button" class="btn border-blue btn-bg-blue switch-btn text-white text-center">Switch to Profile Preview</button>
+              </a>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-9 col-12 details">
+              <div class="bg-border bg-gradient-blue col-12 mb-1 d-flex p-1">
+                <div class="border-right-blue col-6 p-0">
+                  <div class="col-12 follow event-btns d-flex mt-2">
+                    <div class="">
+                      <a href="{% url 'activitypostalluser' request.user.id %}">
+                      <div class="text-center d-inline-block post mr-2">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-external-link-alt"></i> </button>
+                        <p>Post</p>
+                      </div>
+                    </a>
+                      <a href="{% url 'event' %}">
+                      <div class="text-center d-inline-block post mr-2 ml-2">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-calendar-day"></i> </button>
+                        <p>Event</p>
+                      </div>
+                      </a>
+
+                      <a href="{% url 'appointment' %}">
+                      <div class="text-center d-inline-block post mr-2 ml-1" data-toggle="modal" data-target="#createAppointment-modal">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-notes-medical"></i> </button>
+                        <p>Appointment</p>
+                      </div>
+
+                    </a>
+                    <a href="{% url 'enquiry' %}"></a>
+                      <div class="text-center d-inline-block post mr-2 ml-2" data-toggle="modal" data-target="#createEnquiry-modal">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-question-circle"></i> </button>
+                        <p>Enquiry</p>
+                      </div>
+                    </a>
+
+                    </div>
+                  </div>
+                  <div class="col-12 follow event-btns d-flex mt-2">
+                    <div class="">
+                      <div class="text-center d-inline-block post mr-2">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue" disabled><i class="fas fa-user-plus"></i></button>
+                        <p>Follow</p>
+                      </div>
+                      <a href="#">
+                      <div class="text-center d-inline-block post mr-2 ml-2">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue" disabled><i class="fas fa-user"></i></button>
+                        <p>Connect</p>
+                      </div>
+                      </a>
+                      <div class="text-center d-inline-block post mr-2 ml-2" data-toggle="modal" data-target="#createAppointment-modal">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue" disabled><i class="fas fa-thumbs-up"></i></button>
+                        <p>Endorse</p>
+                      </div>
+                      <a href="{% url 'connectionList' request.user.id %}">
+                      <div class="text-center d-inline-block post mr-2 ml-2">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-sitemap"></i> </button>
+                        <p>Connections</p>
+                      </div>
+                    </a>
+                    </div>
+                  </div>
+
+                </div>
+                <div class="col-12 follow event-btns d-flex mt-2">
+                  <div class="col-6 p-0 pt-4">
+                    <div class="text-center d-inline-block post mr-2">
+                      <button class="btn btn-rounded btn-success" disabled><i class="fa fa-phone-alt"></i></button>
+                      <p>Phone</p>
+                    </div>
+                    <div class="text-center d-inline-block post mr-2 ml-2">
+                      <button class="btn btn-rounded btn-info" disabled><i class="fa fa-comment-alt"></i></button>
+                      <p>Chat</p>
+                    </div>
+                    <div class="text-center d-inline-block post mr-2 ml-2">
+                      <button class="btn btn-rounded btn-chocolate" disabled><i class="fa fa-address-card text-white"></i></button>
+                      <p>Pick Card</p>
+                    </div>
+                    <div class="text-center d-inline-block post mr-2 ml-2">
+                      <button class="btn btn-rounded btn-violet" disabled><i class="fa fa-address-card text-white"></i></button>
+                      <p>Drop Card</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="workmap col-12 p-0">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 profile p-0 mr-1">
+                  <div class="working-btns d-flex w-100">
+                    <div class="float-left w-100"> <a href="#" class="btn btn-primary btn-bg-blue m-1">Working Hours</a> </div>
+                    <div class="float-right pt-2 ptop-edit"><i class="fas fa-plus edit-icon" data-toggle="modal" data-target="#working-time-modal"></i></div>
+                  </div>
+                  <div class="working-hrs work p-2 text">
+                    <ul class="alignMe">
+
+                      {% if monview.start_time %}
+                      <li><b>Monday</b> {% if monview.start_time %} {{monview.start_time}} to {{monview.end_time}} {% endif%}</li>
+                      {% else %}
+                      <li><b>Monday</b> Closed </li>
+                      {% endif %}
+
+                      {% if tueview.start_time %}
+                      <li><b>Tuesday</b> {% if tueview.start_time %} {{tueview.start_time}} to {{tueview.end_time}} {% endif%}</li>
+                      {% else %}
+                      <li><b>Tuesday</b> Closed </li>
+                      {% endif %}
+
+                      {% if wedview.start_time %}
+                      <li><b>Wednesday</b> {% if wedview.start_time %} {{wedview.start_time}} to {{wedview.end_time}} {% endif%}</li>
+                      {% else %}
+                      <li><b>Wednesday</b> Closed </li>
+                      {% endif %}
+
+                      {% if thuview.start_time %}
+                      <li><b>Thursday</b> {% if thuview.start_time %} {{thuview.start_time}} to {{thuview.end_time}} {% endif%}</li>
+                      {% else %}
+                      <li><b>Thursday</b> Closed </li>
+                      {% endif %}
+
+                      {% if friview.start_time %}
+                      <li><b>Friday</b> {% if friview.start_time %} {{friview.start_time}} to {{friview.end_time}} {% endif%}</li>
+                      {% else %}
+                      <li><b>Friday</b> Closed </li>
+                      {% endif %}
+
+                      {% if satview.start_time %}
+                      <li><b>Saturday</b> {% if satview.start_time %} {{satview.start_time}} to {{satview.end_time}} {% endif%}</li>
+                      {% else %}
+                      <li><b>Saturday</b> Closed </li>
+                      {% endif %}
+
+                      {% if sunview.start_time %}
+                      <li><b>Sunday</b> {% if sunview.start_time %} {{sunview.start_time}} to {{sunview.end_time}} {% endif%}</li>
+                      {% else %}
+                      <li><b>Sunday</b> Closed </li>
+                      {% endif %}
+
+                      <!-- <li><b>Tuesday</b> 09:00am to 05:00pm</li>
+                      <li><b>Wednesday</b> 09:00am to 05:00pm</li>
+                      <li><b>Thursday</b> 09:00am to 05:00pm</li>
+                      <li><b>Friday</b> 09:00am to 05:00pm</li>
+                      <li><b>Saturday</b> 09:00am to 05:00pm</li>
+                      <li><b>Sunday</b> Closed</li> -->
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 profile p-0">
+                  <div class="working-btns d-flex w-100">
+                    <div class="float-left w-100"> <a href="#" class="btn btn-primary btn-bg-blue m-1">Map</a><div class="float-right pt-2 ptop-edit"><i class="fas fa-plus edit-icon" data-toggle="modal" data-target="#location-modal"></i></div> </div>
+                  </div>
+                  <div class="working-hrs map"> <img src="{% static 'img/map.png' %}" alt="" class="img-fluid"><a>
+                    {% if location.place %}
+                    <a href="http://maps.google.com/?q={{location.place}}" style="font-size: 12px !important;" target="_blank">
+                    <button type="button" class="btn btn-bg-blue text-white p-1 rounded-pill"> View location on map</button> </a>
+                    {% else %}
+                    <button type="button" class="btn btn-bg-blue text-white p-1 rounded-pill">Location Not Added</button>
+                    {% endif %}
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 job-detail pt-3 bg-border ">
+              <div class="rightbtns text-center">
+                <button type="button" class="btn btn-default rightbtns btn-bg-blue text-white"> PROFESSION</button>
+                <button type="button" class="btn btn-default rightbtns btn-bg-blue text-white"> DESIGNER</button>
+                <button type="button" class="btn btn-default rightbtns btn-bg-blue text-white"> KAARMY PROFESSIONAL</button>
+                <div class="display-btns">
+                  <div class="m-2 mr-4 col-lg-4 col-12 text-center">
+                    <p class="font-weight-bold font-24">{{follower_count}}</p>
+                    <p class="text-blue font-10">FOLLOWERS</p>
+                  </div>
+                  <div class="m-2 col-lg-4 col-12 text-center">
+                    <p class="font-weight-bold font-24">{{following_count}}</p>
+                    <p class="text-blue font-10">FOLLOWING</p>
+                  </div>
+                </div>
+                <div class="display-btns">
+                  <div class="m-2 mr-4 col-lg-4 col-12 text-center">
+                    <p class="font-weight-bold font-24">{{connection_count}}</p>
+                    <p class="text-blue font-10">CONNECTIONS</p>
+                  </div>
+                  <div class="m-2 col-lg-4 col-12 text-center">
+                    <p class="font-weight-bold font-24">{{endorse_count}}</p>
+                    <p class="text-blue font-10">ENDORSEMENT</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 pl-0 pr-0 mt-3 mb-3 bg-gradient-blue p-3" style="border-radius: 15px;">
+          <div class="about bg-border p-2 w-100 pt-3 pb-5 mb-1">
+            <h5>About Me  <i class="far fa-edit float-right" data-toggle="modal" data-target="#exampleModalCenter"></i></h5>
+            {% if abouth %}
+                  <p>{{abouth.description}}</p>
+                {% else %}
+                  <p> About is not described</p>
+                {% endif %}
+          </div>
+          <div class="d-flex m-0 profile-body">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mr-1 mt-1 mb-1 bg-white bg-border">
+              <div class="working-btns d-flex mt-1 mb-1 border-bottom">
+                <div class="w-100"> <a href="#" class="btn btn-primary btn-bg-blue m-1">About Us</a> </div>
+                <div class="p-2 ptop-edit"> <i class="fas fa-edit edit-icon" data-toggle="modal" data-target="#aboutus-modal"></i></div>
+              </div>
+              <div class="working-exp working-hrs p-2 bg-white">
+                <ul>
+
+                  <li>
+                    <div class="d-flex p-2">
+                      <div class="float-left col-md-10 col-8 d-flex p-0"> 
+                        {% if about == 'None' %}
+                        
+<img src="{% static 'img/profileupdate.png' %}" width="160" height="160" class="ml-5 pb-3">
+                        
+                        
+                        {% else %}
+                        <i class="fas fa-circle ml-2 text-blue"></i> <p class="exp-year">{{about}}</p>
+                        {% endif %}
+                        </div>
+
+                      <div class="float-right col-md-2 col-4 d-flex p-0"> </div>
+                    </div>
+                  </li>
+
+                  
+                  
+
+                </ul>
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-center profile-thirdrow mt-1 mb-1 bg-white bg-border">
+              <div class="working-btns d-flex mt-1 mb-1 border-bottom">
+                <div class="w-100"> <a href="#" class="btn btn-primary btn-bg-blue m-1" data-toggle="modal" data-target="#expertise-modal">Expertise</a> </div>
+                <div class="float-right p-2 ptop-edit"> <i class="fas fa-plus edit-icon" data-toggle="modal" data-target="#expertise-modal"></i></div>
+              </div>
+              <div class="working-exp working-hrs p-2 text bg-white">
+                <ul>
+                 
+                  
+                  
+                  {% for i in expertiselist %}
+                  <li>
+                    <div class="d-flex p-2">
+                      <div class="float-left col-md-10 col-8 d-flex p-0"> <i class="fas fa-circle ml-2 text-blue"></i> <a href="#">
+                        <p class="exp-year">{{i.years}} years in {{i.expertisein}}</p>
+                        </a></div>
+                      <div class="float-right col-md-2 col-4 d-flex p-0"> <i class="far fa-edit float-right" data-toggle="modal" data-target="#edit-expertise-modal-{{i.id}}"></i> {% if i.is_approved %}<i class="fas fa-check-circle text-success">Verified</i> {% endif %}</div>
+                    </div>
+                  </li>
+
+                  <div class="modal fade" id="edit-expertise-modal-{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-md modal-md">
+                        <div class="modal-content modal-radius">
+                            
+                            <div class="d-flex w-100 mt-3 testimonial-heading" style="background-color: #CEEAFF; border-bottom: none;">
+                                <h5>Edit Expertise</h5>
+                            </div>
+                            <form class="w-100" action="{% url 'editexpertise' i.id %}" method="post" id="aadd-expertise{{i.id}}">
+                                {% csrf_token %}
+
+                                <div class="col-12 mt-3">
+                                    <div class="form-group  cmpny-addrs">
+                                        <input type="text" class="form-control" placeholder="select person or company" name="expertise_edit" id="expertise_edit{{i.id}}" value="{{i.authname}}" required>
+                                        </div>
+                                        <input type="number" name="expertise_edit_id" id="expertise_edit_id{{i.id}}" value="{{i.auth_id}}" hidden>
+                                    <div class="form-group cmpny-addrs">
+                                        <input type="text" class="form-control" placeholder="Profession" name="profession" id="profession{{i.id}}" value="{{i.profession}}" required>
+                                    </div>
+
+                                    <div class="form-group  cmpny-addrs">
+                                        <input type="text" class="form-control" placeholder="Expertise in" name="expertisein" id="cexpertisein{{i.id}}" value="{{i.expertisein}}" required>
+
+                                    </div>
+
+                                    <div class="form-group cmpny-addrs">
+                                        <input type="number" class="form-control" placeholder="Expertise in years" name="years" id="yyears{{i.id}}" value="{{i.years}}" min="0" step=".5" required>
+                                    </div>
+
+                                    <div class="form-group cmpny-addrs">
+                                        <textarea class="form-control" name="description" placeholder="Description" rows="5" id="ddescription{{i.id}}">{{i.description}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex pb-3 testimonial-btns justify-content-center">
+                                    <a href="" class="m-2">
+                                        <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </a> 
+                                    <a href="#" class="m-2">
+                                        <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                                    </a>
+
+                                    {% if i.auth_id %}
+                                    <a href="{% url 'sendverexpertise' i.id %}" class="m-2">
+                                        <button type="submit" class="btn btn-bg-green savebtn-testimonial">Verify</button>
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+                <script type="text/javascript">
+                  $(function() {
+          
+                      $("#expertise_edit{{i.id}}").autocomplete({
+                          source: "{% url 'client_autocomplete' %}",                                                
+                          select: function(event, ui) {
+                              $("#expertise_edit{{i.id}}").val(ui.item.label);
+                              $("#expertise_edit_id{{i.id}}").val(ui.item.value)
+                              return false; 
+                              
+                          },
+                          
+          
+                      })
+              //         .data().autocomplete._renderItem = function (ul, item) {
+              //             console.log(item.img);
+          
+              //      return $("<li>").append( "<li>" + item.label +  item.descr + '<br>' +  item.img+ "</li>" ).appendTo( ul );
+              // };
+          
+          });
+              </script>
+
+                {% empty %}
+                <img src="{% static 'img/updateExpertise.png' %}" width="160" height="160" class="ml-5 pb-3">
+                {% endfor %}
+
+                  
+                  
+                  
+                  
+
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="d-flex m-0 profile-body">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 mr-1 mt-1 mb-1 bg-white bg-border">
+              <div class="working-btns d-flex mt-1 mb-1 border-bottom">
+                <div class="w-100"> <a href="#" class="btn btn-primary btn-bg-blue m-1" data-toggle="modal" data-target="#testimonial3-modal">Achievements</a> </div>
+                <div class="float-right p-2 ptop-edit"> <i class="fas fa-plus edit-icon" data-toggle="modal" data-target="#achievements-modal"></i></div>
+              </div>
+              <div class="working-exp working-hrs p-2 bg-white">
+                <ul>
+                  {% for i in achievements %}
+                  <li>
+                    <div class="d-flex p-2">
+                      <div class="float-left col-md-10 col-8 d-flex p-0"> <i class="fas fa-circle ml-2 text-blue"></i> <a href="#">
+                        <p class="exp-year">{{i.title}}</p>
+                        </a></div>
+                      <div class="float-right col-md-2 col-4 d-flex p-0"> <i class="far fa-edit float-right" data-toggle="modal" data-target="#edit-achievements-modal{{i.id}}"></i>  {% if i.is_approved %}<i class="fas fa-check-circle text-success">Verified</i> {% endif %}</div>
+                    </div>
+                  </li>
+
+
+                  <!--Edit Achievements-->
+                  <div class="modal fade" id="edit-achievements-modal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-md modal-md">
+                        <div class="modal-content modal-radius">
+                            <div class="d-flex w-100 mt-3 testimonial-heading" style="background-color: #CEEAFF; border-bottom: none;">
+                                <h5>Achievement</h5>
+                            </div>
+                            <form class="w-100" action="{% url 'editachievements' i.id %}" method="post" id="edit-achievement{{i.id}}">
+                                {% csrf_token %}
+                                <div class="col-12 mt-3">
+                                    <div class="form-group  cmpny-addrs">
+                                        <input type="text" class="form-control" placeholder="select person or company" name="achievementss_edit" id="achievementss_edit{{i.id}}" value="{{i.authname}}" required>
+                                        </div>
+                                        <input type="number" name="achievementss_edit_id" id="achievementss_edit_id{{i.id}}" value="{% if i.auth_id %}{{i.auth_id}}{% endif %}" hidden>
+                                    <div class="form-group cmpny-addrs">
+                                        <input type="text" class="form-control" placeholder="Achievement Title" name="achievementtitle" value="{{i.title}}">
+                                    </div>
+                                    <div class="form-group cmpny-addrs">
+                                        <textarea class="form-control" name="description" placeholder="Description" rows="5">{{i.description}}</textarea>
+                                    </div>
+                                    <!--          <div class="cmpny-addrs">-->
+                                    <!--            <div class="d-flex border col-6 m-auto">-->
+                                    <!--              <input type="file" id="upload btn" hidden/>-->
+                                    <!--              <label for="actual-btn" class="exp-name">Upload Document</label>-->
+                                    <!--              <span><i class="fas fa-upload"></i></span> </div>-->
+                                    <!--          </div>-->
+                                </div>
+                                <div class="d-flex pb-3 testimonial-btns justify-content-center">
+                                    <a href="" class="m-2">
+                                        <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                                            Cancel
+                                        </button>
+                                    </a> 
+                                    <a href="#" class="m-2">
+                                        <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                                    </a>
+
+                                    {% if i.auth_id %}
+                                    <a href="{% url 'sendverachievements' i.id %}" class="m-2">
+                                        <button type="submit" class="btn btn-bg-green savebtn-testimonial">Verify</button>
+                                    </a>
+                                    {% endif %}
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <script type="text/javascript">
+                    $(function() {
+            
+                        $("#achievementss_edit{{i.id}}").autocomplete({
+                            source: "{% url 'client_autocomplete' %}",
+                            
+                            select: function(event, ui) {
+                                $("#achievementss_edit{{i.id}}").val(ui.item.label);
+                                $("#achievementss_edit_id{{i.id}}").val(ui.item.value)
+                                return false; //
+                                
+                            },
+                            
+            
+                        })
+                //         .data().autocomplete._renderItem = function (ul, item) {
+                //             console.log(item.img);
+            
+                //      return $("<li>").append( "<li>" + item.label +  item.descr + '<br>' +  item.img+ "</li>" ).appendTo( ul );
+                // };
+            
+            });
+                </script>
+        
+        {% empty %}
+        <img src="{% static 'img/updateAchievement.png' %}" width="160" height="160" class="ml-5 pb-3">
+        {% endfor %}
+                </ul>
+              </div>
+            </div>
+
+
+
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12 text-center profile-thirdrow mt-1 mb-1 bg-white bg-border">
+              <div class="working-btns d-flex mt-1 mb-1 border-bottom">
+                <div class="w-100"> <a href="#" class="btn btn-primary btn-bg-blue m-1">Projects/Products</a> </div>
+                <div class="float-right p-2 ptop-edit"> <i class="fas fa-plus edit-icon" data-toggle="modal" data-target="#projects-modal"></i></div>
+              </div>
+              <div class="working-exp working-hrs p-2 text bg-white">
+                <ul>
+
+                  {% for i in projects %}
+
+                  <li>
+                    <div class="d-flex p-2">
+                      <div class="float-left col-md-10 col-8 d-flex p-0"> <i class="fas fa-circle ml-2 text-blue"></i> <a href="#">
+                        <p class="exp-year">{{i.project_name}}</p>
+                        </a></div>
+                      <div class="float-right col-md-2 col-4 d-flex p-0"> <i class="far fa-edit float-right" data-toggle="modal" data-target="#edit-projects-modal{{i.id}}"></i> {% if i.is_approved %}<i class="fas fa-check-circle text-success">Verified</i> {% endif %}</div>
+                    </div>
+                  </li>
+
+<!--edit projects modal-->
+<div class="modal fade" id="edit-projects-modal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+      <div class="modal-content modal-radius">
+          <div class="modal-header"></div>
+          <form class="w-100" action="{% url 'editprojects' i.id %}" method="post" id="edit-projects-form{{i.id}}">
+              {% csrf_token %}
+              <div class="form-group  cmpny-addrs">
+                  <input type="text" class="form-control col-12" name="company_name_edit" id="company_name_edit{{i.id}}" placeholder="select user/company" value="{{i.authname}}" required>
+              </div> 
+              <input type="number" class="form-control col-12" name="company_name_edit_id" id="company_name_edit_id{{i.id}}" value="{% if i.auth_id %}{{i.auth_id}}{%endif%}" hidden>
+                  
+              <div class="form-group  cmpny-addrs">
+                  <input type="text" class="form-control col-12" name="project_name" id="project_name" placeholder="projects"  value="{{i.project_name}}" required>
+              </div>
+
+
+              <div class="d-flex pb-3">
+                  <a href="#" class="m-2" data-dismiss="modal">
+                      <button type="submit" class="btn btn-primary cancelbtn bg-red text-white">Cancel</button>
+                  </a>
+                  <a href="#" class="m-2">
+                      <button type="submit" class="btn btn-bg-blue savebtn text-white">Save</button>
+                  </a>
+                  {% if i.auth_id %}
+                  <a href="{% url 'sendverprojects' i.id %}" class="m-2">
+                      <button type="button" class="btn btn-sucess savebtn text-white">Verify</button>
+                  </a>
+                  {% endif %}
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+
+      $("#company_name_edit{{i.id}}").autocomplete({
+          source: "{% url 'client_autocomplete' %}",
+          
+          select: function(event, ui) {
+              $("#company_name_edit{{i.id}}").val(ui.item.label);
+              $("#company_name_edit_id{{i.id}}").val(ui.item.value)
+              return false; //
+              
+          },
+          
+
+      })
+//         .data().autocomplete._renderItem = function (ul, item) {
+//             console.log(item.img);
+
+//      return $("<li>").append( "<li>" + item.label +  item.descr + '<br>' +  item.img+ "</li>" ).appendTo( ul );
+// };
+
+});
+</script>
+{% empty %}
+<img src="{% static 'img/updateprodects.png' %}" width="160" height="160" class="ml-5 pb-3">
+{% endfor %}
+
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 pl-0 pr-0 mt-3">
+            <div class="bg-border">
+              <div class="d-flex mb-3 border-bottom p-2 justify-content-between">
+                <h5 class="certify-head text-blue font-weight-bold">Certifications</h5>
+                <div class="d-flex pt-1" data-toggle="modal" data-target="#certification-modal">
+                  <p>Add</p>
+                  <i class="fas fa-plus edit-icon ml-1"></i></div>
+              </div>
+              <div class="d-flex m-0 profile-body col-12">
+
+                {% for i in certificates %}
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 p-0">
+                  <div class="card profile-card w-100" data-id="{{i.id}}">
+                    <div class="card-body profile-body">
+                      <div class="col-12 p-0">
+                        <div class="d-flex justify-content-around"><i class="far fa-edit float-left" data-toggle="modal" data-target="#edit-certification-modal{{i.id}}"></i>
+                          {% if i.is_approved%}
+                          <h6 class="green-tick font-weight-bold">{{ i.certificate_name }}</h6>
+                          <i class="fas fa-check-circle green-tick ml-2"></i> 
+                        {% else %}
+                        <h6 class="font-weight-bold">{{ i.certificate_name }}</h6> 
+                        {% endif%}
+                        </div>
+                        <div class="company-details">
+                          <p>{{ i.certificate_description|slice:10 }}<span class="dots"></span><span class="more">{{ i.certificate_description|slice:"10:" }}</span></p>
+                          <div class="text-center">
+                            <button class="view-more myBtn" onclick="readMore('{{i.id}}')"><i class="fas fa-chevron-circle-down"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                  
+                
+
+              </div>
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                
+                </div>
+                <div class="d-flex m-0 profile-body col-12">
+
+                {% endif %}
+
+                <div class="modal fade" id="edit-certification-modal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+                aria-hidden="true">
+<div class="modal-dialog modal-md">
+<div class="modal-content modal-radius">
+<div class="d-flex w-100 mt-3 testimonial-heading" style="border-bottom: 1px solid #808080;">
+<h5>Edit Certifications</h5>
+</div>
+<form class="w-100" action="{% url 'editcertificate' i.id %}" method="post" id="edit-certification{{i.id}}" enctype="multipart/form-data">
+{% csrf_token %}
+
+<div class="d-flex col-12 mt-3">
+<div class="form-group col-10 cmpny-addrs">
+   <div class="d-flex form-group d-flex">
+       <label class="col-form-label col-5"> Issued Authority</label>
+       <input type="text" class="form-control w-100" name="issued_authority_edit" id="issued_authority_edit{{i.id}}" value="{{ i.company_name }}" required>
+       <input type="text" class="form-control w-100" name="issued_authority_edit_id" id="issued_authority_edit_id{{i.id}}" value="{% if i.i.authority_id%}{{i.authority_id}}{% endif %}" hidden>
+<!--                            <select class="w-100" name="issued_authority" id="issued_authority{{i.id}}" required >-->
+
+<!--                                {% for j in companies %}-->
+<!--`                               <option value="{{ i.authority.id }}" selected>{{ j.authority.first_name }}</option>-->
+<!--                                <option value="{{ j.id }}">{% if j.first_name %}{{j.first_name}} {% endif %}  {% if  j.last_name %} {{j.last_name}} {% endif %}</option>-->
+
+<!--                                {% endfor %}-->
+<!--                            </select>-->
+
+   </div>
+   <div class="form-group d-flex">
+       <label class="col-form-label col-5">Certificate</label>
+           <input type="text" class="form-control w-100" name="certificate_name" id="edit_certificate_name{{i.id}}" value="{{i.certificate_name}}">
+
+   </div>
+   <div class="form-group d-flex">
+       <label class="col-form-label  col-5">Certificate No / ID</label>
+           <input type="text" class="form-control w-100" name="certificate_id" id="edit_certificate_id{{i.id}}" value="{% if i.certificate_id %}{{i.certificate_id}}{% endif %}">
+   </div>
+   <div class="form-group  d-flex">
+       <div class="form-group col-12 d-flex">
+           <label class="col-form-label w-100 col-5">Change Image</label>
+           <input type="file" class="upld-doc w-100" name="certificate_image" id="edit_certificate_image{{i.id}}">
+       </div>
+   </div>
+
+
+   <div class="form-group d-flex">
+       <label class="col-form-label col-5">Description</label>
+           <textarea class="w-100 form-control" name="certificate_description"  id="edit_certificate_description{{i.id}}" rows="5">{{ i.certificate_description}}</textarea>
+   </div>
+</div>
+<div class="form-group col-2 cmpny-addrs certificate">{% if i.certificate_image %}
+           <img src="{{i.certificate_image.url}}" style="height:64px;width:68px; margin: 171px 0px 1px -15px;" alt="">
+               {% endif %}</div>
+</div>
+<div class="d-flex pb-3 certification-btns justify-content-center"><a href="profile-company-edit.html"
+                                                                 class="m-2">
+<button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">Cancel</button>
+</a> <a href="#" class="m-2">
+<button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+</a>
+{% if i.authority_id %}
+<a href="{% url 'sendvercertificate' i.id %}" class="m-2">
+<button type="button" class="btn btn-primary srqst-testimonial srqst-testimonial2 srqst-cert">Send
+   verification request
+</button>
+</a>
+{% endif %}
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<script>
+
+$(function() {
+
+  $("#issued_authority_edit{{i.id}}" ).autocomplete({
+    source: "{% url 'client_autocomplete' %}",
+     select: function (event, ui) {
+      $("#issued_authority_edit{{i.id}}").val(ui.item.label);
+      $("#issued_authority_edit_id{{i.id}}").val(ui.item.value);
+      return false;  //
+      }
+  });
+
+} );
+</script>
+
+{% empty %}
+<img src="{% static 'img/updateCertificate.png' %}" width="160" height="160" class="ml-5 pb-3">
+{% endfor %}
+
+          </div>
+
+
+
+
+
+            </div>
+          </div>
+
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 pl-0 pr-0 mt-3 bg-gradient-blue" style="border-radius: 15px;">
+            <div class="bg-border">
+              <div class="d-flex mb-3 border-bottom p-2 justify-content-between">
+                <h5 class="certify-head text-blue font-weight-bold">Our Client </h5>
+                <div class="d-flex pt-1" data-toggle="modal" data-target="#client-modal">
+                  <p>Add</p>
+                  <i class="fas fa-plus edit-icon ml-1"></i></div>
+              </div>
+              <div class="d-flex m-0 profile-body col-12">
+
+                
+                {% for i in clients %}
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 p-0">
+                  <div class="card profile-card w-100" data-id="2{{i.id}}">
+                    <div class="card-body profile-body">
+                      <div class="col-12 p-0">
+                        <div class="d-flex justify-content-around"><i class="far fa-edit float-left" data-toggle="modal" data-target="#edit-clients-modal{{i.id}}"></i>
+                          {% if i.is_approved %}
+                          <h6 class="green-tick font-weight-bold">{{ i.clientname }}</h6>
+                          <i class="fas fa-check-circle green-tick ml-2"></i> 
+                          {% else %}
+                          <h6 class="font-weight-bold">{{ i.clientname }}</h6>
+                           
+                          {% endif %}
+                        </div>
+                        <div class="company-details">
+                          <p>{{ i.client_description|slice:5 }}<span class="dots"></span><span class="more">{{ i.client_description|slice:"5:" }}</span></p>
+                          <div class="text-center">
+                            <button class="view-more myBtn" onclick="readMore('2{{i.id}}')"><i class="fas fa-chevron-circle-down"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+
+
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                
+                </div>
+                <div class="d-flex m-0 profile-body col-12">
+
+                {% endif %}
+
+
+                <!-- Edit client-->
+<div class="modal fade" id="edit-clients-modal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-md">
+   <div class="modal-content modal-radius">
+       <div class="d-flex w-100 mt-3 testimonial-heading" style="border-bottom: 1px solid #FF0004;">
+           <h5>Edit Client</h5>
+       </div>
+       <form class="w-100" action="{% url 'editclient' i.id %}" method="post" id="edit-clients-form{{i.id}}" enctype="multipart/form-data">
+           {% csrf_token %}
+
+           <div class="d-flex mt-3">
+               <div class="form-group col-8 cmpny-addrs">
+
+                   <input type="text" class="form-control mt-2" name="client-name_edit" id="client-name_edit{{i.id}}"
+                              placeholder="Enter Name" value="{{i.clientname}}" required>
+
+                   <input type="text" class="form-control mt-2" name="client-name_edit_id" id="client-name_edit_id{{i.id}}"
+                              placeholder="Enter Name" value="{% if i.client_id %}{{i.client_id}}{%endif%}" hidden>
+<!--                        <select class="w-100" name="client-name" id="select-name{{i.id}}" required >-->
+<!--                                <option  class="w-100" value="{{i.client_id}}" selected>{{ i.client.first_name }}</option>-->
+<!--                                {% for j in companies %}-->
+<!--                                <option value="{{ j.id }}">{% if j.first_name %} {{j.first_name}} {% endif %} {% if j.last_name %} {{j.last_name}} {% endif %}</option>-->
+<!--                                {% endfor %}-->
+<!--                            </select>-->
+
+                       <label class="col-form-label upload-img">Change Image</label>
+                       <input type="file" class="mt-2 img-upload" name="clientimage" id="edit-clientimage{{i.id}}" >
+               </div>
+               {% if i.clientimage %}
+               <div class="form-group col-4 cmpny-addrs"><img src=" {{ i.clientimage.url }}" alt=""></div>
+               {% else %}
+               <div class="form-group col-4 cmpny-addrs"><img src="" alt=""></div>
+               {% endif %}
+           </div>
+           <div class="col-12">
+               <label class="col-form-label">Description</label>
+               <textarea class="w-100 form-control" name="client_description" id="edit-description{{i.id}}" rows="5">{{ i.client_description }}</textarea>
+           </div>
+           <div class="d-flex pb-3 testimonial-btns justify-content-center"><a href="profile-user-edit.html"
+                                                                               class="m-2">
+               <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                   Cancel
+               </button>
+           </a>
+               <a href="#" class="m-2">
+               <button type="submit" class="btn btn-bg-blue savebtn-testimonial"
+                       data-toggle="modal" data-target="#client2-modal">Save
+               </button>
+           </a>
+               {% if i.client_id %}
+               <a href="{% url 'sendverclient' i.id %}" class="m-2">
+               <button type="button" class="btn btn-primary srqst-testimonial srqst-testimonial2">Send Request
+               </button>
+           </a>
+               {% endif %}
+           </div>
+       </form>
+   </div>
+</div>
+</div>
+
+
+<script>
+  $(function() {
+
+    $("#client-name_edit{{i.id}}" ).autocomplete({
+      source: "{% url 'client_autocomplete' %}",
+       select: function (event, ui) {
+        $("#client-name_edit{{i.id}}").val(ui.item.label);
+        $("#client-name_edit_id{{i.id}}").val(ui.item.value);
+        return false;  //
+        }
+    });
+  });
+
+
+
+    </script>
+                
+                {% empty %}
+<img src="{% static 'img/updateclient Information.png' %}" width="160" height="160" class="ml-5 pb-3">
+{% endfor %}
+                </div>
+
+                <!--  -->
+
+              </div>
+
+
+              
+
+
+            </div>
+          </div>
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 pl-0 pr-0 mt-3 bg-gradient-blue" style="border-radius: 15px;">
+            <div class="bg-border">
+              <div class="d-flex mb-3 border-bottom p-2 justify-content-between">
+                <h5 class="certify-head text-blue font-weight-bold">Our Branches </h5>
+                <div class="d-flex pt-1" data-toggle="modal" data-target="#branch-modal">
+                  <p>Add</p>
+                  <i class="fas fa-plus edit-icon ml-1"></i></div>
+              </div>
+
+              <div class="d-flex m-0 profile-body col-12">
+              {% for i in branches %}
+
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 p-0">
+                  <div class="card profile-card w-100" data-id="3{{i.id}}">
+                    <div class="card-body profile-body">
+                      <div class="col-12 p-0">
+                        <div class="d-flex justify-content-around"><i class="far fa-edit float-left" data-toggle="modal" data-target="#edit-branch-modal{{i.id}}"></i>
+                          <h6 class="green-tick font-weight-bold">{{i.branch}}</h6>
+                          <i class="fas fa-check-circle green-tick ml-2"></i> </div>
+                        <div class="company-details">
+                          <p>{{ i.branchaddress|slice:10 }}<span class="dots"></span><span class="more">{{ i.branchaddress|slice:"10:" }}</span></p>
+                          <div class="text-center">
+                            <button class="view-more myBtn" onclick="readMore('3{{i.id}}')"><i class="fas fa-chevron-circle-down"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+                
+                </div>
+                <div class="d-flex m-0 profile-body col-12">
+
+                {% endif %}
+
+                
+
+
+                <!--Edit Branch-->
+<div class="modal fade" id="edit-branch-modal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+aria-hidden="true">
+<div class="modal-dialog modal-md">
+   <div class="modal-content modal-radius">
+       <div class="d-flex w-100 mt-3 testimonial-heading" style="border-bottom: 1px solid #808080;">
+           <h5>Edit Branch</h5>
+       </div>
+       <form class="w-100" action="{% url 'editbranch' i.id %}" method="post" id="edit-branch{{i.id}}">
+           {% csrf_token %}
+           <div class="d-flex col-12 mt-3">
+               <div class="form-group col-10 cmpny-addrs">
+<!--                        <div class="d-flex form-group d-flex">-->
+<!--                            <label class="col-form-label col-5 "> Company Name</label>-->
+<!--                            <<input type="text" class="form-control w-100" name="certificate_id" id="ccertificate_id">-->
+<!--                        </div>-->
+                   <div class="form-group d-flex" >
+
+                       <label class="col-form-label col-5">Branch Place</label>
+                       <input type="text" class="form-control w-100" name="branch" id="editbranch{{i.id}}" value="{{i.branch}}">
+                   </div>
+                   <div class="form-group d-flex">
+                       <label class="col-form-label col-5">Address</label>
+                       <textarea class="w-100 form-control" name="branchaddress" rows="5" id="editbranchaddress{{i.id}}"> {{i.branchaddress}} </textarea>
+                   </div>
+               </div>
+               <div class="form-group col-2 cmpny-addrs certificate"><img src="img/g1.jpg" alt=""></div>
+           </div>
+           <div class="d-flex pb-3 certification-btns justify-content-center"><a href="profile-user-edit.html"
+                                                                                 class="m-2">
+               <button type="button" class="btn btn-bg-blue cancelbtn-testimonial cancelbtn-cert" data-dismiss="modal">Cancel</button>
+           </a> <a href="#" class="m-2">
+               <button type="submit" class="btn btn-primary savebtn-testimonial savebtn-testimonial2 bg-red">Save</button>
+           </a></div>
+       </form>
+   </div>
+</div>
+</div>
+{% empty %}
+<img src="{% static 'img/updateBranch.png' %}" width="160" height="160" class="ml-5 pb-3">
+{% endfor %}
+                
+                
+              </div>
+
+              
+
+
+            </div>
+          </div>
+
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 pl-0 pr-0 mt-3 bg-gradient-blue" style="border-radius: 15px;">
+            <div class="bg-border">
+              <div class="d-flex mb-3 border-bottom p-2 justify-content-between">
+                <h5 class="certify-head text-blue font-weight-bold">Testimonial</h5>
+                <div class="d-flex pt-1" data-toggle="modal" data-target="#testimonial-modal">
+                  <p>Add</p>
+                  <i class="fas fa-plus edit-icon ml-1"></i></div>
+              </div>
+              <div class="d-flex m-0 profile-body col-12">
+
+                {% for i in testimonial %}
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 p-0">
+                  <div class="card profile-card w-100" data-id="4{{i.id}}">
+                    <div class="card-body profile-body">
+                      <div class="col-12 p-0">
+                        <div class="d-flex justify-content-around"><i class="far fa-edit float-left" data-toggle="modal" data-target="#edit-testimonial-modal{{i.id}}"></i>
+
+                          {% if i.is_approved%}
+                          <h6 class="green-tick font-weight-bold">{{i.testimonial_name}}</h6>
+                          <i class="fas fa-check-circle green-tick ml-2"></i> 
+                          {% else %}
+                          <h6 class="font-weight-bold">{{i.testimonial_name}}</h6>
+                          
+                        {% endif %}
+                        </div>
+                        <div class="company-details">
+                          <p>{{i.testimonial_description|slice:5}}<span class="dots">...</span><span class="more">{{ i.testimonial_description|slice:"5:" }}</span></p>
+                          <div class="text-center">
+                            <button class="view-more myBtn" onclick="readMore('4{{i.id}}')"><i class="fas fa-chevron-circle-down"></i></button>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                
+                
+
+                {% if forloop.counter|divisibleby:3 and not forloop.last %}
+              </div>
+              <div class="d-flex m-0 profile-body col-12">
+
+                {% endif %}
+
+
+
+<!--Edit Testimonial  Modal-->
+<div class="modal fade" id="edit-testimonial-modal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+
+
+    <div class="modal-dialog modal-md">
+        <div class="modal-content modal-radius">
+            <div class="d-flex w-100 mt-3 testimonial-heading">
+                <h5>Edit Testimonial</h5>
+            </div>
+            <form class="w-100" action="{% url 'edittestimonial' i.id %}" method="post" id="edit-testimonial-form{{i.id}}" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="d-flex mt-3">
+                    <div class="form-group col-8 cmpny-addrs">
+<!--                        <select class="single-request w-100" name="state">-->
+<!--                            <option value="AL" class="w-100">Send Request to</option>-->
+
+
+<!--                            ...-->
+
+
+<!--                            <option value="WY">Wyoming</option>-->
+<!--                        </select>-->
+<!--                        <input type="text" class="form-control mt-2"  placeholder="Enter Name" name="testicliName" id="testicliName">-->
+                        <!-- <select class="w-100" name="testicliName"  required >
+
+                                {% for j in companies %}
+                                <option value="{{ i.testuser_id }}" class="w-100" selected> {{i.testuser.first_name}} </option>
+                                <option value="{{ j.id }}">{% if j.first_name %} {{j.first_name}} {% endif %} {% if j.last_name %}{{j.last_name}}{% endif %}</option>
+                                {% endfor %}
+
+                            </select> -->
+                            <input type="text" class="form-control mt-2" name="testicliNameEdit" id="testicliNameEdit{{i.id}}"
+                                   placeholder="Enter Name"  value="{{i.testimonial_name}}"  required>
+
+                            <input type="text" class="form-control mt-2" name="testicliName-idEdit" id="testicliName-idEdit{{i.id}}"
+                                   placeholder="Enter Name"  hidden value="{% if i.testuser_id%}{{i.testuser_id}} {% endif %}">
+
+                        <label class="col-form-label upload-img">Upload Image</label>
+                        <input type="file" class="mt-2 img-upload" id="editfiles{{i.id}}" name="testimonial_image">
+                    </div>
+                    <div class="form-group col-4 cmpny-addrs">{% if i.testimonial_image %} <img src="{{i.testimonial_image.url}}" alt="">{% endif %}</div>
+                </div>
+                <div class="col-12">
+                    <label class="col-form-label">Description</label>
+                    <textarea class="w-100 form-control" name="testimonial_description" id="testimonial_description{{i.id}}" rows="5">{{i.testimonial_description}}</textarea>
+                </div>
+                <div class="d-flex pb-3 testimonial-btns justify-content-center"><a href="profile-user-edit.html"
+                                                                                    class="m-2">
+                    <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red" data-dismiss="modal" >Cancel</button>
+                </a> <a href="#" class="m-2">
+                    <button type="submit" class="btn btn-bg-blue savebtn-testimonial" data-toggle="modal"
+                            data-target="#testimonial2-modal">Save
+                    </button>
+                </a> <a href="{% url 'sendvertestimonial' i.id%}" class="m-2">
+                    <button type="button" class="btn btn-primary savebtn-testimonial">Send Request</button>
+                </a></div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script>
+  $(function() {
+
+    $("#testicliNameEdit{{i.id}}" ).autocomplete({
+      source: "{% url 'client_autocomplete' %}",
+       select: function (event, ui) {
+        $("#testicliNameEdit{{i.id}}").val(ui.item.label);
+        $("#testicliName-idEdit{{i.id}}").val(ui.item.value);
+        return false;  //
+        }
+    });
+  });
+
+
+
+    </script>
+
+
+{% empty %}
+<img src="{% static 'img/updateTestimonial.png' %}" width="160" height="160" class="ml-5 pb-3">
+{% endfor %}
+
+            </div>
+
+              
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /#Sidebar --> 
+  </div>
+</div>
+<div class="text-center text-white p-3" style="background-color: #00b1ff;"> Copyright 2021 © <a class="text-white font-weight-bolder text-decoration-none" href="#">Infonics</a> Powered by <a class="text-white font-weight-bolder text-decoration-none" href="http://bluesapphiretek.com/" target="_blank">BlueSapphire Info Solutions Pvt Ltd.</a> </div>
+<!-- Working time modal -->
+<!-- <div class="modal fade" id="working-time-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-xl modal-lg modal-md modal-sm modal-col">
+    <div class="modal-content modal-radius">
+      <div class="modal-header">
+        <h5>Working Hour</h5>
+      </div>
+      <table class="table table-borderless">
+        <thead>
+          <tr class="border">
+            <th>Days</th>
+            <th>Availability</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Break time1</th>
+            <th>Break time2</th>
+          </tr>
+        </thead>
+        <tbody class="border">
+          <tr>
+            <td>Monday</td>
+            <td><input type="checkbox" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" >
+              to
+              <input type="time" ></td>
+            <td ><input type="time" >
+              to
+              <input type="time" ></td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td><input type="checkbox" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" >
+              to
+              <input type="time" ></td>
+            <td ><input type="time" >
+              to
+              <input type="time" ></td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td><input type="checkbox" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" >
+              to
+              <input type="time" ></td>
+            <td ><input type="time" >
+              to
+              <input type="time" ></td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td><input type="checkbox" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" >
+              to
+              <input type="time" ></td>
+            <td ><input type="time" >
+              to
+              <input type="time" ></td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td><input type="checkbox" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" >
+              to
+              <input type="time" ></td>
+            <td ><input type="time" >
+              to
+              <input type="time" ></td>
+          </tr>
+          <tr>
+            <td>Saturday</td>
+            <td><input type="checkbox" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" >
+              to
+              <input type="time" ></td>
+            <td ><input type="time" >
+              to
+              <input type="time" ></td>
+          </tr>
+          <tr>
+            <td>Sunday</td>
+            <td><input type="checkbox" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" ></td>
+            <td><input type="time" >
+              to
+              <input type="time" ></td>
+            <td ><input type="time" >
+              to
+              <input type="time" ></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="d-flex m-auto pb-3"> <a href="profile-company-edit.html" class="m-2">
+        <button type="button" class="btn btn-primary cancelbtn">Cancel</button>
+        </a> <a href="#" class="m-2">
+        <button type="button" class="btn savebtn btn-bg-blue text-white">Save</button>
+        </a> </div>
+    </div>
+  </div>
+</div> -->
+
+
+<!--Testimonial  Modal-->
+<div class="modal fade" id="testimonial-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content modal-radius">
+            <div class="d-flex w-100 mt-3 testimonial-heading">
+                <h5>Add Testimonial</h5>
+            </div>
+            <form class="w-100" action="{% url 'addtestimonial' %}" method="post" id="edit-testimonial" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="d-flex mt-3">
+                    <div class="form-group col-8 cmpny-addrs">
+<!--                        <select class="single-request w-100" name="state">-->
+<!--                            <option value="AL" class="w-100">Send Request to</option>-->
+
+
+<!--                            ...-->
+
+
+<!--                            <option value="WY">Wyoming</option>-->
+<!--                        </select>-->
+<!--                        <input type="text" class="form-control mt-2"  placeholder="Enter Name" name="testicliName" id="testicliName">-->
+                        <input type="text" class="form-control mt-2" name="testicliName" id="testicliName"
+                                   placeholder="Enter Name" required>
+
+                        <input type="text" class="form-control mt-2" name="testicliName-id" id="testicliName-id"
+                                   placeholder="Enter Name"  hidden>
+
+
+                        <!-- <select class="w-100" name="testicliName" id="testicliName" required >
+                                <option value="" class="w-100">Select User/Company </option>
+                                {% for i in companies %}
+                                <option value="{{ i.id }}">{% if i.first_name %}{{i.first_name}} {% endif %}  {% if  i.last_name %} {{i.last_name}} {% endif %}</option>
+                                {% endfor %}
+                            </select> -->
+
+                        <label class="col-form-label upload-img">Upload Image</label>
+                        <input type="file" class="mt-2 img-upload" id="filesup" name="testimonial_image">
+                    </div>
+                    <div class="form-group col-4  "><img src="img/g1.jpg" class="img-thumbnail upload-testimonial w-25 ml-2"  alt=""></div>
+                </div>
+                <div class="col-12">
+                    <label class="col-form-label">Description</label>
+                    <textarea class="w-100 form-control" name="testimonial_description" id="testimonial_description" rows="5"></textarea>
+                </div>
+                <div class="d-flex pb-3 testimonial-btns justify-content-center">
+                    <a href="" class="m-2">
+                        <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </a> <a href="#" class="m-2">
+                        <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                    </a>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+  
+      $("#testicliName").autocomplete({
+        source: "{% url 'client_autocomplete' %}",
+         select: function (event, ui) {
+          $("#testicliName").val(ui.item.label);
+          $("#testicliName-id").val(ui.item.value);
+          return false;  //
+          }
+      });
+    } );
+  
+  
+  
+      </script>
+<!-- Expertise modal
+<div class="modal fade" id="expertise-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md modal-md">
+    <div class="modal-content modal-radius">
+      <div class="d-flex w-100 mt-3 testimonial-heading" style="background-color: #CEEAFF; border-bottom: none;">
+        <h5>Project Engineer - 2 Years</h5>
+      </div>
+      <form class="w-100" action="#" method="post" id="edit-expertise">
+        <div class="col-12 mt-3">
+          <div class="form-group cmpny-addrs">
+            <input type="text" class="form-control" placeholder="Profession" name="profession">
+          </div>
+          <div class="form-group  cmpny-addrs">
+            <input type="text" class="form-control" placeholder="Expertise in" name="expertise in">
+          </div>
+          <div class="form-group cmpny-addrs">
+            <input type="text" class="form-control" placeholder="Expertise in years" name="expertise in years">
+          </div>
+          <div class="form-group cmpny-addrs">
+            <textarea class="form-control" name="description" placeholder="Description" rows="5"></textarea>
+          </div>
+        </div>
+        <div class="d-flex pb-3 testimonial-btns justify-content-center"> <a href="profile-company-edit.html" class="m-2">
+          <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-dark">Cancel</button>
+          </a> <a href="#" class="m-2">
+          <button type="button" class="btn btn-primary savebtn-testimonial">Save</button>
+          </a> </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+<!--projects modal-->
+<!-- <div class="modal fade" id="projects-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content modal-radius">
+      <div class="modal-header"> </div>
+      <form class="w-100" action="#" method="post" id="edit-projects">
+        <div class="d-flex w-100 mt-3 expertise-heading">
+          <h5 class="px-4 w-50">Projects</h5>
+          <h5 class="px-4 w-50">Company</h5>
+        </div>
+        <div class="d-flex mt-3">
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12" name="name">
+          </div>
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12 text-right" name="email">
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12" name="gname">
+          </div>
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control text-right col-12" name="gamt">
+          </div>
+        </div>
+        <div class="d-flex mt-3">
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12" name="name">
+          </div>
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12 text-right" name="email">
+          </div>
+        </div>
+        <div class="d-flex mt-3">
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12" name="name">
+          </div>
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12 text-right" name="email">
+          </div>
+        </div>
+        <div class="d-flex mt-3">
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12" name="name">
+          </div>
+          <div class="form-group col-6 cmpny-addrs">
+            <input type="text" class="form-control col-12 text-right" name="email">
+          </div>
+        </div>
+        <div class="d-flex pb-3"> <a href="profile-company-edit.html" class="m-2" style="margin: 0 2px 0 auto!important;">
+          <button type="button" class="btn btn-primary cancelbtn">Cancel</button>
+          </a><a href="#" class="m-2" style="margin: 0 auto 0 2px!important;">
+          <button type="button" class="btn savebtn btn-bg-blue text-white">Save</button>
+          </a> </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+<!--About us-->
+<!-- <div class="modal fade" id="aboutus-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content modal-radius">
+      <div class="modal-header">
+        <h5>About Us</h5>
+      </div>
+      <textarea class="aboutus m-3" rows="7"></textarea>
+      <div class="d-flex m-auto pb-3"> <a href="profile-company-edit.html" class="m-2">
+        <button type="button" class="btn btn-primary cancelbtn">Cancel</button>
+        </a><a href="#" class="m-2">
+        <button type="button" class="btn savebtn btn-bg-blue text-white">Save</button>
+        </a> </div>
+    </div>
+  </div>
+</div> -->
+<!-- Achievements
+<div class="modal fade" id="achievements-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md modal-md">
+    <div class="modal-content modal-radius">
+      <div class="d-flex w-100 mt-3 testimonial-heading" style="background-color: #CEEAFF; border-bottom: none;">
+        <h5>Achievement</h5>
+      </div>
+      <form class="w-100" action="#" method="post" id="edit-achievement">
+        <div class="col-12 mt-3">
+          <div class="form-group cmpny-addrs">
+            <input type="text" class="form-control" placeholder="Achievement Title" name="achievement title">
+          </div>
+          <div class="form-group cmpny-addrs">
+            <textarea class="form-control" name="description" placeholder="Description" rows="5"></textarea>
+          </div>
+          <div class="cmpny-addrs">
+            <div class="d-flex border col-6 m-auto">
+              <input type="file" id="upload btn" hidden/>
+              <label for="actual-btn" class="exp-name">Upload Document</label>
+              <span><i class="fas fa-upload"></i></span> </div>
+          </div>
+        </div>
+        <div class="d-flex pb-3 testimonial-btns justify-content-center"> <a href="profile-company-edit.html" class="m-2">
+          <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-dark">Cancel</button>
+          </a> <a href="#" class="m-2">
+          <button type="button" class="btn btn-primary savebtn-testimonial">Save</button>
+          </a> </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+<!-- Add client-->
+<!-- <div class="modal fade" id="client-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content modal-radius">
+      <div class="d-flex w-100 mt-3 testimonial-heading" style="border-bottom: 1px solid #FF0004;">
+        <h5>Add Client</h5>
+      </div>
+      <form class="w-100" action="#" method="post" id="add-client">
+        <div class="d-flex mt-3">
+          <div class="form-group col-8 cmpny-addrs">
+            <select class="single-request w-100" name="state">
+              <option value="AL" class="w-100">Send Request to</option>
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              ... 
+              
+              
+              
+              
+              
+              
+              
+              
+              
+              <option value="WY">Wyoming</option>
+            </select>
+            <input type="text" class="form-control mt-2" name="name" placeholder="Enter Name">
+            <label class="col-form-label upload-img">Upload Image</label>
+            <input type="file" class="mt-2 img-upload">
+          </div>
+          <div class="form-group col-4 cmpny-addrs"> <img src="img/g1.jpg" alt=""> </div>
+        </div>
+        <div class="col-12">
+          <label class="col-form-label">Description</label>
+          <textarea class="w-100 form-control" name="addmed" rows="5"></textarea>
+        </div>
+        <div class="d-flex pb-3 testimonial-btns justify-content-center"> <a href="profile-user-edit.html" class="m-2">
+          <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-dark">Cancel</button>
+          </a> <a href="#" class="m-2">
+          <button type="button" class="btn btn-primary savebtn-testimonial savebtn-testimonial2" data-toggle="modal" data-target="#client2-modal">Save</button>
+          </a> <a href="#" class="m-2">
+          <button type="button" class="btn btn-primary srqst-testimonial srqst-testimonial2">Send Request</button>
+          </a> </div>
+      </form>
+    </div>
+  </div>
+</div> -->
+
+
+<script>
+	function myFunction(){
+		var x = document.getElementById("sidebar-wrapper");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else{
+			x.style.display = "none";
+		}
+	}
+//        $("#menu-toggle").click(function (e) {
+//            e.preventDefault();
+//            $("#sidebar-wrapper").show();
+//            $("#wrapper").toggleClass("toggled");
+//        });
+//    </script> 
+<script>
+//function openNav() {
+//  document.getElementById("sidebar-wrapper").style.width = "166px";
+//}
+//
+//function closeNav() {
+//  document.getElementById("sidebar-wrapper").style.width = "0";
+//}
+	
+	function readMore(id) {
+        let dots = document.querySelector(`.card[data-id="${id}"] .dots`);
+        let moreText = document.querySelector(`.card[data-id="${id}"] .more`);
+        let btnText = document.querySelector(`.card[data-id="${id}"] .myBtn`);
+
+        if (dots.style.display === "none") {
+            dots.style.display = "inline";
+			
+            btnText.innerHTML = '<i class="fas fa-chevron-circle-down "></i>';
+            moreText.style.display = "none";
+        } else {
+            dots.style.display = "none";
+            btnText.innerHTML = '<i class="fas fa-chevron-circle-up"></i>';
+            moreText.style.display = "inline";
+        }
+    }
+	
+</script>
+
+<!-- Working time modal -->
+<div class="modal fade" id="working-time-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-lg modal-md modal-sm modal-col">
+        <div class="modal-content modal-radius">
+            <div class="modal-header">
+                <h5>Working Hour</h5>
+            </div>
+            
+            <table class="table table-borderless">
+                <thead>
+                <tr class="border">
+                    <th>Days</th>
+                    <th>Availability</th>
+                    <th>Start Time</th>
+                    <th>End Time</th>
+                    <th>Break time1</th>
+                    <th>Break time2</th>
+                </tr>
+                </thead>
+
+                <form action=" {% url 'addworking' %}" method="POST">
+                    {% csrf_token %}
+                <tbody class="border">
+                    <tr>
+                        <td>Monday</td>
+                        <td><input type="checkbox" name="moncheck" id="moncheck" {% if monview.start_time %} checked {% endif %}></td>
+                        <td><input type="time" name="monstartime" id="monstartime" value="{% if monview.start_time %}{{monview.start_time |time:"H:i"}}{% endif%}" ></td>
+    
+                        <td><input type="time" name="monendtime" id="monendtime"   value="{% if monview.end_time %}{{monview.end_time |time:"H:i"}}{% endif%}" ></td>
+                        <td><input type="time" name="monbreaktime1st" id="monbreaktime1st" value="{% if monview.breaktimef_start %}{{monview.breaktimef_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name= "monbreaktime1en" id="monbreaktime1en" value="{% if monview.breaktimef_end %}{{monview.breaktimef_end |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="monbreaktime2st" id="monbreaktime2st" value="{% if monview.breaktimes_start %}{{monview.breaktimes_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="monbreaktime2en" id="monbreaktime2en" value="{% if monview.breaktimes_end %}{{monview.breaktimes_end |time:"H:i"}}{% endif%}"></td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td><input type="checkbox" name="tuecheck" id="tuecheck" {% if tueview.start_time %} checked {% endif %}></td>
+    
+                        <td><input type="time" name="tuestartime" id="tuestartime" value="{% if tueview.start_time %}{{tueview.start_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="tueendtime" id="tueendtime" value="{% if tueview.end_time %}{{tueview.end_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="tuebreaktime1st" id="tuebreaktime1st" value="{% if tueview.breaktimef_start %}{{tueview.breaktimef_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="tuebreaktime1en" id="tuebreaktime1en" value="{% if tueview.breaktimef_end %}{{tueview.breaktimef_end |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name = "tuebreaktime2st" id="tuebreaktime2st" value="{% if tueview.breaktimes_start %}{{tueview.breaktimes_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="tuebreaktime2en" id="tuebreaktime2en" value="{% if tueview.breaktimes_end %}{{tueview.breaktimes_end |time:"H:i"}}{% endif%}"></td>
+                    </tr>
+
+                    <tr>
+                        <td>Wednesday</td>
+                        <td><input type="checkbox" name="wedcheck" id="wedcheck" {% if wedview.start_time %} checked {% endif %}></td>
+    
+    
+                        <td><input type="time" name="wedstartime" id="wedstartime"  value="{% if wedview.start_time %}{{wedview.start_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="wedendtime" id="wedendtime" value="{% if wedview.end_time %}{{wedview.end_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="wedbreaktime1st" id="wedbreaktime1st" value="{% if wedview.breaktimef_start %}{{wedview.breaktimef_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="wedbreaktime1en" id="wedbreaktime1en" value="{% if wedview.breaktimef_end %}{{wedview.breaktimef_end |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name = "wedbreaktime2st" id="wedbreaktime2st" value="{% if wedview.breaktimes_start %}{{wedview.breaktimes_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time"  name="wedbreaktime2en" id="wedbreaktime2en" value="{% if wedview.breaktimes_end %}{{wedview.breaktimes_end |time:"H:i"}}{% endif%}"></td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td><input type="checkbox" name="thucheck" id="thucheck" {% if thuview.start_time %} checked {% endif %}></td>
+    
+                        <td><input type="time" name="thustartime" id="thustartime" value="{% if thuview.start_time %}{{thuview.start_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="thuendtime" id="thuendtime" value="{% if thuview.end_time %}{{thuview.end_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="thubreaktime1st" id="thubreaktime1st" value="{% if thuview.breaktimef_start %}{{thuview.breaktimef_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="thubreaktime1en" id="thubreaktime1en" value="{% if thuview.breaktimef_end %}{{thuview.breaktimef_end |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name = "thubreaktime2st" id="thubreaktime2st" value="{% if thuview.breaktimes_start %}{{thuview.breaktimes_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="thubreaktime2en" id="thubreaktime2en" value="{% if thuview.breaktimes_end %}{{thuview.breaktimes_end |time:"H:i"}}{% endif%}"></td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td><input type="checkbox" name="fricheck" id="fricheck" {% if friview.start_time %} checked {% endif %}></td>
+                        <td><input type="time" name="fristartime" id="fristartime" value="{% if friview.start_time %}{{friview.start_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="friendtime" id="friendtime" value="{% if friview.end_time %}{{friview.end_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="fribreaktime1st" id="fribreaktime1st" value="{% if friview.breaktimef_start %}{{friview.breaktimef_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="fribreaktime1en" id="fribreaktime1en" value="{% if friview.breaktimef_end %}{{friview.breaktimef_end |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name = "fribreaktime2st" id="fribreaktime2st" value="{% if friview.breaktimes_start %}{{friview.breaktimes_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="fribreaktime2en" id="fribreaktime2en" value="{% if friview.breaktimes_end %}{{friview.breaktimes_end |time:"H:i"}}{% endif%}"></td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td><input type="checkbox" name="satcheck" id="satcheck" {% if satview.start_time %} checked {% endif %}></td>
+                        <td><input type="time" name="satstartime" id="satstartime" value="{% if satview.start_time %}{{satview.start_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="satendtime" id="satendtime" value="{% if satview.end_time %}{{satview.end_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="satbreaktime1st" id="satbreaktime1st" value="{% if satview.breaktimef_start %}{{satview.breaktimef_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="satbreaktime1en" id="satbreaktime1en" value="{% if satview.breaktimef_end %}{{satview.breaktimef_end |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name = "satbreaktime2st" id="satbreaktime2st" value="{% if satview.breaktimes_start %}{{satview.breaktimes_start |time:"H:i"}}{% endif%}">
+    
+    
+                            <input type="time" name="satbreaktime2en" id="satbreaktime2en" value="{% if satview.breaktimes_end %}{{satview.breaktimes_end |time:"H:i"}}{% endif%}"></td>
+                    </tr>
+                    <tr>
+                        <td>Sunday</td>
+                        <td><input type="checkbox" name="suncheck" id="suncheck" {% if sunview.start_time %} checked {% endif %}></td>
+                        <td><input type="time" name="sunstartime" id="sunstartime" value="{% if sunview.start_time %}{{sunview.start_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="sunendtime" id="sunendtime" value="{% if sunview.end_time %}{{sunview.end_time |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name="sunbreaktime1st" id="sunbreaktime1st" value="{% if sunview.breaktimef_start %}{{sunview.breaktimef_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="sunbreaktime1en" id="sunbreaktime1en" value="{% if sunview.breaktimef_end %}{{sunview.breaktimef_end |time:"H:i"}}{% endif%}"></td>
+                        <td><input type="time" name = "sunbreaktime2st" id="sunbreaktime2st" value="{% if sunview.breaktimes_start %}{{sunview.breaktimes_start |time:"H:i"}}{% endif%}">
+                            to
+                            <input type="time" name="sunbreaktime2en" id="sunbreaktime2en" value="{% if sunview.breaktimes_end %}{{sunview.breaktimes_end |time:"H:i"}}{% endif%}"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+            <div class="d-flex m-auto pb-3">
+                <a href="" class="m-2">
+                    <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                        Cancel
+                    </button>
+                </a> <a href="#" class="m-2">
+                    <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                </a>
+        </div>
+                </form>
+        </div>
+    </div>
+</div>
+
+
+<script> 
+         
+         //set initial state.
+                   
+         $('#moncheck').click(function () {
+    if ($(this).attr('checked')) {
+        
+        $("#monstartime").attr('required', '');
+        $("#monendtime").attr('required', '');
+
+        $("#monbreaktime1st").attr('required', '');
+        $("#monbreaktime1en").attr('required', '');
+
+        $("#monbreaktime2st").attr('required', '');
+        $("#monbreaktime2en").attr('required', '');
+
+    }
+
+    else  {
+        $("#monstartime").removeAttr("required");
+        $("#monendtime").removeAttr('required');
+
+        $("#monbreaktime1st").removeAttr('required');
+        $("#monbreaktime1en").removeAttr('required');
+
+        $("#monbreaktime2st").removeAttr('required');
+        $("#monbreaktime2en").removeAttr('required');
+    }
+})
+
+//tuesday
+
+$('#tuecheck').click(function () {
+    if ($(this).attr('checked')) {
+        
+        $("#tuestartime").attr('required', '');
+        $("#tueendtime").attr('required', '');
+
+        $("#tuebreaktime1st").attr('required', '');
+        $("#tuebreaktime1en").attr('required', '');
+
+        $("#tuebreaktime2st").attr('required', '');
+        $("#tuebreaktime2en").attr('required', '');
+
+    }
+    else {
+        $("#tuestartime").removeAttr('required');
+        $("#tueendtime").removeAttr('required');
+
+        $("#tuebreaktime1st").removeAttr('required');
+        $("#tuebreaktime1en").removeAttr('required');
+
+        $("#tuebreaktime2st").removeAttr('required');
+        $("#tuebreaktime2en").removeAttr('required');
+    } 
+})
+
+//wednesday
+
+$('#wedcheck').click(function () {
+
+    if ($(this).attr('checked')) {
+        
+        $("#wedstartime").attr('required', '');
+        $("#wedendtime").attr('required', '');
+
+        $("#wedbreaktime1st").attr('required', '');
+        $("#wedbreaktime1en").attr('required', '');
+
+        $("#wedbreaktime2st").attr('required', '');
+        $("#wedbreaktime2en").attr('required', '');
+
+    }
+    
+    else {
+        $("#wedstartime").removeAttr('required');
+        $("#wedendtime").removeAttr('required');
+
+        $("#wedbreaktime1st").removeAttr('required');
+        $("#wedbreaktime1en").removeAttr('required');
+
+        $("#wedbreaktime2st").removeAttr('required');
+        $("#wedbreaktime2en").removeAttr('required');
+    }
+})
+
+//thursday
+
+$('#thucheck').click(function () {
+    if ($(this).attr('checked')) {
+        
+        $("#thustartime").attr('required', '');
+        $("#thuendtime").attr('required', '');
+
+        $("#thubreaktime1st").attr('required', '');
+        $("#thubreaktime1en").attr('required', '');
+
+        $("#thubreaktime2st").attr('required', '');
+        $("#thubreaktime2en").attr('required', '');
+
+    }
+    
+    else 
+    {
+        $("#thustartime").removeAttr('required');
+        $("#thuendtime").removeAttr('required');
+
+        $("#thubreaktime1st").removeAttr('required');
+        $("#thubreaktime1en").removeAttr('required');
+
+        $("#thubreaktime2st").removeAttr('required');
+        $("#thubreaktime2en").removeAttr('required');
+    }
+})
+
+//friday
+
+$('#fricheck').click(function () {
+    if ($(this).attr('checked')) {
+        
+        $("#fristartime").attr('required', '');
+        $("#friendtime").attr('required', '');
+
+        $("#fribreaktime1st").attr('required', '');
+        $("#fribreaktime1en").attr('required', '');
+
+        $("#fribreaktime2st").attr('required', '');
+        $("#fribreaktime2en").attr('required', '');
+
+    }
+    else {
+
+        $("#fristartime").removeAttr('required',);
+        $("#friendtime").removeAttr('required',);
+
+        $("#fribreaktime1st").removeAttr('required');
+        $("#fribreaktime1en").removeAttr('required');
+
+        $("#fribreaktime2st").removeAttr('required');
+        $("#fribreaktime2en").removeAttr('required');
+    } 
+})
+
+//saturday
+
+$('#satcheck').click(function () {
+    if ($(this).attr('checked')) {
+        
+        $("#satstartime").attr('required', '');
+        $("#satendtime").attr('required', '');
+
+        $("#satbreaktime1st").attr('required', '');
+        $("#satbreaktime1en").attr('required', '');
+
+        $("#satbreaktime2st").attr('required', '');
+        $("#satbreaktime2en").attr('required', '');
+
+    }
+    else {
+        $("#satstartime").removeAttr('required');
+        $("#satendtime").removeAttr('required');
+
+        $("#satbreaktime1st").removeAttr('required');
+        $("#satbreaktime1en").removeAttr('required');
+
+        $("#satbreaktime2st").removeAttr('required');
+        $("#satbreaktime2en").removeAttr('required');
+    } 
+})
+
+//sunday
+
+$('#suncheck').click(function () {
+    if ($(this).attr('checked')) {
+        
+        $("#sunstartime").attr('required', '');
+        $("#sunendtime").attr('required', '');
+
+        $("#sunbreaktime1st").attr('required', '');
+        $("#sunbreaktime1en").attr('required', '');
+
+        $("#sunbreaktime2st").attr('required', '');
+        $("#sunbreaktime2en").attr('required', '');
+
+    }
+
+    else
+     
+    {
+        $("#sunstartime").removeAttr('required');
+        $("#sunendtime").removeAttr('required');
+
+        $("#sunbreaktime1st").removeAttr('required');
+        $("#sunbreaktime1en").removeAttr('required');
+
+        $("#sunbreaktime2st").removeAttr('required');
+        $("#sunbreaktime2en").removeAttr('required');
+    } 
+})
+
+</script>
+
+
+<!--About us-->
+<div class="modal fade" id="aboutus-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <form method="POST" id="abt-form">
+        {% csrf_token %}
+
+        <div class="modal-dialog modal-md">
+
+            <div class="modal-content modal-radius">
+                <div class="modal-header">
+                    <h5>About Us</h5>
+                </div>
+
+                <textarea class="aboutus m-3" rows="7" name="about" id="about" placeholder="add about yourself....">{{about}}</textarea>
+                <div class="d-flex m-auto pb-3">
+                    <a href="" class="m-2" data-dismiss="modal">
+                        <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-dark" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </a> <a href="#" class="m-2">
+                        <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                    </a>
+            </div>
+
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+  $("#abt-form").on("submit", function (e) {
+      e.preventDefault();
+      var about = $('#about').val();
+      // var serializedData = $('#his').serialize();
+      console.log(about);
+      
+      $.ajax({
+        url: "{% url 'addabout' %}",
+        type: 'POST',
+        data: { "about": about },
+        success: function (response) {
+            document.location.reload();
+
+          $("#aboutus-modal").modal('hide');
+
+        }
+      })
+
+
+    });
+
+</script>
+
+<!-- add map location modal-->
+<div class="modal fade" id="location-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-md modal-md">
+            <div class="modal-content modal-radius">
+                <div class="d-flex w-100 mt-3 testimonial-heading"
+                     style="background-color: #CEEAFF; border-bottom: none;">
+                    <h5>Location</h5>
+                </div>
+                <form class="w-100" action="{% url 'addlocation' %}" method="post" id="add-expertise">
+                    {% csrf_token %}
+
+                    <div class="col-12 mt-3">
+                        <div class="form-group cmpny-addrs">
+                            <label class=""> Location Place</label>
+                            
+                            
+                            <input type="text" class="ml-5"   name="location"
+                                   id="location"   value="{% if location %}{{location.place}}{% endif %}"  required >
+                        </div>
+                       
+                       
+                       
+                    </div>
+                    <div class="d-flex pb-3 testimonial-btns justify-content-center">
+                        <a href="" class="m-2">
+                            <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                                Cancel
+                            </button>
+                        </a> <a href="#" class="m-2">
+                            <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                        </a>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+<!--Expertise modal-->
+<div class="modal fade" id="expertise-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md modal-md">
+        <div class="modal-content modal-radius">
+            <div class="d-flex w-100 mt-3 testimonial-heading" style="background-color: #CEEAFF; border-bottom: none;">
+                <h5>Expertise</h5>
+            </div>
+
+            <form class="w-100" action="{% url 'expertise' %}" method="post" id="add-expertise">
+                {% csrf_token %}
+
+                <div class="col-12 mt-3">
+                    <div class="form-group cmpny-addrs">
+                        <div class="form-group  cmpny-addrs">
+                        <input type="text" class="form-control" placeholder="select person or company" name="expertise" id="expertise" required>
+                        </div>
+                        <input type="number" name="expertise_id" id="expertise_id" hidden>
+                        <input type="text" class="form-control" placeholder="Profession" name="profession" id="profession" required>
+                    </div>
+                    <div class="form-group  cmpny-addrs">
+                        <input type="text" class="form-control" placeholder="Expertise in" name="expertisein" id="expertisein" required>
+                    </div>
+                    <div class="form-group cmpny-addrs">
+                        <input type="number" min=0 step=0.5 class="form-control" placeholder="Expertise in years" name="years" id="years" required>
+                    </div>
+                    <div class="form-group cmpny-addrs">
+                        <textarea class="form-control" name="description" placeholder="Description" rows="6" id="description"></textarea>
+                    </div>
+                </div>
+                <div class="d-flex pb-3 testimonial-btns justify-content-center">
+                    <a href="" class="m-2">
+                        <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </a>
+                    <a href="#" class="m-2">
+                        <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                    </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+
+      $("#expertise").autocomplete({
+          source: "{% url 'client_autocomplete' %}",
+          
+          select: function(event, ui) {
+              $("#expertise").val(ui.item.label);
+              $("#expertise_id").val(ui.item.value)
+              return false; //
+              
+          },
+          
+
+      })
+//         .data().autocomplete._renderItem = function (ul, item) {
+//             console.log(item.img);
+
+//      return $("<li>").append( "<li>" + item.label +  item.descr + '<br>' +  item.img+ "</li>" ).appendTo( ul );
+// };
+
+});
+</script>
+
+
+    <!--Add Achievements modal-->
+    <div class="modal fade" id="achievements-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-md modal-md">
+          <div class="modal-content modal-radius">
+              <div class="d-flex w-100 mt-3 testimonial-heading" style="background-color: #CEEAFF; border-bottom: none;">
+                  <h5>Achievement</h5>
+              </div>
+              <form class="w-100" action="{% url 'addachievements' %}" method="post" id="add-achievement">
+                  {% csrf_token %}
+                  <div class="col-12 mt-3">
+                      <div class="form-group  cmpny-addrs">
+                          <input type="text" class="form-control" placeholder="select person or company" name="achievementss" id="achievementss" required>
+                          </div>
+                          <input type="number" name="achievementss_id" id="achievementss_id" hidden>
+                      <div class="form-group cmpny-addrs">
+                          <input type="text" class="form-control" placeholder="Achievement Title" name="title" id="title" required>
+                      </div>
+                      <div class="form-group cmpny-addrs">
+                          <textarea class="form-control" name="description" placeholder="Description" rows="5" id="achievementdescription"></textarea>
+                      </div>
+                      <!--                    <div class="cmpny-addrs">-->
+                      <!--                        <div class="d-flex border col-6 m-auto">-->
+                      <!--                            <input type="file" id="upload btn" hidden/>-->
+                      <!--                            <label for="actual-btn" class="exp-name">Upload Document</label>-->
+                      <!--                            <span><i class="fas fa-upload"></i></span></div>-->
+                      <!--                    </div>-->
+                  </div>
+                  <div class="d-flex pb-3 testimonial-btns justify-content-center">
+                      <a href="" class="m-2">
+                          <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                              Cancel
+                          </button>
+                      </a>
+                      <a href="#" class="m-2">
+                          <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                      </a>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  
+  <script type="text/javascript">
+      $(function() {
+
+          $("#achievementss").autocomplete({
+              source: "{% url 'client_autocomplete' %}",
+              
+              select: function(event, ui) {
+                  $("#achievementss").val(ui.item.label);
+                  $("#achievementss_id").val(ui.item.value)
+                  return false; //
+                  
+              },
+              
+
+          })
+  //         .data().autocomplete._renderItem = function (ul, item) {
+  //             console.log(item.img);
+
+  //      return $("<li>").append( "<li>" + item.label +  item.descr + '<br>' +  item.img+ "</li>" ).appendTo( ul );
+  // };
+
+});
+  </script>
+
+
+
+
+<!--projects modal-->
+<div class="modal fade" id="projects-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+      <div class="modal-content modal-radius">
+          <div class="modal-header"></div>
+          <form class="w-100" action="{% url 'projects' %}" method="post" id="edit-projects">
+              {% csrf_token %}
+             
+              
+                  <div class="form-group  cmpny-addrs">
+                      <input type="text" class="form-control col-12" name="company_name" id="company_name" placeholder="select user/company" required>
+                  </div> 
+                  <input type="number" class="form-control col-12" name="company_name_id" id="company_name_id" hidden>
+                      
+                  <div class="form-group  cmpny-addrs">
+                      <input type="text" class="form-control col-12" name="project_name" id="project_name" placeholder="project name" required>
+                  </div>
+             
+
+              <div class="d-flex pb-3">
+                  <a href="" class="m-2" style="margin: 0 2px 0 auto!important;">
+                      <button type="button" class="btn btn-primary cancelbtn bg-red text-white" data-dismiss="modal">Cancel</button>
+                  </a>
+                  <a href="#" class="m-2" style="margin: 0 auto 0 2px!important;">
+                      <button type="submit" class="btn btn-bg-blue savebtn">Save</button>
+                  </a>
+              </div>
+          </form>
+      </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function() {
+
+      $("#company_name").autocomplete({
+          source: "{% url 'client_autocomplete' %}",
+          
+          select: function(event, ui) {
+              $("#company_name").val(ui.item.label);
+              $("#company_name_id").val(ui.item.value)
+              return false; //
+              
+          },
+          
+
+      })
+//         .data().autocomplete._renderItem = function (ul, item) {
+//             console.log(item.img);
+
+//      return $("<li>").append( "<li>" + item.label +  item.descr + '<br>' +  item.img+ "</li>" ).appendTo( ul );
+// };
+
+});
+</script>
+
+
+<!--Add certification-->
+<div class="modal fade" id="certification-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content modal-radius">
+            <div class="d-flex w-100 mt-3 testimonial-heading" style="border-bottom: 1px solid #808080;">
+                <h5>Add Certifications</h5>
+            </div>
+            <form class="w-100" action="{% url 'addcertificate' %}" method="post" id="add-certification" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="d-flex col-12 mt-3">
+                    <div class="form-group col-10 cmpny-addrs">
+                        <div class="d-flex form-group d-flex">
+                            <label class="col-form-label col-5"> Issued Authority</label>
+                            <input type="text" class="form-control w-100" name="issued_authority" id="issued_authority">
+                            <input type="text" class="form-control w-100" name="issued_authority_id" id="issued_authority_id" hidden>
+<!--                            <select class="w-100" name="issued_authority" id="issued_authority" required >-->
+<!--                                <option value="" class="w-100"></option>-->
+<!--                                {% for i in companies %}-->
+
+<!--                                <option value="{{ i.id }}">{% if i.first_name %}{{i.first_name}} {% endif %}  {% if  i.last_name %} {{i.last_name}} {% endif %}</option>-->
+<!--                                {% endfor %}-->
+<!--                            </select>-->
+
+                        </div>
+                        <div class="form-group d-flex">
+                            <label class="col-form-label col-5">Certificate</label>
+                                <input type="text" class="form-control w-100" name="certificate_name" id="certificate_name">
+                        </div>
+                        <div class="form-group d-flex">
+                            <label class="col-form-label  col-5">Certificate No / ID</label>
+                                <input type="text" class="form-control w-100" name="certificate_id" id="certificate_id">
+                        </div>
+                        <div class="form-group d-flex">
+                            <div class="form-group d-flex">
+                                <label class="col-form-label w-100 col-5">Upload Document</label>
+                                <input type="file" class="upld-doc w-100" name="certificate_image" id="certificate_image">
+                            </div>
+                        </div>
+                        <div class="form-group d-flex">
+                            <label class="col-form-label col-5">Description</label>
+                                <textarea class="w-100 form-control" name="certificate_description"  id="certificate_description" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-2 cmpny-addrs certificate"><img src="img/g1.jpg" alt=""></div>
+                </div>
+                <div class="d-flex pb-3 certification-btns justify-content-center">
+                    <a href="" class="m-2">
+                        <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-dark" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </a> <a href="#" class="m-2">
+                        <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                    </a>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+
+  $(function() {
+
+    $("#issued_authority" ).autocomplete({
+      source: "{% url 'client_autocomplete' %}",
+       select: function (event, ui) {
+        $("#issued_authority").val(ui.item.label);
+        $("#issued_authority_id").val(ui.item.value);
+        return false;  //
+        }
+    });
+
+  } );
+
+
+</script>
+
+
+<!-- Add client-->
+<!-- Add client-->
+<div class="modal fade" id="client-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content modal-radius">
+            <div class="d-flex w-100 mt-3 testimonial-heading" style="border-bottom: 1px solid #FF0004;">
+                <h5>Add Client</h5>
+            </div>
+            <form class="w-100" action="{% url 'addclient' %}" method="post" id="add-client" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                <div class="d-flex mt-3">
+                    <div class="form-group col-8 cmpny-addrs">
+
+                        <input type="text" class="form-control mt-2" name="client-name" id="client-name"
+                                   placeholder="Enter Name" required>
+                        <input type="text" class="form-control mt-2" name="client-name_id" id="client-name_id"
+                                   placeholder="Enter Name" hidden>
+<!--                        <select class="w-100" name="client-name" id="client-name" required >-->
+<!--                                <option value="" class="w-100">Select Client</option>-->
+
+<!--                                {% for i in companies %}-->
+<!--                                <option value="{{ i.id }}">{% if i.first_name %}{{i.first_name}} {% endif %}  {% if  i.last_name %} {{i.last_name}} {% endif %}</option>-->
+<!--                                {% endfor %}-->
+<!--                            </select>-->
+
+                            <label class="col-form-label upload-img">Upload Image</label>
+                            <input type="file" class="mt-2 img-upload"  id="clientImage" name="clientImage" required>
+                    </div>
+                    <div class="form-group col-4 cmpny-addrs"><img src="img/g1.jpg" class="clientUpload" alt=""></div>
+                </div>
+                <div class="col-12">
+                    <label class="col-form-label">Description</label>
+                    <textarea class="w-100 form-control" name="client_description" id="client_description" rows="5"></textarea>
+                </div>
+                <div class="d-flex pb-3 testimonial-btns justify-content-center">
+                    
+                    
+                    <a href="" class="m-2">
+                        <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </a> <a href="#" class="m-2">
+                        <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                    </a>
+
+                    </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Add Branch-->
+<div class="modal fade" id="branch-modal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content modal-radius">
+            <div class="d-flex w-100 mt-3 testimonial-heading" style="border-bottom: 1px solid #808080;">
+                <h5>Add Branch</h5>
+            </div>
+            <form class="w-100" action="{% url 'addbranch' %}" method="post" id="add-branch{{i.id}}">
+                {% csrf_token %}
+                <div class="d-flex col-12 mt-3">
+                    <div class="form-group col-10 cmpny-addrs">
+                        <div class="d-flex form-group d-flex">
+                            <label class="col-form-label col-5 "> Company Name</label>
+
+                            <input type="text" class="form-control w-100" name="" id="" value="{{request.user.first_name}}" readonly>
+                        </div>
+                        <div class="form-group d-flex">
+                            <label class="col-form-label col-5">Branch Place</label>
+                            <input type="text" class="form-control w-100" name="branch" id="branchedit{{i.id}}">
+                        </div>
+
+                        <div class="form-group d-flex">
+                            <label class="col-form-label col-5">Address</label>
+                            <textarea class="w-100 form-control" name="branchaddress" id="branchaddress{{i.id}}" rows="5"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-2 cmpny-addrs certificate"><img src="img/g1.jpg" alt=""></div>
+                </div>
+                <div class="d-flex pb-3 certification-btns justify-content-center">
+                    
+                    <a href="" class="m-2">
+                        <button type="button" class="btn btn-primary cancelbtn-testimonial bg-red border-red text-white" data-dismiss="modal">
+                            Cancel
+                        </button>
+                    </a> <a href="#" class="m-2">
+                        <button type="submit" class="btn btn-bg-blue savebtn-testimonial">Save</button>
+                    </a>
+            
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+  $(function() {
+
+    $("#client-name" ).autocomplete({
+      source: "{% url 'client_autocomplete' %}",
+       select: function (event, ui) {
+        $("#client-name").val(ui.item.label);
+        $("#client-name_id").val(ui.item.value);
+        return false;  //
+        }
+    });
+  } );
+
+
+
+    </script>
+
+
+<!--About himself Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color:#00b1ff;">About</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"style="color:#00b1ff;">&times;</span>
+        </button>
+      </div>
+      <div>
+        <form id="aboutform" name="aboutform" enctype="multipart/form-data">
+        <div class="modal-body">
+          {% comment %} <textarea id="about" name="about" rows="4" cols="50">
+          
+          </textarea> {% endcomment %}
+          <textarea class="form-control" id="about" name="about" rows="4" >{{abouth.description}}</textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary aboutsubmit">Save</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(".aboutsubmit").on("click", function(e){
+    e.preventDefault();
+    about = $('#about').val();
+    if( about.length === 0 ) {
+        alert("fill properly..");
+    }else{
+      var token = '{{csrf_token}}';
+      $.ajax(
+      {
+        headers: { "X-CSRFToken": token },
+        url: "{% url 'aboutupdate' %}",
+        type: 'POST',
+        data: { "about": about },
+        'success': function () {
+          $("#aboutform").trigger('reset');
+          alert("Successfully Updated");
+          document.location.reload();
+        }
+      })
+    }
+  });
+</script>
+     <!--          Edit Profile Picture Modal-->
+     <div class="modal fade" id="editProfilePicture" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-md">
+        <div class="modal-content modal-radius">
+          <div class="modal-header">
+            <h5>Edit Profile Picture</h5>
+          </div>
+          <form class="w-100" action="{% url 'changeprofile' %}" method="post" id="create-profilePicture" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="modal-body">
+              <div class="preview text-center mt-3"> <img class="img-thumbnail preview-profilePicture w-25 ml-2" src="{{request.user.bio.profile_pic}}" alt=""> </div>
+              <div class="add text-center mt-2">
+                <label for="upload-profilePicture"><i class="fas fa-photo-video"></i><a>Upload Profile Picture</a></label>
+                <input type="file" id="upload-profilePicture" name="file" class="hidden" accept=".jpg,.jpeg.,.gif,.png,.mov,.mp4" required>
+              </div>
+            </div>
+            <div class="modal-footer border-0 text-center"> <a href="#">
+              <button type="submit" class="btn btn-primary btn-bg-blue">Submit</button>
+              </a>
+              <button type="button" class="btn btn-default border" data-dismiss="modal"> Close </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.getElementById('upload-profilePicture').addEventListener('change', function (event) {
+  
+          var file = event.target.files[0];
+          var fileReader = new FileReader();
+          if (file.type.match('image')) {
+              fileReader.onload = function (event) {
+                  $('.preview-profilePicture').attr('src', event.target.result);
+              };
+              fileReader.readAsDataURL(file);
+          }
+  
+      });
+          </script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js" type="text/javascript"></script>
+
+
+</body>
+</html>
+
+{% endblock %}

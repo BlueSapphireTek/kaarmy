@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div>
+        <h2>My Appointment</h2>
+        <h4>Pending</h4>
+        {% for i in pending %}
+            <p>Name:{{i.name}}</p>
+            <p>Purpose of visit:{{i.purpose}}</p>
+            <p>{{i.description}}</p>
+            <p>Date:{{i.dateandtime}}</p>
+            <a type="button" class="btn btn-success" id="approve" role="button" href="{% url 'approveappointment' i.pk %}">Approve</a>
+            <a type="button" class="btn btn-primary " id="modify" role="button" href="{% url 'updateappointment' i.pk %}">Modify</a>
+            <a type="button" class="btn btn-danger" id="delete" role="button" href="{% url 'deleteappointment' i.pk %}">Delete</a><br>
+            -----------------------------------------------
+        {% endfor %}
+    </div>
+    <h4>Active</h4>
+    {% for i in actived %}
+        <p>Name:{{i.name}}</p>
+        <p>Purpose of visit:{{i.purpose}}</p>
+        <p>{{i.description}}</p>
+        <p>Date:{{i.dateandtime}}</p>
+        <a type="button" class="btn btn-danger" id="delete" role="button" href="{% url 'deleteappointment' i.pk %}">Delete</a><br>
+    {% endfor %}
+    <h4>Complete</h4>
+    {% for i in complete %}
+        <p>Name:{{i.name}}</p>
+        <p>Purpose of visit:{{i.purpose}}</p>
+        <p>{{i.description}}</p>
+        <p>Date:{{i.dateandtime}}</p>
+        <a type="button" class="btn btn-danger" id="delete" role="button" href="{% url 'deleteappointment' i.pk %}">Delete</a><br>
+    {% endfor %}
+    <h2>Requested Appointment</h2>
+    {% for i in requested %}
+        <p>Recevier:{{i.enquired_person.first_name}}</p>
+        <p>Purpose of visit:{{i.purpose}}</p>
+        <p>{{i.description}}</p>
+        <p>Date:{{i.dateandtime}}</p>
+    {% endfor %}
+</body>
+</html>

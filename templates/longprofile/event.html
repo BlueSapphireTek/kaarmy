@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <h2>Event</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+    <h2>MY event</h2>
+    {% for i in my_event %}
+        <p>Event name:{{i.name}}</p>
+        <p>auther:{{i.user.first_name}}</p>
+        <p>{{i.description}}</p>
+        ----------------------------------------------
+    {% endfor %}
+    <h2>Saved Event</h2>
+    {% for i in savedEventView %}
+        <p>Name:{{i.event.name}}</p>
+        <p>Author:{{i.event.user.first_name}}</p>
+        <p>{{i.event.description}}</p>
+        <a href="{% url 'deleteevent' i.pk %}" id = "savebtn{{i.id}}"><i id="saveicon{{i.id}}" class="fa fa-star text-warning"  style="font-size: 30px;"></i></a><br>
+    {% endfor %}
+</body>
+</html>

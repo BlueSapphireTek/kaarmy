@@ -1,0 +1,1194 @@
+{% extends 'longprofile/base.html' %}
+{% block content %}
+{% load static %}
+  <!-- Page Content -->
+  <div id="page-content-wrapper" class="w-100">
+    <div class="container-fluid">
+      <div class="row m-0">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 center-scroll row-height pt-3">
+        <div class="row m-0">
+          {% if biodata.image %}
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-12 py-3 text-center profile bg-border"> <img class="rounded-circle border p-1" height="100" width="100" src="{{biodata.image.url}}" alt=""> <span class="float-right">{% if otheruser_id == request.user.id %}<i class="fa fa-edit pt-1 pr-1 text-blue" data-toggle="modal" data-target="#editProfilePicture"></i> {% endif %}</span>
+          {% else %}
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-12 py-3 text-center profile bg-border"> <img class="img-fluid profile-img rounded-circle" src="{% static 'img/unknown.jpg' %}" alt=""> <span class="float-right">{% if otheruser_id == request.user.id %}<i class="fa fa-edit pt-1 pr-1 text-blue" data-toggle="modal" data-target="#editProfilePicture"></i> {% endif %}</span>
+          {% endif %}
+              <div class="pt-3 text-center profile-address">
+                <h5>{{instance.first_name}}</h5>
+                <p>{{userextend.group}}</p>
+                <p>{{userextend.profession}}</p>
+                <h5>Address</h5>
+                {% if biodata.address != None%}
+                    <p>{{biodata.address}}</p>
+                {% else %}
+                    <p> Address details is </p>
+                    <p> not specified</p>
+                {% endif %}
+                {% if otheruser_id == request.user.id %}
+                  {% if company %}
+                    <a href="{% url 'companyprofile' %}" type="button" class="btn border-blue btn-bg-blue switch-btn text-white text-center"> Switch To Shortprofile</a>
+                  {% else %}
+                    <a href="{% url 'userprofile' %}" type="button" class="btn border-blue btn-bg-blue switch-btn text-white text-center"> Switch To Shortprofile</a>
+                  {% endif %}
+                {% else %}
+                  {% if company %}
+                    <a href="{% url 'companyprofileview' otheruser_id %}" type="button" class="btn border-blue btn-bg-blue switch-btn text-white text-center"> Switch To Shortprofile</a>
+                  {% else %}
+                    <a href="{% url 'userprofileview' otheruser_id %}" type="button" class="btn border-blue btn-bg-blue switch-btn text-white text-center"> Switch To Shortprofile</a>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-12 details">
+              <div class="col-12 follow event-btns d-flex mt-2">
+                <div class="ml-auto">
+                  <a href="{% url 'activitypostalluser' otheruser_id %}">
+                    <div class="text-center d-inline-block post mr-3">
+                      <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-external-link-alt"></i>
+                      </button>
+                      <p>Post</p>
+                    </div>
+                  </a>
+                  {% if otheruser_id != request.user.id %}
+                    <a href="{% url 'eventOtheruser' otheruser_id %}">
+                      <div class="text-center d-inline-block post mr-3 ml-2">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-calendar-day"></i>
+                        </button>
+                        <p>Event</p>
+                      </div>
+                    </a>
+                  {% else %}
+                    <a href="{% url 'event' %}">
+                      <div class="text-center d-inline-block post mr-3 ml-2">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-calendar-day"></i>
+                        </button>
+                        <p>Event</p>
+                      </div>
+                    </a>
+                  {% endif %}
+                  {% if otheruser_id != request.user.id %}
+                    <div class="text-center d-inline-block post mr-3 ml-2" data-toggle="modal" data-target="#createAppointment-modal">
+                      <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-notes-medical"></i>
+                      </button>
+                      <p>Appointment</p>
+                    </div>
+                  {% else %}
+                  <a href="{% url 'appointment' %}">
+                    <div class="text-center d-inline-block post mr-3 ml-2">
+                      <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-notes-medical"></i>
+                      </button>
+                      <p>Appointment</p>
+                    </div>
+                  </a>
+                  {% endif %}
+                  {% if otheruser_id != request.user.id %}
+                  <div class="text-center d-inline-block post mr-3 ml-2" data-toggle="modal" data-target="#createEnquiry-modal">
+                    <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-question-circle"></i>
+                    </button>
+                    <p>Enquiry</p>
+                  </div>
+                  {% else %}
+                  <a href="{% url 'enquiry' %}">
+                    <div class="text-center d-inline-block post mr-3 ml-2">
+                      <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-question-circle"></i>
+                      </button>
+                      <p>Enquiry</p>
+                    </div>
+                  </a>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-12 follow event-btns d-flex mt-2">
+                <div class="ml-auto">
+                  <div class="text-center d-inline-block post mr-3">
+                    {% if otheruser_id != request.user.id %}
+                      {% if connection %}
+                        <a type="button" class="btn btn-default btn-rounded connect-btn border-blue" id="follow" href="{% url 'follow' instance.pk %}"><i id="followicon" class="fas fa-user-check"></i></a>
+                        <p id="followp">Followed</p>
+                      {% else %}
+                        <a type="button" class="btn btn-default btn-rounded connect-btn border-blue" id="follow" href="{% url 'follow' instance.pk %}"><i class="fas fa-user-plus"></i></a>
+                        <p id="followp">Follow</p>
+                      {% endif %}
+                    {% else %}
+                      <button type="button" class="btn btn-default btn-rounded connect-btn border-blue" disabled><i id="followicon" class="fas fa-user-check"></i></button>
+                      <p id="followp">Followed</p>
+                    {% endif %}
+                  </div>
+                  <div class="text-center d-inline-block post mr-4 ml-2">
+                    {% if otheruser_id != request.user.id %}
+                      {% if is_connection == "notConnected" %}
+                        <a type="button" class="btn btn-default btn-rounded connect-btn border-blue" id="connect_btn" href="{% url 'connection' instance.pk %}"><i class="fas fa-user"></i></a>
+                        <p id="connect_btnp">Connect+</p>
+                      {% elif is_connection == "connected" %}
+                        <a type="button" class="btn btn-default btn-rounded connect-btn border-blue" id="connect_btn" href="{% url 'connection' instance.pk %}"><i class="fas fa-user"></i></a>
+                        <p id="connect_btnp">Connected</p>
+                      {% else %}
+                        <a type="button" class="btn btn-default btn-rounded connect-btn border-blue" id="connect_btn" href="{% url 'connection' instance.pk %}"><i class="fas fa-user"></i></a>
+                        <p id="connect_btnp">Requested</p>
+                      {% endif %}
+                    {% else %}
+                      <button type="button" class="btn btn-default btn-rounded connect-btn border-blue" disabled><i class="fas fa-user"></i></button>
+                      <p id="connect_btnp">Connected</p>
+                    {% endif %}
+                  </div>
+                  <div class="text-center d-inline-block post mr-3 ml-2">
+                    {% if otheruser_id != request.user.id %}
+                      {% if endorse %}
+                        <a type="button" class="btn btn-default btn-rounded connect-btn border-blue" id="endorse_btn" href="{% url 'endorse' instance.pk %}"><i class="fas fa-thumbs-up"></i></a>
+                        <p id="endorse_btnp">Endorsed</p>
+                      {% else %}
+                        <a type="button" class="btn btn-default btn-rounded connect-btn border-blue" id="endorse_btn" href="{% url 'endorse' instance.pk %}"><i class="fas fa-thumbs-up"></i></a>
+                        <p id="endorse_btnp">Endorse</p>
+                      {% endif %}
+                    {% else %}
+                      <button type="button" class="btn btn-default btn-rounded connect-btn border-blue" disabled><i class="fas fa-thumbs-up"></i></button>
+                      <p id="endorse_btnp">Endorsed</p>
+                    {% endif %}
+                  </div>
+                  {% if otheruser_id == request.user.id %}
+                    <a href="{% url 'connectionList' instance.pk %}">
+                      <div class="text-center d-inline-block post mr-2 ml-2">
+                        <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fa fa-sitemap"></i></button>
+                        <p>Connections</p>
+                      </div>
+                    </a>
+                  {% else %}
+                    <div class="text-center d-inline-block post mr-2 ml-2">
+                      <button class="btn btn-default btn-rounded connect-btn border-blue" disabled><i class="fa fa-sitemap"></i></button>
+                      <p>Connections</p>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-12 follow event-btns d-flex mt-2">
+                <div class="ml-auto">
+                  <div class="text-center d-inline-block post mr-3">
+                    {% if otheruser_id != request.user.id %}
+                      <a href="tel:{{instance.username}}">
+                        <button class="btn btn-rounded btn-success"><i class="fa fa-phone-alt"></i></button>
+                        <p>Phone</p>
+                      </a>
+                    {% else %}
+                      <button class="btn btn-rounded btn-success" disabled><i class="fa fa-phone-alt"></i></button>
+                      <p>Phone</p>
+                    {% endif %}
+                  </div>
+                  {% if chaticonhide == True %}
+                    <div class="text-center d-inline-block post mr-3 ml-2">
+                        <a href="{% url 'chatroom' otheruser_id %}">
+                          <button class="btn btn-rounded btn-info"><i class="fa fa-comment-alt"></i></button>
+                          <p>Chat</p>
+                        </a>
+                    </div>
+                  {% else %}
+                      <div class="text-center d-inline-block post mr-3 ml-2">
+                          <button class="btn btn-rounded btn-info" disabled><i class="fa fa-comment-alt"></i></button>
+                          <p>Chat</p>
+                    </div>
+                  {% endif %}
+                  {% if otheruser_id != request.user.id %}
+                    <div class="text-center d-inline-block post mr-3 ml-2">
+                      <button class="btn btn-rounded btn-chocolate"><i class="fa fa-address-card text-white"></i></button>
+                      <p>Pick Card</p>
+                    </div>
+                    <div class="text-center d-inline-block post mr-3 ml-3">
+                      <button class="btn btn-rounded btn-violet"><i class="fa fa-address-card text-white"></i></button>
+                      <p>Drop Card</p>
+                    </div>
+                  {% else %}
+                    <div class="text-center d-inline-block post mr-3 ml-2">
+                      <button class="btn btn-rounded btn-chocolate" disabled><i class="fa fa-address-card text-white"></i></button>
+                      <p>Pick Card</p>
+                    </div>
+                    <div class="text-center d-inline-block post mr-3 ml-3">
+                      <button class="btn btn-rounded btn-violet" disabled><i class="fa fa-address-card text-white"></i></button>
+                      <p>Drop Card</p>
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="about bg-border p-2 w-100 pt-3 pb-5">
+                {% if otheruser_id == request.user.id %}
+                  <a data-toggle="modal" data-target="#exampleModalCenter"><i class="fa fa-edit" aria-hidden="true" style="float:right; padding: 0px 8px 0px 0px;color:#00b1ff;"></i></a>
+                {% endif %}
+                <h5>About</h5>
+                {% if about %}
+                  <p>{{about.description}}</p>
+                {% else %}
+                  <p> About is not described</p>
+                {% endif %}
+              </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-12 col-12 job-detail pt-3 bg-border ">
+              <div class="rightbtns text-center">
+                <button type="button" class="btn btn-primary rightbtns btn-bg-blue"> Professional</button>
+                <button type="button" class="btn btn-primary rightbtns btn-bg-blue"> Designer</button>
+                <button type="button" class="btn btn-primary rightbtns btn-bg-blue"> Kaarmy Professional</button>
+                <button type="button" class="btn btn-default rightbtns" id="follower_count"> Followers {{follower_count}}</button>
+                <button type="button" class="btn btn-default rightbtns" id="f_count"> Following {{following_count}}</button>
+                <button type="button" class="btn btn-default rightbtns"> Connections {{connection_count}}</button>
+                <button type="button" class="btn btn-default rightbtns"> Endorsement {{endorse_count}}</button>
+              </div>
+              <div class="text-center">
+                <div class="d-inline-block rating mt-3">
+                  {% if otheruser_id != request.user.id %}
+                  <input type="radio" class="starInp" id="star5" name="rating" value="5" />
+                  <label class = "full" for="star5" title="Awesome - 5 stars"></label>
+                  <input type="radio" class="starInp" id="star4half" name="rating" value="4.5" />
+                  <label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+                  <input type="radio" class="starInp" id="star4" name="rating" value="4" />
+                  <label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+                  <input type="radio" class="starInp" id="star3half" name="rating" value="3.5" />
+                  <label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+                  <input type="radio" class="starInp" id="star3" name="rating" value="3" />
+                  <label class = "full" for="star3" title="Meh - 3 stars"></label>
+                  <input type="radio" class="starInp" id="star2half" name="rating" value="2.5" />
+                  <label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+                  <input type="radio" class="starInp" id="star2" name="rating" value="2" />
+                  <label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+                  <input type="radio" class="starInp" id="star1half" name="rating" value="1.5" />
+                  <label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+                  <input type="radio" class="starInp" id="star1" name="rating" value="1" />
+                  <label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+                  <input type="radio" class="starInp" id="starhalf" name="rating" value="0.5" />
+                  <label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+                  {% endif %}
+                  <h4 style="color: #707AE5;">{{rating}} Rating</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-100 m-0 mt-3 col-12 pl-0 pr-0">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation"> <a class="nav-link active" id="pills-expertise-tab" data-toggle="pill" href="#nav-expertise" role="tab" aria-controls="pills-home" aria-selected="true">Expertise</a> </li>
+              {% if userextend.group != "Company" %}
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-experience-tab" data-toggle="pill" href="#nav-experience" role="tab" aria-controls="pills-profile" aria-selected="false">Experience</a> </li>
+              {% endif %}
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-projects-tab" data-toggle="pill" href="#nav-projects" role="tab" aria-controls="pills-contact" aria-selected="false">Projects</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-achievements-tab" data-toggle="pill" href="#nav-achievements" role="tab" aria-controls="pills-contact" aria-selected="false">Achievements</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-certification-tab" data-toggle="pill" href="#nav-certificate" role="tab" aria-controls="pills-contact" aria-selected="false">Certification</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-clientinfo-tab" data-toggle="pill" href="#nav-clientinfo" role="tab" aria-controls="pills-contact" aria-selected="false">Client Info</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-testimonial-tab" data-toggle="pill" href="#nav-testimonial" role="tab" aria-controls="pills-contact" aria-selected="false">Testimonial</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-card-tab" data-toggle="pill" href="#nav-card" role="tab" aria-controls="pills-contact" aria-selected="false">Card</a> </li>
+            </ul>
+            <div class="col-12 tab-content py-3 pl-0 px-sm-0" id="nav-tabContent">
+              <div class="tab-pane fade  show active" id="nav-expertise" role="tabpanel" aria-labelledby="nav-profile-tab">
+                {% for z in expertise %}
+                  <div class="col-12 py-2 cards-info">
+                    <div class="card mycards testimonialcard">
+                      <div class="card-body mycards-body certified-cards-body experience-card">
+                        <div class="col-12 text-left p-2">
+                          {% if otheruser_id == request.user.id %}
+                            <a href="{% url 'expertisedelete' z.id %}"><i class="fa fa-trash" aria-hidden="true" style="float:right; padding: 0px 8px 0px 0px;color:red;"></i></a>
+                          {% endif %}
+                          <p class="form_text1"><span>Profession</span>: {{z.profession}}</p>
+                          <p class="form_text1"><span>Expertise in</span>: {{z.expertisein}}</p>
+                          <p class="form_text1"><span>Experience</span>: {{z.years}} Years</p>
+                          <p class="form_text1"><span>Description</span>: {{z.description}}</p>
+                          
+                        </div>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="tab-pane fade" id="nav-experience" role="tabpanel" aria-labelledby="nav-profile-tab">
+                {% for y in experience %}
+                  <div class="col-12 py-2 cards-info">
+                    <div class="card mycards testimonialcard">
+                      <div class="card-body mycards-body certified-cards-body experience-card">
+                        <div class="col-12 text-left p-2">
+                          {% if otheruser_id == request.user.id %}
+                            <a href="{% url 'experiencedelete' y.id %}"><i class="fa fa-trash" aria-hidden="true" style="float:right; padding: 0px 8px 0px 0px;color:red;"></i></a>
+                          {% endif %}
+                          <p class="form_text1"><span>Company Name</span>: {{y.company_name}}</p>
+                          <p class="form_text1"><span style="padding-right: 5.5%;">Focus on</span>: {{y.exp_detail}}</p>
+                          <p class="form_text1"><span style="padding-right: 5.5%;">Description</span>: {{y.comments}}</p>
+                        </div>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              <div class="tab-pane fade" id="nav-projects" role="tabpanel" aria-labelledby="nav-profile-tab">
+				        <div class="col-12 d-flex projects">
+                {% for x in projects %}
+                  <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 m-1 projects-card">
+                    <div class="card"> 
+                    {% comment %} <img class="card-img-top" src="{% static 'img/g1.jpg' %}" alt="Card image cap"> {% endcomment %}
+                      <div class="card-body project-body">
+                        {% if otheruser_id == request.user.id %}
+                          <a href="{% url 'projectsdelete' x.id %}"><i class="fa fa-trash" aria-hidden="true" style="float:right; padding: 0px 8px 0px 0px;color:red;"></i></a>
+                        {% endif %}
+                        <h5>Project</h5>
+                        <p>Project Name: {{x.project_name}}</p>
+                        <div class="d-flex justify-content-between">
+                          <p>Company:{{x.company}}</p>
+                          <!-- <p><i class="fas fa-rupee-sign"></i>25L</p> -->
+                        </div>
+                        <!-- <p>Description</p> -->
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+					    </div>
+            </div>
+				<div class="tab-pane fade" id="nav-achievements" role="tabpanel" aria-labelledby="nav-profile-tab">
+				 <div class="col-12 d-flex projects">
+          {% for w in achievements %}
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 m-1 projects-card">
+              <div class="card" style="background-color: #f0f8ff;">
+                <div class="card-header">
+                  {% comment %} <img class="card-img-top" src="{% static 'img/g1.jpg' %}" alt="Card image cap"> {% endcomment %}
+                  {% if otheruser_id == request.user.id %}
+                    <a href="{% url 'achievementsdelete' w.id %}"><i class="fa fa-trash" aria-hidden="true" style="float:right; padding: 0px 8px 0px 0px;color:red;"></i></a>
+                  {% endif %}
+                  <h5 class="pt-2">{{w.title}}</h5>
+                </div>
+                <div class="card-body project-body">
+                  <h6 class="font-weight-bold">Description</h6>
+                  <p>{{w.description}}</p>
+                </div>
+              </div>
+            </div>
+          {% endfor %}
+				</div>
+      </div>
+          <div class="tab-pane fade" id="nav-certificate" role="tabpanel" aria-labelledby="nav-profile-tab">
+            <div class="col-12 py-2 cards-info">
+              <h6 class="pb-3">Certified List</h6>
+              <div class="display-cards col-12 p-0">
+                {% for certi in certification %}
+                <div class="col-md-6 col-12 p-0">
+                <div class="card mycards">
+                  <div class="card-body mycards-body certified-cards-body">
+                  {% if otheruser_id == request.user.id %}
+                    <a href="{% url 'certificationdelete' certi.id %}"><i class="fa fa-trash" aria-hidden="true" style="float:right; padding: 0px 8px 0px 0px;color:red;"></i></a>
+                  {% endif %}
+                    <div class="col-12 d-flex p-0">
+                    {% if certi.certificate_image %}
+                      <div class="col-4 certified"> <img  src="{{certi.certificate_image.url}}" alt="" width="150" height="150"> </div>
+                    {% endif %}
+                      <div class="col-8 p-0"> 
+                    <div class="certified-name">
+                    <span class="d-flex">
+                        <h6>{{certi.certificate_name}}</h6>
+                        {% comment %} <i class="fas fa-check-circle round-tick float-right"></i></span> {% endcomment %}
+                        <p>{{certi.certificate_description}}</p>
+                      </div>
+                      {% comment %} <div class="d-flex certified-footer"> <span class="d-flex"><i class="fas fa-th"></i>
+                    <p>Category</p>
+                    </span> <span class="d-flex pen-edit"><i class="fas fa-thumbtack"></i>
+                      <p>Attachment</p>
+                      </span> <span class="d-flex"><i class="fas fa-medal"></i>
+                      <p>Certified Form</p>
+                      </span>
+                    </div> {% endcomment %}
+                  </div>
+                </div>
+                    <br>
+                    <div class="col-12 d-flex certified-footer-hide"> <span class="d-flex"><i class="fas fa-th"></i>
+                      <p>Category</p>
+                      </span> <span class="d-flex pen-edit"><i class="fas fa-thumbtack"></i>
+                      <p>Attachment</p>
+                      </span> <span class="d-flex"><i class="fas fa-medal"></i>
+                      <p>Certified Form</p>
+                      </span>
+                     </div>
+                  </div>
+                  
+                </div>
+              </div>
+              {% endfor %}
+              </div>
+            </div>
+            </div>
+            <div class="tab-pane fade" id="nav-clientinfo" role="tabpanel" aria-labelledby="nav-profile-tab">
+              <div class="d-flex client">
+                {% for client in clientinfo %}
+		            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-12 client-info text-center">
+                {% if otheruser_id == request.user.id %}
+                  <a href="{% url 'clientdelete' client.id %}"><i class="fa fa-trash" aria-hidden="true" style="float:right; padding: 0px 8px 0px 0px;color:red;"></i></a>
+                {% endif %}
+                {% if client.clientimage %}
+						      <img src="{{client.clientimage.url}}" class="rounded-circle" height="70" width="70" alt="">
+                  {% endif %}
+						      <h5>{{client.clientname}}</h5>
+						      <p>{{client.client_description}}</p>
+				    	  </div>
+                {% endfor %}
+					    </div>
+            </div>
+              <div class="tab-pane fade" id="nav-testimonial" role="tabpanel" aria-labelledby="nav-profile-tab">
+                {% for testi in testimonial %}
+                  <div class="col-12 py-2 cards-info">
+                    <div class="card mycards testimonialcard">
+                      <div class="card-body mycards-body certified-cards-body">
+                      {% if otheruser_id == request.user.id %}
+                    <a href="{% url 'testimonialdelete' testi.id %}"><i class="fa fa-trash" aria-hidden="true" style="float:right; padding: 0px 8px 0px 0px;color:red;"></i></a>
+                  {% endif %}
+                        <div class="col-12 d-flex p-0">
+                          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-5 testimonial"> {% if testi.testimonial_image %}<img src="{{testi.testimonial_image.url}}" {% endif %} alt=""> </div>
+                          <div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-7 testimonial-name">
+                            <h5>{{testi.testimonial_name}}</h5>
+                            <p class="testimonial-digital">-----------------</p>
+                            <p>{{testi.testimonial_description}}</p>
+                          </div>
+                        </div>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+				
+              <div class="col-12 tab-pane fade" id="nav-card" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="col-12 py-2 cards-info">
+                  <ul class="nav nav-pills mb-3 justify-content-center" id="pills-inner-tab" role="tablist">
+                    <li class="nav-item" role="presentation"> <a class="nav-link active" id="pills-mycard-tab" data-toggle="pill" href="#nav-mycard" role="tab" aria-controls="pills-home" aria-selected="true">My Cards</a> </li>
+                    <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-savedcard-tab" data-toggle="pill" href="#nav-saved-card" role="tab" aria-controls="pills-profile" aria-selected="false">Saved Cards</a> </li>
+                  </ul>
+                  <div class="col-12 tab-content py-3 px-sm-0" id="nav-inside-tabContent">
+                    <div class="col-12 tab-pane fade show active pl-0" id="nav-mycard" role="tabpanel" aria-labelledby="nav-mycards-tab">
+                      <div class="col-12 pl-0 py-2 cards-info">
+						  
+                        <div class="display-cards">
+						
+                          <div class="card mycards w-100">
+							  
+                  {% if personalcard.front_img %}
+                  <a href="{% url 'personalcardview' slug=otheruser_id pk=personalcard.id %}" class="text-decoration-none">
+							   <img src="{{personalcard.front_img.url}}" class="card-img-top img-fluid" alt="...">
+                 </a>
+                 {% else %}
+							   <img src="{% static 'img/card-front.png' %}" class="card-img-top img-fluid" alt="...">
+                  {% endif %}
+                  <div class="blue">
+                    <p class="text-white">Personal Card</p>
+                  </div>
+								  
+                <div class="card-footer d-flex mycards-footer justify-content-between"> 
+                  {% if otheruser_id != request.user.id %}
+                    <span class="d-flex"><i class="fas fa-star checked"></i>
+                    <p>Save</p>
+                    </span> 
+                  {% endif %}
+                  {% if otheruser_id == request.user.id %}
+                    <span class="d-flex" style="padding-top: 4px;" data-toggle="modal" data-target="#personalCardEditModal"><i class="fas fa-pen"></i>
+                    <p>Add</p>
+                    </span> 
+                  {% endif %}
+                  {% if otheruser_id == request.user.id %}
+                    {% if personalcard %}
+                      <a href="{% url 'personalcardDelete' personalcard.id %}">
+                      <span class="d-flex" style="padding-top: 4px;"><i class="fas fa-trash"></i>
+                      <p>Delete</p>
+                      </span> 
+                      </a>
+                    {% endif %}
+                  {% endif %}
+							  </div>
+							  
+								  
+                          </div>
+								
+							
+                          <div class="card mycards w-100">
+							  <a href="company-profile-card.html" class="text-decoration-none">
+                  {% if companycard.front_img %}
+							   <img src="{{companycard.front_img.url}}" class="card-img-top img-fluid" alt="...">
+                 {% else %}
+							   <img src="{% static 'img/card-back.png' %}" class="card-img-top img-fluid" alt="...">
+                 {% endif %}
+								    </a>
+                            <div class="blue">
+                              <p class="text-white">Company Card</p>
+                            </div>
+                <div class="card-footer d-flex mycards-footer justify-content-between">
+                  {% if otheruser_id != request.user.id %} 
+                    <span class="d-flex"><i class="fas fa-star"></i>
+                      <p>Save</p>
+                    </span>
+                  {% endif %}
+							    {% comment %} <span class="d-flex" style="padding-top: 4px;" data-toggle="modal" data-target="#companyCardEditModal"><i class="fas fa-pen"></i>
+                    <p>Edit</p>
+                  </span>  {% endcomment %}
+                  {% if otheruser_id == request.user.id %}
+                    <a href="#">
+                      <span class="d-flex" style="padding-top: 4px;"><i class="fas fa-trash"></i>
+                        <p>Delete</p>
+                      </span> 
+                    </a>
+                  {% endif %}
+						    </div>
+								
+                          </div>
+								 
+                        </div>
+							 
+                      </div>
+                    </div>
+                    <div class="col-12 tab-pane fade pl-0" id="nav-saved-card" role="tabpanel" aria-labelledby="nav-savedcards-tab">
+                      <div class="display-cards">
+						  <div class="card savedcards">
+                            <a href="personal-profile-card.html" class="text-decoration-none">
+							   <img src="{% static 'img/card-front.png' %}" class="card-img-top img-fluid" alt="...">
+                            <div class="card-footer d-flex mycards-footer">
+								 <span class="d-flex"><i class="fas fa-star checked"></i>
+                            <p>Save Card</p>
+                            </span> 
+                            <!-- <span class="d-flex pen-edit"><i class="far fa-comment-alt"></i>
+                            <p>Chat</p>
+                            </span> 
+                            <span class="d-flex"><i class="fas fa-minus-square"></i>
+                            <p>Remove</p>
+                            </span>  -->
+							  </div>
+								</a>
+                          </div>
+                        
+                        <div class="card savedcards">
+                            <a href="personal-profile-card.html" class="text-decoration-none">
+							   <img src="{% static 'img/card-front.png' %}" class="card-img-top img-fluid" alt="...">
+                            <div class="card-footer d-flex mycards-footer">
+								 <span class="d-flex"><i class="fas fa-star checked"></i>
+                            <p>Save Card</p>
+                            </span> 
+                            <!-- <span class="d-flex pen-edit"><i class="far fa-comment-alt"></i>
+                            <p>Chat</p>
+                            </span> 
+                            <span class="d-flex"><i class="fas fa-minus-square"></i>
+                            <p>Remove</p>
+                            </span>  -->
+							  </div>
+								</a>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+ 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper --> 
+</div>
+	<!--Personal Card Edit Modal-->
+	<div class="modal fade" id="personalCardEditModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-radius">
+      <div class="modal-header">
+		<h5 class="modal-title personalcard-title">Update Card</h5>
+		  <button type="button" class="btn btn-primary btn-bg-blue personalcard-btn" id="uploadBackBtn" onClick="toggleUploadBack()"><p class="" id="upB">Edit Back</p><p class="hidden" id="upF">Edit Front</p></button>
+		  <button type="button" class="btn btn-outline-primary" data-dismiss="modal" aria-label="Close">X</button>
+		</div>
+      <div class="modal-body">
+		 <form id="personalcardupdate" name="personalcardupdate" enctype="multipart/form-data">
+			  <div id="cardUploadFront">
+				<div class="preview">  
+			  <img class="img-fluid" id="frontImage" src="{% static 'img/card-front.png' %}" alt="">
+				</div>
+		  <div class="d-inline-block text-center w-100 m-2">
+		  <input type="file" class="hidden" name="uploadFront" id="uploadFront" required>
+			  <label class="col-form-label btn btn-primary btn-bg-blue" for="uploadFront">Upload Image</label>
+		  </div>
+		 
+			  <div class="blue">
+                  <p class="text-white">Personal Card</p>
+                </div>
+		 
+                <div class="p-0">
+                  <div class="col-12 d-flex p-0 personalcard-detail">
+                    <div class="col-2 p-0 personalcard-photo"> <img src="{% static 'img/g1.jpg' %}" class="img-fluid rounded-circle m-1" alt=""> </div>
+                    <div class="col-7 p-1 personalcard-details"> 
+						<span class="input-group-append w-100 m-1">
+                      <input type="text" class="form-control name-input col-xl-10 col-lg-10 col-md-10 col-sm-9 col-10" name="name" value="{{personalcard.name}}" placeholder="Name" required>
+                      <i class="fas fa-building user-icon"></i></span> 
+						<span class="input-group-append w-100 m-1">
+                      <input type="text" class="form-control name-input col-xl-10 col-lg-10 col-md-10 col-sm-9 col-10" name="services" value="{{personalcard.services}}" placeholder="Services" required>
+                      <i class="fas fa-users-cog user-icon"></i></span> </div>
+                    <div class="col-3 p-0 personalcard-karmybtn">
+                      <button type="button" class="btn btn-primary karmy-btn">Kaarmy Profile</button>
+                    </div>
+                  </div>
+					<div class="col-12 companycard-details border">
+						<div class="form-group d-flex details-group">
+						<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+							<i class="fas fa-phone-alt details-icon"></i>
+                      <input type="text" class="form-control details-input" name="mobile" value="{{personalcard.mobile}}" placeholder="Mobile No" required>
+                      </span>
+							<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+								<i class="far fa-envelope details-icon"></i>
+                      <input type="text" class="form-control details-input" name="email" value="{{personalcard.email}}" placeholder="Email" required>
+                      </span>
+							</div>
+						<div class="form-group d-flex details-group">
+						<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+							<i class="fab fa-whatsapp details-icon whatp-icon"></i>
+                      <input type="text" class="form-control details-input" name="whatsapp" value="{{personalcard.whatsapp}}" placeholder="Whatsapp" required>
+                      </span>
+							<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+								<i class="fas fa-map-marker-alt details-icon"></i>
+                      <input type="text" class="form-control details-input" name="location" value="{{personalcard.location}}" placeholder="Location" required>
+                      </span>
+							</div>
+						<div class="form-group d-flex details-group">
+						<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+							<i class="fas fa-building details-icon"></i>
+                      <input type="text" class="form-control details-input" name="companyname" value="{{personalcard.company_name}}" placeholder="Company Name" required>
+                      </span>
+							<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+								<i class="fas fa-map-marker-alt details-icon"></i>
+                      <input type="text" class="form-control details-input" name="companylocation" value="{{personalcard.company_location}}" placeholder="Company Location" required>
+                      </span>
+							</div>
+						<div class="form-group d-flex">
+						<span class="input-group-prepend website-input m-1 pl-0 col-12">
+							<i class="fab fa-chrome details-icon wbste-icon"></i>
+                      <input type="text" class="form-control details-input details-input2" name="website" value="{{personalcard.website}}" placeholder="Website" required>
+                      </span>
+							</div>
+						</div>
+					</div>
+			  </div>
+			  <div class="hidden" id="cardUploadBack">
+			  <div class="preview">  
+			  <img class="img-fluid" id="backImage" src="{% static 'img/card-back.png' %}" alt="">
+				  </div>
+			 
+		 
+		  <div class="d-inline-block w-100 text-center m-2">
+		  <input type="file" class="hidden" name="uploadBack" id="uploadBack" required>
+			  <label class="col-form-label btn btn-primary btn-bg-blue" for="uploadBack">Upload Image</label>
+		  </div>
+			   <div class="blue">
+                  <p class="text-white">Personal Card</p>
+                </div>
+			  <div class="col-12 form-group text-left">
+					  <label class="col-form-label">Additional Details :</label>
+					 <textarea class="form-control details-input" rows="3" value="{{personalcard.aditional_details}}" name="addtionaldetails" required></textarea>
+					  </div>
+				  </div>
+			  <div class="cardupload-btn text-center mt-3">
+			 <button type="submit" class="btn btn-primary btn-bg-blue w-25">Save</button>
+				 </div>
+				  
+			  </form>
+		</div>
+    </div>
+  </div>
+</div>
+	<!--/Personal Card Edit Modal-->
+
+  <script>
+    $("#personalcardupdate").on("submit", function(e){
+    e.preventDefault();
+    var groupdata = document.forms.namedItem("personalcardupdate");
+    oData = new FormData(groupdata);
+    var token = '{{csrf_token}}';
+    $.ajax(
+    {
+      headers: { "X-CSRFToken": token },
+      'url': "{% url 'personal_card_update' %}",
+      'type': 'POST',
+      processData: false,
+      contentType: false,
+      enctype: 'multipart/form-data',
+      'data': oData,
+      'success': function () {
+        $("#personalcardupdate").trigger('reset');
+        // alert("sent enqquiry");
+        document.location.reload();
+      }
+    })
+  });
+  </script>
+
+	<!--Company Card Edit Modal-->
+	<div class="modal fade" id="companyCardEditModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content modal-radius">
+      <div class="modal-header">
+		<h5 class="modal-title personalcard-title">Update Card</h5>
+		  <button type="button" class="btn btn-primary btn-bg-blue personalcard-btn" id="uploadBackBtn2" onClick="toggleUploadBack2()"><p class="" id="upB2">Edit Back</p><p class="hidden" id="upF2">Edit Front</p></button>
+		  <button type="button" class="btn btn-outline-primary" data-dismiss="modal" aria-label="Close">X</button>
+		</div>
+      <div class="modal-body">
+		 <form id="companycardupdate" name="companycardupdate" enctype="multipart/form-data">
+			  <div id="cardUploadFront2">
+				<div class="preview">  
+			  <img class="img-fluid" id="frontImage2" src="{% static 'img/card-front.png' %}" alt="">
+				</div>
+		  
+		  <div class="d-inline-block text-center w-100 m-2">
+		  <input type="file" class="hidden" name="uploadFront" id="uploadFrontImg">
+			  <label class="col-form-label btn btn-primary btn-bg-blue" for="uploadFrontImg">Upload Image</label>
+		  </div>
+		 
+			  <div class="blue">
+                  <p class="text-white">Company Card</p>
+                </div>
+		 
+                <div class="p-0">
+                  <div class="col-12 d-flex p-0 personalcard-detail">
+                    <div class="col-2 p-0 personalcard-photo"> <img src="{% static 'img/g1.jpg' %}" class="img-fluid rounded-circle m-1" alt=""> </div>
+                    <div class="col-7 p-1 personalcard-details"> 
+						<span class="input-group-append w-100 m-1">
+                      <input type="text" class="form-control name-input col-xl-10 col-lg-10 col-md-10 col-sm-9 col-10" name="name" value="{{companycard.name}}" placeholder="Name">
+                      <i class="fas fa-building user-icon"></i></span> 
+						<span class="input-group-append w-100 m-1">
+                      <input type="text" class="form-control name-input col-xl-10 col-lg-10 col-md-10 col-sm-9 col-10" name="services" value="{{companycard.services}}" placeholder="Services">
+                      <i class="fas fa-users-cog user-icon"></i></span> </div>
+                    <div class="col-3 p-0 personalcard-karmybtn">
+                      <button type="button" class="btn btn-primary karmy-btn">Kaarmy Profile</button>
+                    </div>
+                  </div>
+					<div class="col-12 companycard-details border">
+						<div class="form-group d-flex details-group">
+						<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+							<i class="fas fa-phone-alt details-icon"></i>
+                      <input type="text" class="form-control details-input" name="mobile" value="{{companycard.mobile}}" placeholder="Mobile No">
+                      </span>
+							<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+								<i class="far fa-envelope details-icon"></i>
+                      <input type="text" class="form-control details-input" name="email" value="{{companycard.email}}" placeholder="Email">
+                      </span>
+							</div>
+						<div class="form-group d-flex details-group">
+						<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+							<i class="fab fa-whatsapp details-icon whatp-icon"></i>
+                      <input type="text" class="form-control details-input" name="whatsapp" value="{{companycard.whatsapp}}" placeholder="Whatsapp">
+                      </span>
+							<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+								<i class="fas fa-map-marker-alt details-icon"></i>
+                      <input type="text" class="form-control details-input" name="location" value="{{companycard.location}}" placeholder="Location">
+                      </span>
+							</div>
+						<div class="form-group d-flex details-group">
+						<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+							<i class="fas fa-building details-icon"></i>
+                      <input type="text" class="form-control details-input" name="companyname" value="{{companycard.company_name}}" placeholder="Company Name">
+                      </span>
+							<span class="input-group-prepend m-1 col-lg-6 col-md-6 col-sm-6 col-12 pl-0">
+								<i class="fas fa-map-marker-alt details-icon"></i>
+                      <input type="text" class="form-control details-input" name="companylocation" value="{{companycard.company_location}}" placeholder="Company Location">
+                      </span>
+							</div>
+						<div class="form-group d-flex">
+						<span class="input-group-prepend website-input m-1 pl-0 col-12">
+							<i class="fab fa-chrome details-icon wbste-icon"></i>
+                      <input type="text" class="form-control details-input details-input2" name="website" value="{{companycard.website}}" placeholder="Website">
+                      </span>
+							</div>
+						</div>
+					</div>
+			  </div>
+			  <div class="hidden" id="cardUploadBack2">
+			  <div class="preview">  
+			  <img class="img-fluid" id="backImage2" src="{% static 'img/card-back.png' %}" alt="">
+				  </div>
+			 
+		 
+		  <div class="d-inline-block w-100 text-center m-2">
+		  <input type="file" class="hidden" name="uploadBack" id="uploadBackImg">
+			  <label class="col-form-label btn btn-primary btn-bg-blue" for="uploadBackImg">Upload Image</label>
+		  </div>
+			   <div class="blue">
+                  <p class="text-white">Company Card</p>
+                </div>
+			  <div class="col-12 form-group text-left">
+					  <label class="col-form-label">Additional Details :</label>
+					 <textarea class="form-control details-input" rows="3" name="addtionaldetails" value="{{companycard.aditional_details}}"></textarea>
+					  </div>
+				  </div>
+			 <div class="cardupload-btn text-center mt-3">
+			 <button type="submit" class="btn btn-primary btn-bg-blue w-25">Save</button>
+				 </div>
+			  </form>
+		</div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  $("#companycardupdate").on("submit", function(e){
+  e.preventDefault();
+  var groupdata = document.forms.namedItem("companycardupdate");
+  oData = new FormData(groupdata);
+  var token = '{{csrf_token}}';
+  $.ajax(
+  {
+    headers: { "X-CSRFToken": token },
+    'url': "{% url 'company_card_update' %}",
+    'type': 'POST',
+    processData: false,
+    contentType: false,
+    enctype: 'multipart/form-data',
+    'data': oData,
+    'success': function () {
+      $('#companyCardEditModal').modal('hide');
+      $("#companycardupdate").trigger('reset');
+      // alert("sent enqquiry");
+      document.location.reload();
+    }
+  })
+});
+</script>
+
+
+<div class="modal fade" id="createEnquiry-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content modal-radius" style="overflow-x: hidden">
+      <div class="d-flex w-100 mt-3 testimonial-heading justify-content-between" style="background-color: #CEEAFF; border-bottom: none;">
+        <h5>Create Enquiry</h5>
+		  <button type="button" class="btn btn-outline-primary m-1 text-dark" data-dismiss="modal" aria-label="Close">X</button>
+      </div>
+      <form class="w-100" id="edit-enquiry" name="edit-enquiry" enctype="multipart/form-data">
+        <div class="col-12 mt-3">
+          <span class="d-flex m-3"> <i class="fas fa-pen pt-3"></i><input type="text" class="form-control" placeholder="Enquiry Title" name="title"></span>
+          <span class="d-flex m-3"> <i class="fas fa-pen pt-3"></i> <textarea class="form-control" rows="3" placeholder="Description" name="description"></textarea></span>
+          <!-- <div class="w-100 m-3 ml-4">
+          <span><i class="fas fa-paperclip"></i></span> <label for="actual-btn" class="mr-2">Upload Image</label>
+          <input type="file" id="actual-btn2"/>
+          </div> -->
+        </div>
+        <div class="pb-3 certification-btns m-5 text-center"> 
+          <button type="submit" class="btn btn-primary text-white btn-bg-blue" style="border-radius: 12px;">Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  $("#edit-enquiry").on("submit", function(e){
+  e.preventDefault();
+  var groupdata = document.forms.namedItem("edit-enquiry");
+  oData = new FormData(groupdata);
+  var token = '{{csrf_token}}';
+  $.ajax(
+  {
+    headers: { "X-CSRFToken": token },
+    'url': "{% url 'createEnquiry' otheruser_id %}",
+    'type': 'POST',
+    processData: false,
+    contentType: false,
+    enctype: 'multipart/form-data',
+    'data': oData,
+    'success': function () {
+      $('#createEnquiry-modal').modal('hide');
+      $("#edit-enquiry").trigger('reset');
+      alert("sent enqquiry");
+      document.location.reload();
+    }
+  })
+});
+</script>
+	<!--/Create Enquiry-->
+	<!-- Create Appointment-->
+	<div class="modal fade" id="createAppointment-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content modal-radius" style="overflow-x: hidden">
+      <div class="d-flex w-100 mt-3 testimonial-heading justify-content-between" style="background-color: #CEEAFF; border-bottom: none;">
+        <h5>Create Appointment</h5>
+		  <button type="button" class="btn btn-outline-primary m-1 text-dark" data-dismiss="modal" aria-label="Close">X</button>
+      </div>
+      <form class="w-100" id="edit-appointment" name="edit-appointment" enctype="multipart/form-data">
+        <div class="col-12 mt-3">
+            <span class="d-flex m-3"> <i class="fas fa-pen pt-3"></i><input type="text" class="form-control" name="name" placeholder="Name" required></span>
+			      <span class="d-flex m-3"> <i class="fas fa-pen pt-3"></i><input type="text" class="form-control" name="purpose" placeholder="Purpose of visit" required></span>
+			      <span class="d-flex m-3"> <i class="fas fa-pen pt-3"></i> <textarea class="form-control" rows="3" name="description" placeholder="Description" required></textarea></span>
+			      <span class="d-flex m-3"> <i class="fas fa-pen pt-3"></i><input type="date" class="form-control" name="date" placeholder="Date" required></span>
+			      <span class="d-flex m-3"> <i class="fas fa-pen pt-3"></i><input type="time" class="form-control" name="time" placeholder="Time" required></span>
+            <!-- <div class="w-100 m-3 ml-4">
+				      <span><i class="fas fa-paperclip"></i></span> <label for="actual-btn" class="mr-2">Upload Image</label>
+              <input type="file" id="actual-btn3"/>
+              </div> -->
+        </div>
+        <div class="pb-3 certification-btns m-5 text-center"> 
+          <button type="submit" class="btn btn-primary text-white btn-bg-blue" style="border-radius: 12px;">Post</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+    $("#edit-appointment").on("submit", function(e){
+    e.preventDefault();
+    var groupdata = document.forms.namedItem("edit-appointment");
+    oData = new FormData(groupdata);
+    var token = '{{csrf_token}}';
+    $.ajax(
+    {
+      headers: { "X-CSRFToken": token },
+      'url': "{% url 'createAppoinment' otheruser_id %}",
+      'type': 'POST',
+      processData: false,
+      contentType: false,
+      enctype: 'multipart/form-data',
+      'data': oData,
+      'success': function () {
+        $('#createAppointment-modal').modal('hide');
+        $("#edit-appointment").trigger('reset');
+        alert("sent appoinment");
+        document.location.reload();
+      }
+    })
+  });
+</script>
+	<!--/Create Appointment-->
+<script>
+    $(window).on('load',realTime());
+    function realTime(){
+        $.ajax({
+            type:"get",
+            url:"{% url 'countAndNotifications' instance.pk %}",
+            success:function(data){
+                $("#follower_count").html("follower:"+data["follower_count"])
+                $("#connect_btnp").html(data["is_connection"])
+                setTimeout(realTime, 2000);
+            }
+        });
+    }
+</script>
+<script>
+    $(document).ready(function(){
+    $(".starInp").click(function(){
+        var rating = $('input[name="rating"]:checked').val();
+        $.ajax({
+            url: "{% url 'starRating' %}",
+            type: 'POST',
+            data: { "rating": rating },
+        })
+    });
+    });
+</script>
+<script>
+    $("#follow").click(function(e){
+        e.preventDefault();
+        var href = this.href;
+        $.ajax({
+            url : href,
+            success : function(response){
+                if(response["following"]){
+                    $("#followp").html("Followed")
+                    $("#follow").find('i').removeClass('fas fa-user-plus').addClass("fas fa-user-check")
+                    $("#f_count").html("following:"+response["following_count"])
+                }
+                else{
+                    $("#followp").html("Follow")
+                    $("#follow").find('i').removeClass('fas fa-user-check').addClass("fas fa-user-plus")
+                    $("#f_count").html("following:"+response["following_count"])
+                }
+            }
+        })
+    })
+</script>
+<script>
+    $("#endorse_btn").click(function(e){
+        e.preventDefault();
+        var href = this.href;
+        $.ajax({
+            url : href,
+            success : function(response){
+                if(response["endorsing"]){
+                    $("#endorse_btnp").html("Endorsed")
+                    // $("#f_count").html("following:"+response["following_count"])
+                }
+                else{
+                    $("#endorse_btnp").html("Endorse")
+                    // $("#f_count").html("following:"+response["following_count"])
+                }
+            }
+        })
+    })
+</script>
+<script>
+    $("#connect_btn").click(function(e){
+        e.preventDefault();
+        var href = this.href;
+        $.ajax({
+            url : href,
+            success : function(response){
+                if(response["isconnection"]=="notConnected"){
+                    $("#connect_btnp").html("Connect+")
+                }
+                else if(response["isconnection"]=="connected"){
+                    $("#connect_btnp").html("Connected")
+                }
+                else{
+                    $("#connect_btnp").html("Requested")
+                }
+            }
+        })
+    })
+</script>
+
+<script>
+    function toggleUploadBack(){
+            $('#cardUploadBack').toggleClass('hidden');
+            $('#upB').toggleClass('hidden');
+            $('#cardUploadFront').toggleClass('hidden');
+                        $('#upF').toggleClass('hidden');
+
+            
+        }
+    document.getElementById('uploadFront').addEventListener('change', function (event) {
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview #frontImage').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        }
+    });
+    document.getElementById('uploadBack').addEventListener('change', function (event) {
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview #backImage').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        }
+    });
+</script>
+<script>
+    function toggleUploadBack2(){
+        $('#cardUploadBack2').toggleClass('hidden');
+        $('#upB2').toggleClass('hidden');
+        $('#cardUploadFront2').toggleClass('hidden');
+                    $('#upF2').toggleClass('hidden');
+
+        
+    }
+    document.getElementById('uploadFrontImg').addEventListener('change', function (event) {
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview #frontImage2').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        }
+    });
+    document.getElementById('uploadBackImg').addEventListener('change', function (event) {
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview #backImage2').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        }
+    });
+</script>
+<script>
+       	function myFunction(){
+		var x = document.getElementById("sidebar-wrapper");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else{
+			x.style.display = "none";
+		}
+	}
+</script>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle" style="color:#00b1ff;">About</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true"style="color:#00b1ff;">&times;</span>
+        </button>
+      </div>
+      <div>
+        <form id="aboutform" name="aboutform" enctype="multipart/form-data">
+        <div class="modal-body">
+          {% comment %} <textarea id="about" name="about" rows="4" cols="50">
+          
+          </textarea> {% endcomment %}
+          <textarea class="form-control" id="about" name="about" rows="4" >{{about.description}}</textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-primary aboutsubmit">Save</button>
+        </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  $(".aboutsubmit").on("click", function(e){
+    e.preventDefault();
+    about = $('#about').val();
+    if( about.length === 0 ) {
+        alert("fill properly..");
+    }else{
+      var token = '{{csrf_token}}';
+      $.ajax(
+      {
+        headers: { "X-CSRFToken": token },
+        url: "{% url 'aboutupdate' %}",
+        type: 'POST',
+        data: { "about": about },
+        'success': function () {
+          $("#aboutform").trigger('reset');
+          alert("Successfully Updated");
+          document.location.reload();
+        }
+      })
+    }
+  });
+</script>
+     <!--          Edit Profile Picture Modal-->
+     <div class="modal fade" id="editProfilePicture" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+          <div class="modal-content modal-radius">
+            <div class="modal-header">
+              <h5>Edit Profile Picture</h5>
+            </div>
+            <form class="w-100" action="{% url 'changeprofile' %}" method="post" id="create-profilePicture" enctype="multipart/form-data">
+              {% csrf_token %}
+
+              <div class="modal-body">
+                <div class="preview text-center mt-3"> <img class="img-thumbnail preview-profilePicture w-25 ml-2" src="{{request.user.bio.profile_pic}}" alt=""> </div>
+                <div class="add text-center mt-2">
+                  <label for="upload-profilePicture"><i class="fas fa-photo-video"></i><a>Change Profile Picture</a></label>
+                  <input type="file" id="upload-profilePicture" name="file" class="hidden" accept=".jpg,.jpeg.,.gif,.png,.mov,.mp4" required>
+                </div>
+              </div>
+              <div class="modal-footer border-0 text-center"> <a href="#">
+                <button type="submit" class="btn btn-primary btn-bg-blue">Change</button>
+                </a>
+                <button type="button" class="btn btn-default border" data-dismiss="modal"> Close </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById('upload-profilePicture').addEventListener('change', function (event) {
+    
+            var file = event.target.files[0];
+            var fileReader = new FileReader();
+            if (file.type.match('image')) {
+                fileReader.onload = function (event) {
+                    $('.preview-profilePicture').attr('src', event.target.result);
+                };
+                fileReader.readAsDataURL(file);
+            }
+    
+        });
+            </script>
+{% endblock %}

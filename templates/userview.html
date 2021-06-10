@@ -1,0 +1,91 @@
+<html>
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<body>
+<div id="all">
+<div id="users">
+    mobile:{{user}}
+    email:{{user.email}}
+    {% if followstatus %}
+    <br>
+
+    <a type="button" class="btn btn-outline-primary" id="unfollow-btn" href="{% url 'unfollow' user.id  %}"
+       role="button"> Unfollow
+
+    </a>
+    {% else %}
+    <a type="button" class="btn btn-outline-primary" id="follow-btn" href="{% url 'follow' user.id  %}" role="button">Follow
+
+    </a>
+    {% endif %}
+    <div id="followers">
+        Followers:{{followers}}
+
+    </div>
+    <div id="following">
+        Following:{{following}}
+    </div>
+</div>
+    </div>
+
+
+<script>
+    $('#follow-btn').on("click" , function(e){
+
+        e.preventDefault();
+        var href = this.href;
+        console.log(href);
+
+        $.ajax({
+            url:href,
+
+        })
+        .done(function(response){
+         if(response == 'true')
+         {
+
+
+            location.reload();
+
+
+
+
+
+         }
+        })
+
+
+    })
+
+    $('#unfollow-btn').on("click" , function(e){
+
+        e.preventDefault();
+        var href = this.href;
+        console.log(href);
+
+        $.ajax({
+            url:href,
+
+
+
+        })
+        .done(function(response){
+         if(response == 'true')
+         {
+
+
+             location.reload();
+
+         }
+        })
+
+
+    })
+
+
+</script>
+
+</body>
+</html>

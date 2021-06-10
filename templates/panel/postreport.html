@@ -1,0 +1,38 @@
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col"></th>
+        <th scope="col">User</th>
+        <th scope="col">PostLink</th>
+        <th scope="col">TotalReports</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for i in postitems  %}
+      <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{i.user.email}}</td>
+        <td><a href="{% url 'post_detail' i.id %}">See Post</a></td>
+        <td class="text-center">{{i.reportcount}}</td>
+        <td><a href="">Delete</a></td>
+        <!-- <td>remove</td> -->
+      </tr>
+      {% endfor %}
+      <!-- <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+        <td>Delete</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+        <td>Delete</td>
+        
+      </tr> -->
+    </tbody>
+  </table>

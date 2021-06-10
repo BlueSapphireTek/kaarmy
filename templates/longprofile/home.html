@@ -1,0 +1,240 @@
+{% extends 'longprofile/base.html' %}
+{% load static %}
+{% block content %}
+
+  <div id="page-content-wrapper" class="w-100">
+    <div class="container-fluid">
+      <div class="row m-0">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 center-scroll row-height">
+          <div class="row m-0">
+            <div class="col-xl-2 col-lg-2 col-md-2 col-sm-3 col-12 py-3 text-center profile"> <img class="img-fluid profile-img" src="{% static 'img/g1.jpg' %}" alt=""> <span class="float-right"> </span>
+              <div class="pt-3 text-center profile-address">
+                <h5>Annie Fab</h5>
+                <p><span><i class="fas fa-graduation-cap"></i></span>Designer</p>
+                <span class="fa fa-star checked font"></span> <span class="fa fa-star checked font"></span> <span class="fa fa-star checked font"></span> <span class="fa fa-star checked font"></span> <span class="fa fa-star checked font"></span>
+                <p>Age: 25 </p>
+                <h5>Address</h5>
+                <p>Andoorkonam P.O</p>
+                <p>Thiruvananthapuram</p>
+                <p>Pin - 695584</p>
+              </div>
+            </div>
+            <div class="col-xl-7 col-lg-7 col-md-7 col-sm-9 col-12 details">
+              <div class="d-flex m-1">
+                <div class="col-3 text-center content"> <img class="img-fluid " src="{% static 'img/post.png' %}" alt=""> <a href="#">
+                  <h4>Post</h4>
+                  <h6>20</h6>
+                  </a> </div>
+                <div class="col-3 text-center content"> <img class="img-fluid" src="{% static 'img/event.png' %}" alt=""> <a href="#">
+                  <h4>Event</h4>
+                  <h6>20</h6>
+                  </a> </div>
+                <div class="col-3 text-center content"> <img class="img-fluid" src="{% static 'img/enquiry.png' %}" alt=""> <a href="#">
+                  <h4>Enquiry</h4>
+                  <h6>20</h6>
+                  </a> </div>
+                <div class="col-3 text-center content"> <img class="img-fluid" src="{% static 'img/appointment.png' %}" alt=""> <a href="#">
+                  <h4>Appointment</h4>
+                  <h6>20</h6>
+                  </a> </div>
+              </div>
+              <div class="col-12 follow">
+                <div class="col-6 follower pl-0 pr-0">
+                  <button class="btn follow-btn font-weight-bold">Followers<span>
+                  <p>20K</p>
+                  </span></button>
+                </div>
+                <div class="col-6 follower pl-0 pr-0">
+                  <button class="btn follow-btn font-weight-bold">Following<span>
+                  <p>500</p>
+                  </span></button>
+                </div>
+              </div>
+              <div class="about pt-3 col-12">
+                <h4>About Himself<span class=" ml-auto"> </span></h4>
+                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+              </div>
+            </div>
+            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-12 job-detail pt-3">
+              <div class="d-flex">
+                <h5>Job Details
+                  <button type="button" class="bb1 float-right avatar-edit-btn" data-toggle="modal" data-target="#">
+                  <h6 class="text-primary"><i class="far fa-edit primary ml-1"></i></h6>
+                  </button>
+                </h5>
+              </div>
+              <p><span><i class="fas fa-briefcase mr-1"></i></span>Designer at Bluesapphire info dolutions</p>
+              <p><span><i class="fas fa-briefcase mr-1"></i></span>Designer at Bluesapphire info dolutions</p>
+              <p><span><i class="fas fa-briefcase mr-1"></i></span>Designer at Bluesapphire info dolutions</p>
+              <p><span><i class="fas fa-briefcase mr-1"></i></span>Designer at Bluesapphire info dolutions</p>
+              <p><span><i class="fas fa-briefcase mr-1"></i></span>Designer at Bluesapphire info dolutions</p>
+            </div>
+          </div>
+          <div class="w-100 m-0 mt-3 col-12 pl-0 pr-0">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation"> <a class="nav-link active" id="pills-card-tab" data-toggle="pill" href="#nav-card" role="tab" aria-controls="pills-home" aria-selected="true">Card</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-certificate-tab" data-toggle="pill" href="#nav-certificate" role="tab" aria-controls="pills-profile" aria-selected="false">Certification</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-achievement-tab" data-toggle="pill" href="#nav-achievement" role="tab" aria-controls="pills-contact" aria-selected="false">Achievements</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-companyprofile-tab" data-toggle="pill" href="#nav-companyprofile" role="tab" aria-controls="pills-contact" aria-selected="false">Company Profile</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-activities-tab" data-toggle="pill" href="#nav-myactivities" role="tab" aria-controls="pills-contact" aria-selected="false">My Activities</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-endorsement-tab" data-toggle="pill" href="#nav-endorsement" role="tab" aria-controls="pills-contact" aria-selected="false">Endorsement</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-testimonial-tab" data-toggle="pill" href="#nav-testimonial" role="tab" aria-controls="pills-contact" aria-selected="false">Testimonial</a> </li>
+            </ul>
+            <div class="col-12 tab-content py-3 pl-0 px-sm-0" id="nav-tabContent">
+              {% block cards %}
+
+
+              {% endblock %}
+              <div class="tab-pane fade" id="nav-certificate" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="col-12 py-2 cards-info">
+                  <div class="mb-2 d-flex attach"> <span class="d-flex"><i class="fas fa-thumbtack"></i>
+                    <p>Attachment</p>
+                    </span>
+                    <p class="pen-edit">Created on on 20-10-2018</p>
+                  </div>
+                  <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12 attach-text mb-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                  </div>
+                  <h6 class="pb-3">Certified List</h6>
+                  <div class="display-cards">
+                    <div class="card mycards">
+                      <div class="card-body mycards-body certified-cards-body">
+                        <div class="col-12 d-flex p-0">
+                          <div class="col-4 certified"> <img src="{% static 'img/g1.jpg' %}" alt=""> </div>
+                          <div class="col-8 certified-name"> <span class="d-flex">
+                            <h6>Certified to name</h6>
+                            <i class="fas fa-check-circle round-tick float-right"></i></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                          </div>
+                        </div>
+                        <br>
+                      </div>
+                      <div class="card-footer d-flex certified-footer"> <span class="d-flex"><i class="fas fa-th"></i>
+                        <p>Category</p>
+                        </span> <span class="d-flex pen-edit"><i class="fas fa-thumbtack"></i>
+                        <p>Attachment</p>
+                        </span> <span class="d-flex"><i class="fas fa-medal"></i>
+                        <p>Certified Form</p>
+                        </span> </div>
+                    </div>
+                    <div class="card mycards">
+                      <div class="card-body mycards-body certified-cards-body">
+                        <div class="col-12 d-flex p-0">
+                          <div class="col-4 certified"> <img src="{% static 'img/g1.jpg' %}" alt=""> </div>
+                          <div class="col-8 certified-name"> <span class="d-flex">
+                            <h6>Certified to name</h6>
+                            <i class="fas fa-check-circle round-tick-transparent float-right"></i></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                          </div>
+                        </div>
+                        <br>
+                      </div>
+                      <div class="card-footer d-flex certified-footer"> <span class="d-flex"><i class="fas fa-th"></i>
+                        <p>Category</p>
+                        </span> <span class="d-flex pen-edit"><i class="fas fa-thumbtack"></i>
+                        <p>Attachment</p>
+                        </span> <span class="d-flex"><i class="fas fa-medal"></i>
+                        <p>Certified Form</p>
+                        </span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-achievement" role="tabpanel" aria-labelledby="nav-profile-tab"> </div>
+              <div class="tab-pane fade" id="nav-companyprofile" role="tabpanel" aria-labelledby="nav-profile-tab"> </div>
+              <div class="tab-pane fade" id="nav-myactivities" role="tabpanel" aria-labelledby="nav-profile-tab"> </div>
+              <div class="tab-pane fade" id="nav-endorsement" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="col-12 py-2 cards-info">
+                  <div class="mb-2 d-flex attach"> <span class="d-flex"><i class="fas fa-thumbtack"></i>
+                    <p>Attachment</p>
+                    </span>
+                    <p class="pen-edit">Created on on 20-10-2018</p>
+                  </div>
+                  <div class="col-xl-8 col-lg-8 col-md-10 col-sm-12 col-12 attach-text mb-3">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                  </div>
+                  <h6 class="pb-3">Certified List</h6>
+                  <div class="display-cards">
+                    <div class="card mycards">
+                      <div class="card-body mycards-body certified-cards-body">
+                        <div class="col-12 d-flex p-0">
+                          <div class="col-4 certified"> <img src="{% static 'img/g1.jpg' %}" alt=""> </div>
+                          <div class="col-8 certified-name"> <span class="d-flex">
+                            <h6>Certified to name</h6>
+                            <i class="fas fa-check-circle round-tick float-right"></i></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                          </div>
+                        </div>
+                        <br>
+                      </div>
+                      <div class="card-footer d-flex certified-footer"> <span class="d-flex"><i class="fas fa-th"></i>
+                        <p>Category</p>
+                        </span> <span class="d-flex pen-edit"><i class="fas fa-thumbtack"></i>
+                        <p>Attachment</p>
+                        </span> <span class="d-flex"><i class="fas fa-medal"></i>
+                        <p>Certified Form</p>
+                        </span> </div>
+                    </div>
+                    <div class="card mycards">
+                      <div class="card-body mycards-body certified-cards-body">
+                        <div class="col-12 d-flex p-0">
+                          <div class="col-4 certified"> <img src="{% static 'img/g1.jpg' %}" alt=""> </div>
+                          <div class="col-8 certified-name"> <span class="d-flex">
+                            <h6>Certified to name</h6>
+                            <i class="fas fa-check-circle round-tick-transparent float-right"></i></span>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                          </div>
+                        </div>
+                        <br>
+                      </div>
+                      <div class="card-footer d-flex certified-footer"> <span class="d-flex"><i class="fas fa-th"></i>
+                        <p>Category</p>
+                        </span> <span class="d-flex pen-edit"><i class="fas fa-thumbtack"></i>
+                        <p>Attachment</p>
+                        </span> <span class="d-flex"><i class="fas fa-medal"></i>
+                        <p>Certified Form</p>
+                        </span> </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane fade" id="nav-testimonial" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="col-12 py-2 cards-info">
+                  <div class="card mycards testimonialcard">
+                    <div class="card-body mycards-body certified-cards-body">
+                      <div class="col-12 d-flex p-0">
+                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-5 testimonial"> <img src="{% static 'img/g1.jpg' %}" alt=""> </div>
+                        <div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-7 testimonial-name">
+                          <h5>John Doe</h5>
+                          <p class="testimonial-digital">Digital Marketing</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 py-2 cards-info">
+                  <div class="card mycards testimonialcard">
+                    <div class="card-body mycards-body certified-cards-body">
+                      <div class="col-12 d-flex p-0">
+                        <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-5 testimonial"> <img src="{% static 'img/g1.jpg' %}" alt=""> </div>
+                        <div class="col-xl-10 col-lg-10 col-md-9 col-sm-9 col-7 testimonial-name">
+                          <h5>John Doe</h5>
+                          <p class="testimonial-digital">CEO, Company</p>
+                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                        </div>
+                      </div>
+                      <br>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

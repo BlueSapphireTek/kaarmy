@@ -1,0 +1,16 @@
+
+<html>
+<form action="#" method="post" id="login">
+          {% csrf_token %}
+
+<input type="text" placeholder="email or mobilenumber" name="username" required>
+<input type="password" placeholder="password" name="password" required>
+
+    <button type="submit">Submit</button>
+    <b style="color:red">{% if messages %}
+                {% for msg in messages %}
+                        {{ msg }}
+                {% endfor %}
+            {% endif %} </b>
+</form>
+</html>

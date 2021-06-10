@@ -1,0 +1,418 @@
+@charset "utf-8";
+body {
+  background-size: 100%;
+  /*  background: linear-gradient(to right, #a8a0c4, #5e85c1);*/
+  background-color: #FCFBFA !important;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: auto;
+}
+a {
+  text-decoration: none !important;
+}
+.width {
+  width: 80% !important;
+}
+.width-pass {
+  width: 100% !important;
+}
+.top {
+  margin-top: 2.5rem;
+}
+.fs-30 {
+  font-size: 30px;
+}
+.login-header {
+  width: 100%;
+  /*  background: linear-gradient(#024785, #370f82);*/
+  background-color: #d8dce152;
+  height: 5rem !important;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.login-height {
+  height: 48rem;
+}
+.pswd p {
+  padding-left: 10px;
+  font-size: 12px;
+  margin-top: 8px;
+}
+.login p {
+  font-size: 12px;
+}
+.center-scroll {
+  overflow-y: scroll !important;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+* {
+  -ms-overflow-style: none !important;
+}
+/*Set the row height to the viewport*/
+.row-height {
+  width: 100%;
+  min-height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  opacity: 1;
+  padding: 0;
+  padding-bottom: 6rem;
+}
+.banner img {
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 50rem;
+}
+.banner-1 img {
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 48rem;
+}
+.banner-2 img {
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 48rem;
+}
+.banner-enter img {
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 42rem;
+}
+.register {
+  width: 100%;
+  height: auto
+}
+.register h4 {
+  text-align: center;
+  margin-top: 1%;
+  color: #00b1ff;
+}
+.register-as {
+  display: flex;
+}
+.register-as2 {
+  display: flex;
+}
+.register-all {
+  width: 100%;
+  max-width: 32% !important;
+  height: 120px;
+  background: #FFFFFF;
+  margin: 30px 10px 10px 10px !important;
+  text-align: center;
+  padding-top: 2.5rem !important;
+  border-radius: 12px;
+  border: 1px solid #848484;
+}
+.register-all2 {
+  max-width: 32% !important;
+  height: 120px;
+  background: #FFFFFF;
+  /*	margin: 30px 10px 10px 10px!important;*/
+  text-align: center;
+  padding-top: 2.5rem !important;
+  border-radius: 12px;
+  border: 1px solid #848484;
+  margin: 0 auto;
+}
+.mr {
+  margin-right: 1% !important;
+}
+.ml {
+  margin-left: 1% !important;
+}
+.login-card {
+  height: 50rem;
+  overflow: hidden;
+}
+.reg {
+  height: 48rem;
+  overflow: hidden;
+}
+.reg h4 {
+  color: #324FAD;
+  font-weight: bold;
+}
+.reg-std h4 {
+  color: #324FAD;
+  font-weight: bold;
+}
+.reg-enter {
+  height: 42rem;
+  overflow: hidden;
+}
+.reg-enter h4 {
+  color: #324FAD;
+  font-weight: bold;
+}
+.container {
+  padding: 2px 16px;
+}
+.header {
+  margin-top: 8% !important;
+}
+.fields {
+  padding-bottom: 20px;
+}
+.edit {
+  margin-top: 20px;
+  padding-right: 20px;
+}
+.form-control {
+  outline: none;
+  box-sizing: border-box;
+  border: none;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 12px !important;
+}
+.email {
+  width: auto !important;
+  color: #6E6E6E;
+}
+.login {
+  text-align: center;
+  margin-top: 10px;
+}
+.images img {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+.btn1 {
+  width: 5rem;
+  border-radius: 12px;
+  padding: 5px !important;
+  background: #00b1ff !important;
+  outline: none;
+  border: none;
+}
+.login-btn {
+  background: #00b1ff !important;
+  outline: none;
+  border: none;
+}
+.bg-blue {
+  background-color: #4381c3;
+}
+.bg-gray {
+  background-color: #e7e7e7 !important;
+}
+.icon img {
+  width: 15%;
+}
+.login-logo {
+  margin-top: 7rem;
+}
+.login-logo img, .login-logo-reg img {
+  width: 50%;
+}
+.login-logo-reg {
+  margin-top: 8rem;
+}
+.login-logo-com {
+  margin-top: 7rem;
+}
+.login-logo-pro {
+  margin-top: 7rem;
+}
+.com img {
+  width: 75%;
+}
+.pro img {
+  width: 76%;
+}
+.std img {
+  width: 48%;
+}
+.mem img {
+  width: 48%;
+}
+.admin-login {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+}
+.admin-login{
+	position: absolute;
+	background: rgba(0,0,0,.07);
+	z-index: 2;
+}
+.admin-log {
+  position: absolute;
+  top: 50%;
+  right: 8%;
+}
+@media (max-width: 1200px) {
+  .login-logo {
+    margin-top: 2rem;
+  }
+  .login-logo img {
+    width: 55%;
+  }
+  .card-header {
+    font-size: 15px !important;
+  }
+  .form-group {
+    display: block !important;
+  }
+  .name {
+    font-size: 14px !important;
+  }
+  .register-all2 {
+    max-width: 32% !important;
+    margin: 0 auto;
+  }
+  .banner img, .banner-1 img, .banner-2 img, .banner-enter img {
+    object-fit: fill;
+  }
+  .login-height {
+    height: 31rem;
+  }
+}
+@media (max-width: 991.98px) {
+  .width {
+    width: 90%;
+  }
+  .card-header {
+    font-size: 11px !important;
+  }
+  .form-group {
+    display: block !important;
+  }
+  .name {
+    font-size: 14px !important;
+  }
+  .login-height {
+    height: 29rem;
+  }
+  .login-height-2 {
+    height: 26rem;
+  }
+  .login-header {
+    height: auto !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .card-header {
+    font-size: 11px !important;
+  }
+  .form-group {
+    display: block !important;
+  }
+  #emailHelp {
+    font-size: 12px !important;
+  }
+  .name {
+    font-size: 14px !important;
+  }
+  .register-as {
+    display: block;
+  }
+  .register-all {
+    max-width: 60% !important;
+    margin: 5% auto !important;
+  }
+  .register-all2 {
+    max-width: 60% !important;
+    margin: 5% auto !important;
+  }
+  .register-as2 {
+    display: block;
+    margin: 0 !important;
+  }
+  .mem img, .std img, .com img {
+    width: 100%;
+  }
+  .com h2, .std h2, .mem h2 {
+    font-size: 18px;
+  }
+  .banner, .banner-1, .banner-2, .banner-enter {
+    display: none;
+  }
+  .login-form {
+    margin: 0 auto;
+  }
+  .login-logo-reg {
+    margin-top: 2rem;
+  }
+  .login-logo-com {
+    margin-top: 0rem;
+  }
+  .register h4 {
+    text-align: left;
+    margin-left: 2rem;
+  }
+}
+@media (max-width: 575.98px) {
+  .card-header {
+    font-size: 12px !important;
+  }
+  .form-group {
+    display: block !important;
+  }
+  #emailHelp {
+    font-size: 9px !important;
+  }
+  .name {
+    font-size: 14px !important;
+  }
+  .com h2, .std h2, .mem h2 {
+    font-size: 15px;
+  }
+  .login-height {
+    margin-left: 0;
+    padding: 0;
+  }
+}
+@media (max-width: 475px) {
+  .card-header {
+    font-size: 8px !important;
+  }
+  .name {
+    font-size: 12px !important;
+  }
+  .btn {
+    font-size: 10px !important;
+  }
+  #emailHelp {
+    font-size: 9px !important;
+  }
+  .register-all {
+    max-width: 100% !important;
+  }
+  .register-all2 {
+    max-width: 100% !important;
+  }
+  .create-btn {
+    font-size: 14px !important;
+  }
+  .reg {
+    margin-top: 5%;
+    height: 33.5rem;
+  }
+}
+@media (max-width: 320px) {
+  .card-header {
+    font-size: 9px !important;
+  }
+  .btn {
+    font-size: 10px !important;
+  }
+  #emailHelp {
+    font-size: 9px !important;
+  }
+  .pswd p {
+    font-size: 10px;
+  }
+  .create-btn {
+    font-size: 14px !important;
+  }
+}

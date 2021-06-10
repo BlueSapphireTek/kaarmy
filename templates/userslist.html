@@ -1,0 +1,12 @@
+<html>
+<body>
+{% for i in users %}
+<a href="{% url 'userview' i.id  %}" >
+    <h3>
+            {{i.email}}
+
+    </h3> <br>
+    </a>
+{% endfor %}
+</body>
+</html>

@@ -1,0 +1,282 @@
+	.chat {
+	  margin-top: 2rem;
+	  margin-right: 2rem;
+	  margin-bottom: auto;
+	}
+	.chat-modal .contacts_card {
+/*	  height: 500px;*/
+	  border-radius: 15px !important;
+	  background-color: rgba(28,27,27,1.00) !important;
+	}
+	.chat-modal .contacts_body {
+	  height: 66vh;
+	  padding: 0.75rem 0 !important;
+	  overflow-y: auto;
+	  white-space: nowrap;
+	}
+	.chat-modal .contacts a:hover {
+	  text-decoration: none;
+	}
+	.chat-modal .msg_card_body {
+	  height: 50vh;
+	  overflow-y: auto;
+	}
+	.chat-modal .card-header {
+	  border-radius: 15px 15px 0 0 !important;
+	  border-bottom: 0 !important;
+	}
+	.chat-modal .modal-footer {
+	  border-radius: 0 0 15px 15px !important;
+	  border-top: 0 !important;
+	  background-color: rgba(0, 0, 0, 0.4) !important;
+	}
+	.chat-modal .justify-content-start {
+	  -ms-flex-pack: start !important;
+	  justify-content: flex-start !important;
+	}
+	.chat-modal .justify-content-end {
+	  -ms-flex-pack: end !important;
+	  justify-content: flex-end !important;
+	}
+	.chat-modal .mb-4, .my-4 {
+	  margin-bottom: 1.5rem !important;
+	}
+	.chat-modal .container {
+	  align-content: center;
+	}
+	.chat-search {
+	  border-radius: 15px 0 0 15px !important;
+	  background-color: rgba(0, 0, 0, 0.3) !important;
+	  border: 0 !important;
+	  color: white !important;
+	}
+	.chat-search:focus {
+	  box-shadow: none !important;
+	  outline: 0px !important;
+	}
+	.chat-modal .type_msg {
+	  background-color: rgba(0, 0, 0, 0.3) !important;
+	  border: 0 !important;
+	  color: white !important;
+	  height: 57px !important;
+	  overflow-y: auto;
+	}
+	.chat-modal .type_msg:focus {
+	  box-shadow: none !important;
+	  outline: 0px !important;
+	}
+	.chat-modal .attach_btn {
+	  border-radius: 15px 0 0 15px !important;
+	  background-color: rgba(0, 0, 0, 0.3) !important;
+	  border: 0 !important;
+	  color: white !important;
+	  cursor: pointer;
+	  height: 57px !important;
+	}
+	.chat-modal .send_btn {
+	  border-radius: 0 15px 15px 0 !important;
+	  background-color: rgba(0, 0, 0, 0.3) !important;
+	  border: 0 !important;
+	  color: white !important;
+	  cursor: pointer;
+	}
+.chat-search_btn {
+	  border-radius: 0 15px 15px 0 !important;
+	  background-color: rgba(0, 0, 0, 0.3) !important;
+	  border: 0 !important;
+	  color: white !important;
+	  cursor: pointer;
+	  padding: 0.375rem 2rem !important;
+	}
+	.chat-modal .contacts {
+	  list-style: none;
+	  padding: 0;
+	}
+	.chat-modal .contacts li {
+	  width: 100% !important;
+	  padding: 5px 10px;
+	  margin-bottom: 15px !important;
+	}
+	.chat-modal .active {
+	  background-color: rgba(0, 0, 0, 0.3);
+	}
+	.chat-modal .user_img {
+	  height: 70px;
+	  width: 70px;
+	  border: 1.5px solid #f5f6fa;
+	}
+	.chat-modal .user_img_msg {
+	  height: 40px;
+	  width: 40px;
+	  border: 1.5px solid #f5f6fa;
+	}
+	.chat-modal .img_cont {
+	  position: relative;
+	  height: 70px;
+	  width: 70px;
+	}
+	.chat-modal .img_cont_msg {
+	  height: 40px;
+	  width: 40px;
+	}
+	.chat-modal .online_icon {
+	  position: absolute;
+	  height: 15px;
+	  width: 15px;
+	  background-color: #4cd137;
+	  border-radius: 50%;
+	  bottom: 0.2em;
+	  right: 0.4em;
+	  border: 1.5px solid white;
+	}
+	.chat-modal .offline {
+	  background-color: #c23616 !important;
+	}
+	.chat-modal .user_info {
+	  margin-top: auto;
+	  margin-bottom: auto;
+	  margin-left: 15px;
+	}
+	.chat-modal .user_info span {
+	  font-size: 20px;
+	  color: white;
+	}
+	.chat-modal .user_info p {
+	  font-size: 10px;
+	  color: rgba(255, 255, 255, 0.6);
+	}
+	.chat-modal .video_cam {
+	  margin-left: 50px;
+	  margin-top: 5px;
+	}
+	.chat-modal .video_cam span {
+	  color: white;
+	  font-size: 20px;
+	  cursor: pointer;
+	  margin-right: 20px;
+	}
+	.chat-modal .msg_cotainer {
+	  margin-top: auto;
+	  margin-bottom: auto;
+	  margin-left: 10px;
+	  border-radius: 25px;
+	  background-color: #82ccdd;
+	  padding: 10px;
+	  position: relative;
+	}
+	.chat-modal .msg_cotainer_send {
+	  margin-top: auto;
+	  margin-bottom: auto;
+	  margin-right: 10px;
+	  border-radius: 25px;
+	  background-color: #78e08f;
+	  padding: 10px;
+	  position: relative;
+	}
+	.chat-modal .msg_time {
+	  position: absolute;
+	  left: 0;
+	  bottom: -15px;
+	  color: rgba(255, 255, 255, 0.5);
+	  font-size: 10px;
+	}
+	.chat-modal .msg_time_send {
+	  position: absolute;
+	  right: 0;
+	  bottom: -15px;
+	  color: rgba(255, 255, 255, 0.5);
+	  font-size: 10px;
+	}
+	.chat-modal .msg_head {
+	  position: relative;
+	}
+	.chat-modal #action_menu_btn {
+	  position: absolute;
+	  right: 10px;
+	  top: 10px;
+	  color: white;
+	  cursor: pointer;
+	  font-size: 20px;
+	}
+	.d-flex {
+	  display: flex;
+	}
+	.chat-modal .rounded-circle {
+	  border-radius: 100%;
+	  object-fit: cover;
+	}
+	.chat-modal .input-group {
+	  position: relative;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -ms-flex-wrap: wrap;
+	  flex-wrap: wrap;
+	  -ms-flex-align: stretch;
+	  align-items: stretch;
+	  width: 100%;
+	}
+	.chat-modal .input-group .form-control {
+	  position: relative;
+	  -ms-flex: 1 1 auto;
+	  flex: 1 1 auto;
+	  width: 1%;
+	  margin-bottom: 0;
+	}
+	.chat-modal .input-group-prepend {
+	  margin-right: 90px;
+	  display: -ms-flexbox;
+	  display: flex;
+	}
+	.chat-modal .input-group-append {
+	  margin-right: -1px;
+	}
+	.chat-modal .input-group-text {
+	  display: -ms-flexbox;
+	  display: flex;
+	  -ms-flex-align: center;
+	  align-items: center;
+/*	  padding: 2.375rem 2.75rem;*/
+	  margin-bottom: 0;
+	  font-size: 1rem;
+	  font-weight: 400;
+	  line-height: 1.5;
+	  color: #495057;
+	  text-align: center;
+	  white-space: nowrap;
+	  background-color: #e9ecef;
+	  border: 1px solid #ced4da;
+	  border-radius: .25rem;
+	}
+	.chat-modal .action_menu {
+	  z-index: 1;
+	  position: absolute;
+	  padding: 15px 0;
+	  background-color: rgba(0, 0, 0,1);
+	  color: white;
+	  border-radius: 15px;
+	  top: 30px;
+	  right: 15px;
+	  display: none;
+	}
+	.chat-modal .action_menu ul {
+	  list-style: none;
+	  padding: 0;
+	  margin: 0;
+	}
+	.chat-modal .action_menu ul li {
+	  width: 100%;
+	  padding: 10px 15px;
+	  margin-bottom: 5px;
+	}
+	.chat-modal .action_menu ul li i {
+	  padding-right: 10px;
+	}
+	.chat-modal .action_menu ul li:hover {
+	  cursor: pointer;
+	  background-color: rgba(0, 0, 0, 0.2);
+	}
+	@media(max-width: 576px) {
+	 .chat-modal .contacts_card {
+	    margin-bottom: 15px !important;
+	  }
+	}

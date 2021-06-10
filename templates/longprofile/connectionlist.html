@@ -1,0 +1,116 @@
+{% extends 'longprofile/base.html' %}
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+    <div class="row m-0">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 center-scroll row-height pt-3">
+        <div class="row m-0">
+          <div class="post-heading w-100"> <img src="{% static 'img/conlist.png' %}" alt="" style="width: 50px;" > <span class="px-4 items">Connection</span> </div>
+          
+          <div class="w-100 m-0 mt-3 col-12 pl-0 pr-0">
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+              <li class="nav-item" role="presentation"> <a class="nav-link active" id="pills-expertise-tab" data-toggle="pill" href="#navPendingRequest" role="tab" aria-controls="pills-home" aria-selected="true">Pending Request</a> </li>
+              <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-experience-tab" data-toggle="pill" href="#navMyconnection" role="tab" aria-controls="pills-profile" aria-selected="false">My Connections</a> </li>
+            </ul>
+            <div class="col-12 tab-content py-3 pl-0 px-sm-0" id="nav-tabContent">
+              <div class="tab-pane fade  show active" id="navPendingRequest" role="tabpanel" aria-labelledby="nav-profile-tab">
+                {% for i in pendingRequest %}
+                    <div class="enquiry connect d-flex col-xl-10 col-lg-10 col-md-10 col-sm-10 col-12">
+                        <div class="enquiry-1 connection-1">
+                            {% if i.user.bio.profile_pic %}
+                                <a href="{% url 'activitypostalluser' i.user_id %}" style="color:#212529; text-decoration:none"><div class="d-flex  avatar"> <img src="{{i.user.bio.profile_pic}}" class="rounded-circle border p-1" height="70" width="70" alt="" loading="lazy"><h5 class="p-4">{{i.user.first_name}}</h5></div></a>
+                            {% else %}
+                                <a href="{% url 'activitypostalluser' i.user_id %}" style="color:#212529; text-decoration:none"><div class="d-flex  avatar"> <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle border p-1" height="70" width="70" alt="" loading="lazy"><h5 class="p-4">{{i.user.first_name}}</h5></div></a>
+                            {% endif %}
+                            <div class="d-flex mt-4 appointment-btns">
+                                <a type="button" class="btn btn-success m-1 appointment-btn" id="connections_accept" role="button" href="{% url 'connectionAccept' i.pk %}" style="border-radius:12px;">Approve</a>
+                                <a type="button" class="btn btn-danger m-1 appointment-btn" id="connections_remove" role="button" href="{% url 'connectionDelete' i.pk %}" style="border-radius:12px;">Remove</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="tab-pane fade" id="navMyconnection" role="tabpanel" aria-labelledby="nav-profile-tab">
+                {% for i in myConnections %}
+                    <div class="enquiry connect d-flex col-xl-10 col-lg-10 col-md-10 col-sm-10 col-12">
+                        <div class="enquiry-1 connection-1">
+                            {% if i.user_id != request.user.id %}
+                                {% comment %} <h5>{{i.user.first_name}}</h5> {% endcomment %}
+                                {% if i.user.bio.profile_pic %}
+                                    <a href="{% url 'activitypostalluser' i.user_id %}" style="color:#212529; text-decoration:none"><div class="d-flex  avatar"> <img src="{{i.user.bio.profile_pic}}" class="rounded-circle border p-1" height="70" width="70" alt="" loading="lazy"><h5 class="p-4">{{i.user.first_name}}</h5></div></a>
+                                {% else %}
+                                    <a href="{% url 'activitypostalluser' i.user_id %}" style="color:#212529; text-decoration:none"><div class="d-flex  avatar"> <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle border p-1" height="70" width="70" alt="" loading="lazy"><h5 class="p-4">{{i.user.first_name}}</h5></div></a>
+                                {% endif %}
+                            {% else %}
+                                {% comment %} <h5>{{i.connected_person.first_name}}</h5> {% endcomment %}
+                                {% if i.user.bio.profile_pic %}
+                                    <a href="{% url 'activitypostalluser' i.user_id %}" style="color:#212529; text-decoration:none"><div class="d-flex  avatar"> <img src="{{i.connected_person.bio.profile_pic}}" class="rounded-circle border p-1" height="70" width="70" alt="" loading="lazy"><h5 class="p-4">{{i.connected_person.first_name}}</h5></div></a>
+                                {% else %}
+                                    <a href="{% url 'activitypostalluser' i.user_id %}" style="color:#212529; text-decoration:none"><div class="d-flex  avatar"> <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle border p-1" height="70" width="70" alt="" loading="lazy"><h5 class="p-4">{{i.connected_person.first_name}}</h5></div></a>
+                                {% endif %}
+                            {% endif %}
+                            <div class="d-flex mt-4 appointment-btns">
+                                <a type="button" class="btn btn-danger m-1 appointment-btn" id="connections_remove" role="button" href="{% url 'connectionDelete' i.pk %}" style="border-radius:12px;">Disconnect</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %} 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    $(window).on('load',realTime());
+    function realTime(){
+        $.ajax({
+            type:"get",
+            url:"{% url 'countAndNotifications' instance.pk %}",
+            success:function(data){
+                $("#html").html(data["data"])
+                // console.log(data["data"])
+                setTimeout(realTime, 2000);
+            }
+        });
+    }
+</script>
+{% endblock %}
+<!-- 
+<body>
+    <h3>Your Connections</h3>
+    <h5>Pending Request</h5>
+    <div id="html"> 
+    {% for i in pendingRequest %}
+        <div>
+            <p style="display: inline-block;">{{i.user.first_name}}</p>
+            <a type="button" class="btn btn-success" id="connections_accept" role="button" href="{% url 'connectionAccept' i.pk %}">Accept</a>
+            <a type="button" class="btn btn-danger" id="connections_remove" role="button" href="{% url 'connectionDelete' i.pk %}">Remove</a>
+        </div>
+    {% endfor %}
+    </div>
+    <h5>My Connections</h5>
+    {% for i in myConnections %}
+        {% if i.user_id != request.user.id %}
+            <p style="display: inline-block;">{{i.user.first_name}}</p>
+        {% else %}
+            <p style="display: inline-block;">{{i.connected_person.first_name}}</p>
+        {% endif %}
+        <a type="button" class="btn btn-danger" id="connections_remove" role="button" href="{% url 'connectionDelete' i.pk %}">Disconnect</a>
+    {% endfor %}
+    <script>
+        $(window).on('load',realTime());
+        function realTime(){
+            $.ajax({
+                type:"get",
+                url:"{% url 'countAndNotifications' instance.pk %}",
+                success:function(data){
+                    $("#html").html(data["data"])
+                    // console.log(data["data"])
+                    setTimeout(realTime, 2000);
+                }
+            });
+        }
+    </script>
+</body> -->

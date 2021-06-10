@@ -1,0 +1,174 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REGISTRATION | FREELANCER</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/byhand.css' %}">
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.js' %}"></script> 
+<script	type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid w-100">
+  <div class="row d-block">
+    <form class="form-inline my-2 my-lg-0" method="post" action="{% url 'login' %}">
+      {% csrf_token %}
+      <nav class="navbar navbar-expand-lg navbar-light w-100 login-header">
+       <div class="navbar-brand w-50"><img src="{% static 'img/logoNEW1.png' %}" alt=""></div>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+       <div class="collapse navbar-collapse pb-2" id="navbarSupportedContent">
+         <input type="text" class="form-control m-2 width" id="email" placeholder="Email or Phone Number" name="username">
+         <div class="width m-2 pswd">
+           <input type="password" class="form-control top width-pass" id="password" placeholder="Password" name="password">
+           <a href="{% url 'reset_passwordc' %}"><p>Forgot Password ?</p></a>
+         </div>
+           <a href="">
+           <button class="btn btn-primary my-2 my-sm-0 m-2 btn1" type="submit">Login</button>
+           </a>
+       </div>
+     </nav>
+     </form>
+	  <div class="col-12 w-100 row login-height login-height-2">
+      <div class="col-xl-9 col-lg-8 col-md-6 banner-1 p-0">  <img src="{% static 'img/freelancer.1.png' %}" alt="" class="card-img-top"> </div>
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 login-form">
+        <form action="#" method="post">
+          {% csrf_token %}
+          <div class="card reg pt-0 border-0">
+           <div class="p-2 mb-0 w-100 login-logo-com text-center"> 
+			  <i class="fas fa-user" style="font-size: 5rem; color: #00b1ff;"></i> </div>
+			  <div class="d-flex">
+              <input type="text" class="form-control mt-4 ml-2 mr-2" id="fname" placeholder="First Name" name="first_name" required>
+              <input type="text" class="form-control mt-4 ml-2 mr-2" id="lname" placeholder="Last Name" name="last_name" required>
+            </div>
+			  <!-- <select class="form-control mt-3 ml-2 mr-2 email" name="position" id="position">
+            <option value="">Position</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="c">C</option>
+          </select> -->
+          <input type="text" class="form-control mt-3 ml-4 mr-2 email" id="profession" placeholder="Enter profession" name="profession"  autocomplete="off">
+            <input type="email" class="form-control mt-3 ml-2 mr-2 email" id="email2" placeholder="Email" name="email" value="{{ view.email }}" autocomplete="off" required>
+            <input type="tel" class="form-control mt-3 ml-2 mr-2 email" id="phoneno" placeholder="Phone Number" name="phone" value = "{{view.phone}}" autocomplete="off" required minlength="10" maxlength="15" required>
+            <div class="col-12 buttons mt-4 mb-3 login">
+              <button type="submit" class="btn btn-primary btn1 mb-3 w-75 create-btn" id="submit-btn">Create Account</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $('#email2').keyup(function(){
+
+
+      var email= $('#email2').val();
+      
+
+          if(email!=""){
+
+                  $.ajax({
+
+                      url : '{% url 'check_email_existe' %}',
+                      type : 'POST',
+                      data : {email:email},
+                  })
+                  .done(function(response){
+
+                       if(response == 'True'){
+                        console.log(response);
+                       $('.email-error').hide();
+                       $( "#email2" ).after( '<span class="email-error pl-5" style="color:red">email already used</span>' );
+                       $("#submit-btn").attr("disabled", true)
+                       console.log('hi');
+                       }else{
+                        console.log(response);
+                         $('.email-error').hide();
+                         $("#submit-btn").removeAttr("disabled")
+                       }
+              })
+
+                  }
+})
+
+
+$('#phoneno').keyup(function(){
+      $(".phoneno-error").hide()
+
+  
+
+      var phoneno= $('#phoneno').val();
+
+          if(phoneno!=""){
+
+
+                  $.ajax({
+
+
+                      url : '{% url 'check_phone_existe' %}',
+                      type : 'POST',
+                      data : {phoneno:phoneno},
+                  })
+                  .done(function(response){
+                  console.log(response);
+
+                       if(response == 'True'){
+                       $('.phoneno-error').hide();
+                       $("#phoneno" ).after( '<span class="phoneno-error pl-5" style="color:red">phone number already used</span>' );
+                       $("#submit-btn").attr("disabled", true)
+                       }else{
+                         $('.phoneno-error').hide();
+                         $("#submit-btn").removeAttr("disabled")
+                       }
+
+              })
+
+                  }
+
+
+})
+
+
+</script>
+
+<!-- <script>
+  $('#submit-btn').on("click",function(e){
+    e.preventDefault()
+    
+    var email= $('#email2').val();
+      
+
+          if(email!=""){
+
+                  $.ajax({
+
+                      url : '{% url 'check_email_exist' %}',
+                      type : 'POST',
+                      data : {email:email},
+                  })
+                  .done(function(response){
+
+                       if(response == 'True'){
+                        console.log(response);
+                       $('.email-error').hide();
+                       $( "#email2" ).after( '<span class="email-error pl-5" style="color:red">email already used</span>' );
+                      //  $("#submit-btn").attr("disabled", true)
+                       console.log('hi');
+                       }else{
+                        console.log(response);
+                         $('.email-error').hide();
+                         $("#submit-btn").removeAttr("disabled")
+                       }
+
+              })
+
+                  }
+  })
+</script> -->
+
+</body>
+</html>

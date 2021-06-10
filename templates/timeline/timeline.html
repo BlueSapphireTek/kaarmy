@@ -1,0 +1,1276 @@
+{% extends 'base.html' %}
+
+{% block top %}
+{% load static %}
+
+{% load humanize %}
+
+
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOME</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<!--<link href="css/mdb.min.css" rel="stylesheet" type="text/css">-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="{% static 'css/byhand-all.css' %}">
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script> 
+<script	type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
+<link href="{% static 'css/mdb.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet"/>
+<link href="{% static 'fontawesome-pro-5.13.0/css/all.css' %}" rel="stylesheet"/>
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script> 
+<script	type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.liveurl.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'fontawesome-pro-5.13.0/js/all.js' %}"></script>
+</head>
+<body>
+
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Timeline</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/byhand-all.css' %}">
+	<link rel="stylesheet" href="{% static 'css/chat.css' %}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
+<!-- <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet"/> -->
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet"/>
+<link href="{% static 'fontawesome-pro-5.13.0/css/all.css' %}" rel="stylesheet"/>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script> 
+<script	type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.liveurl.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'fontawesome-pro-5.13.0/js/all.js' %}"></script>
+</head>
+<body>
+
+  {% endblock %}
+
+
+    <!-- /#sidebar-wrapper -->
+    <!-- Page Content -->
+
+    {% block down%}
+
+  <!-- /#sidebar-wrapper --> 
+  <!-- Page Content -->
+  <div id="page-content-wrapper" class="d-flex w-100">
+    <div class="container-fluid">
+      <div class="row m-0">
+        <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xm-9 center-scroll row-height pt-3">
+          <div class="timeline-post pt-1 pb-1" style="	background-color: #f8f8f8; border-radius: 25px;">
+            <div class="d-flex mt-2 timeline-head avatar"> 
+              {% if request.user.bio.profile_pic %}
+              <img src="{{request.user.bio.profile_pic}}" class="rounded-circle " height="70" width="70" alt="" loading="lazy"/>
+              {% else %}
+              <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle " height="70" width="70" alt="" loading="lazy"/>
+              {%endif%}
+              <textarea class="form-control" data-toggle="modal" data-target="#newPostModal" rows="1" placeholder="Start a post"></textarea>
+            </div>
+            <div class="d-flex">
+              <p data-toggle="modal" data-target="#newPostPhotoModal"><span><i class="far fa-image text-blue mr-1"></i></span>Photos</p>
+              <p data-toggle="modal" data-target="#newPostVideoModal"><span><i class="fab fa-youtube text-success mr-1"></i></span>Videos</p>
+              <!-- <p  data-toggle="modal" data-target="#newEventModal"><span><i class="fas fa-calendar-day text-chocolate mr-1"></i></span>Event</p>
+              <p data-toggle="modal" data-target="#newEnquiryModal"><span><i class="fas fa-calendar-alt text-peach mr-1"></i></span>Enquiry</p> -->
+            </div>
+          </div>
+          {% for i in post_items %}
+          <div class="card mt-4" style="background-color: #f8f8f8; border-radius:50px;">
+            <div class="card-header border-0">
+              <div class="card-title d-flex w-100 justify-content-between">
+                <div class="d-flex avatar"> 
+                  <!-- {% if  i.user.bio.profile_pic %} -->
+                  
+                  <img src="{{ i.user.bio.profile_pic }}" class="rounded-circle " height="70" width="70" alt="" loading="lazy"/>
+                  <!-- {% else %}
+                  <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle " height="70" width="70" alt="" loading="lazy"/>
+                  {% endif %} -->
+                  <div class="d-block ml-2 post-name">
+                    <h6 class="mt-3"><strong>{% if i.user.first_name %}{{i.user.first_name}} {%endif%}   {% if i.user.last_name %} {{ i.user.last_name}}{% endif %}</strong></h6>
+                    <div class="post-name"><small class="text-muted">{{i.date|naturaltime}}</small>
+                      <button type="button" class="custom-btn" title="Save"><i class="fas fa-globe-asia"></i></button>
+                    </div>
+                  </div>
+                </div>
+				  <div class="timeline-settings pt-2">
+
+ 
+  <div class="dropdown-container" tabindex="-1">
+    <div class="three-dots" ></div>
+    <div class="dropdown report">
+		<div data-toggle="modal"   data-target="#exampleModalLong{{i.id}}"><a>Report Post</a></div>
+    {% if i.user_id == request.user.id %}
+    <div data-toggle="modal" id={{i.id}}  onclick="deleteClick(this.id)">Delete Post</div>
+    {% endif %}
+    </div>
+  </div>
+ 
+
+				  </div>
+              </div>
+            </div>
+            <div class="card-body timeline-body">
+              <p class="card-text">{% if i.caption %}{{i.caption}}{% endif %}</p>
+            
+            <div class="fit-image" style="width: 100%; height: 30rem; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+          {% if i.file %}
+
+            {% if i.file_type_html == "image" %}
+            <img src="{% if i.file %}{{ i.file.url }}{% endif %}" style="object-fit: contain; -webkit-flex-shrink: 0;max-width: 100%; max-height: 100%;"  alt="..."/>
+            {% elif i.file_type_html == "video" %}
+            <video controls> <source src="{{ i.file.url }}" type="video/mp4" style="object-fit: contain;"> </video>
+            {% else %}
+            <p> </p>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div> 
+            <div class="card-footer timeline-footer pl-3">
+              <a href="{% url 'postlike' i.id %}" id="likeBtn{{i.id}}" >
+                <i id="likeIcon{{i.id}}"
+                   class="{% if i in liked_posts %}fas fa-thumbs-up  {% else %} far fa-thumbs-up  {% endif %} text-blue">
+                </i></a> 
+
+                <button style="background:none;border:none;" class="ml-1">Like</button><button  id="likeCount{{i.id}}" style="background:none;border:none;" class="ml-1">  {{  i.likecount }}</button>
+                
+              
+              <button type="button" class="custom-btn comment-btn ml-5" title="Comment" id="comment-btn{{i.id}}"><i
+                class="far fa-comment-alt text-blue" ></i> Comment  {{i.cmtcount}}
+        </button>
+
+        <button type="button" class="custom-btn ml-5" title="Share" data-toggle="modal" data-target="#shareModal{{i.id}}"><i class="fas fa-share-square text-blue"></i> Share</button>
+
+        <div class="card-comment hidden" id="comment-card{{i.id}}">
+          <div class="d-flex avatar">
+              {% if bioview.image %}<img src="{{bioview.image.url}}" class="rounded-circle" height="50" style="margin-left: -31px;" alt=""
+                                   loading="lazy"/ > {% else %}
+              <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle" height="50" width="50" style="margin-left: -31px;" alt=""
+                                   loading="lazy"/>
+              {% endif %}
+              <h6 class="text-center mt-3 ml-2"><strong>{{request.user.first_name}}</strong></h6>
+          </div>
+          <form method="post" action="{% url 'comment' %}" id="commentForm{{i.id}}">
+              {% csrf_token %}
+
+          <div class="input-group">
+              <textarea class="comment-input " rows="1" placeholder="Write a comment.."
+                        name="comments" id="comments{{i.id}}" required></textarea>
+              <input type="hidden" value="{{i.id}}" name="commentid" id ="commentid{{i.id}}">
+              <button type="submit" class="btn btn-outline-famroutes btn-floating comment-send"><i
+                      class="fas fa-angle-double-right" style="font-size:25px;"></i></button>
+          </div>
+
+              </form>
+          <div class="col mt-3">
+              <h6>Recent Comments</h6>
+              <p>{{i.cmtcount}}</p>
+          </div>
+
+
+
+
+
+          <div class="card w-100 commentpost{{i.id}}">
+
+              {% for j in i.cmtset %}
+              <div class="d-flex p-3 avatar">
+                  
+                  <img src="{{j.user.bio.profile_pic}}"
+                      class="rounded-circle " height="40" width="40" alt="" loading="lazy"/>
+                  
+
+                  <h6 class="text-center mt-2 ml-2"><strong>{{j.user.first_name}}</strong></h6>
+              </div>
+              <div class="comment-text">
+                  <p>{{j.comment}}</p>
+              </div>
+<!--                                    <div class="d-flex p-3 avatar"><img-->
+<!--                                            src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"-->
+<!--                                            class="rounded-circle " height="70" width="70" alt="" loading="lazy"/>-->
+<!--                                        <h6 class="text-center mt-2 ml-2"><strong>Blue Sapphire</strong></h6>-->
+<!--                                    </div>-->
+                  {% endfor %}
+
+          </div>
+
+
+
+
+
+
+
+      </div>
+            </div>
+          </div>
+
+
+
+          <script>
+            $("#likeBtn{{i.id}}").click(function(e){
+                 e.preventDefault();
+           var URL = this.href;
+           var likecount = $('#likeCount{{i.id}}').val();
+           console.log(likecount);
+ 
+ 
+             $.ajax({
+                 url: URL,
+                 success: function (response) {
+                 console.log(response.liked);
+                 console.log(response.lcn);
+ 
+                     if (response.liked === true) {
+                         $("#likeIcon" + response.post_id).removeClass('far fa-thumbs-up text-blue');
+                         $("#likeIcon" + response.post_id).attr('class', 'fas fa-thumbs-up text-blue');
+ 
+                         $("#likeCount{{i.id}}").html(response.lcn);
+ 
+ 
+                     }
+                     else {
+                         $("#likeIcon" + response.post_id).removeClass('fas fa-thumbs-up text-blue');
+                         $("#likeIcon" + response.post_id).attr('class', 'far fa-thumbs-up text-blue');
+ 
+                         $("#likeCount{{i.id}}").html(response.lcn);
+ 
+                     }
+                 },
+ 
+             });
+         });
+ 
+ 
+         $('#comment-btn{{i.id}}').on('click', function(){
+        $('#comment-card{{i.id}}').toggleClass('hidden')
+     });
+
+ 
+ 
+ 
+                     </script>
+
+
+<script>
+  $("#commentForm{{i.id}}").on("submit", function(e) {
+      e.preventDefault();
+
+      var comments = $('#comments{{i.id}}').val();
+      var commentid = $('#commentid{{i.id}}').val();
+      var token =  '{{csrf_token}}';
+
+      $.ajax({
+            headers: { "X-CSRFToken": token },
+            url: "{% url 'comment' %}",
+            type: 'POST',
+            data: { "comments": comments,"commentid": commentid},
+            dataType: 'json',
+            success: function (comment_list) {
+
+                $("#commentForm{{i.id}}").trigger('reset');
+                 for (i of comment_list) {
+                 console.log(i.comment)
+                  //$(".card").prepend("<b>Prepended text</b>");
+
+
+              $('<div class="d-flex p-3"> <img src="{{request.user.bio.profile_pic}}" class="rounded-circle " height="40" width="40" alt="" loading="lazy"/> <h6 class="text-center mt-2 ml-2"><strong>{{request.user.first_name}}</strong></h6> </div><div class="comment-text"><p>'+ i.comment +'</p></div>').prependTo($('.commentpost{{i.id}}'));
+                 }
+
+
+{% comment %} <!--&lt;!&ndash;                                                            <div class="d-flex p-3"><img--> {% endcomment %}
+<!--                                            src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"-->
+<!--                                            class="rounded-circle " height="40" alt="" loading="lazy"/>-->
+<!--                                        <h6 class="text-center mt-2 ml-2"><strong>{{j.user.email}}</strong></h6>-->
+<!--                                    </div>-->
+<!--                                    <div class="comment-text">-->
+<!--                                        <p>{{j.comment}}</p>-->
+<!--                                    </div>-->
+
+
+          }
+
+      })
+
+  });
+</script>
+
+
+
+
+<!-- report modal-->
+
+<div class="modal fade" id="exampleModalLong{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle{{i.id}}">Report content</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+          <div class="aaaa" style="margin: 0px 0px 0px 17px;">
+            <form method="post" action="{% url 'postreport' %}" id="postreport{{i.id}}">
+              {% csrf_token %}
+              <input type="number" value ={{i.id}} id="postid{{i.id}}" name="postid" hidden>
+              
+              <input class="gender" type="radio" name="gender" id="gender{{i.id}}" value="Vilonce" style="float: right;" required>
+                            <label class="" for="inlineRadio1">Vilonce</label><br>
+                            <input class="gender" type="radio" name="gender" id="inlineRadio1" value="Spam" style="float: right;" required>
+                            <label class="" for="inlineRadio1">Spam</label><br>
+                            <input class="gender" type="radio" name="gender" id="inlineRadio1" value="Abuse" style="float: right;" required>
+                            <label class="" for="inlineRadio1">Abuse</label><br>
+                            
+          </div>
+          <!-- <div class="aaaa" style="margin: 0px 0px 0px 17px;">
+            <a>Spam</a>
+            <input type="radio" class="flavour" id="radioNoLabel1" value="" style="float: right; margin-right: 2em;" for="radioNoLabel1">
+        </div>
+        <div class="aaaa" style="margin: 0px 0px 0px 17px;">
+          <a>Spam</a>
+          <input type="radio" class="flavour" id="radioNoLabel1" value="" style="float: right; margin-right: 2em;" for="radioNoLabel1">
+      </div>
+      <div class="aaaa" style="margin: 0px 0px 0px 17px;">
+        <a>Spam</a>
+        <input type="radio" class="flavour" id="radioNoLabel1" value="" style="float: right; margin-right: 2em;" for="radioNoLabel1"> 
+    </div> -->
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger  text-white" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-bg-blue">Submit</button>
+      </div>
+    </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- ajax modal report-->
+
+<script>
+  $("#postreport{{i.id}}").on("submit",function(e){
+    e.preventDefault();
+
+    var postid = $("#postid{{i.id}}").val();
+    var gender = $(".gender:checked").val();
+
+    console.log(postid);
+    console.log(gender);
+
+   
+
+
+    $.ajax({
+      url: "{% url 'postreport' %}",
+      type: 'POST',
+      data: { "postid": postid ,"gender":gender,},
+      success: function (response) {
+      //$("#aboutus-modal").modal('hide');
+          $("#exampleModalLong{{i.id}}").modal('hide');
+           alert('post reported');
+           
+
+          //alert('sucess');
+
+          }
+    })
+
+  })
+
+
+
+
+
+
+
+</script>
+
+
+
+
+            <!--share button -->
+            <div class="modal fade" id="shareModal{{i.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content col-8">
+                      <div class="modal-header">
+                          <h5 class="modal-title">Share</h5> <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                      </div>
+                      <div class="modal-body">
+                          <div class="icon-container1 d-flex">
+
+                            <textarea id=postodr{{i.id}} hidden>http://www.kaarmy.com/social/post-detail/{{i.id}}</textarea>
+
+                            <!-- <input type="text" value="http://127.0.0.1:8000/social/post-detail/{{i.id}}" id=postodr{{i.id}} hidden> -->
+          
+                               <div class="smd ml-2"> <a style="text-decoration:none;color:black" href="" id="whatsapp{{i.id}}"><i class="img-thumbnail fab fa-whatsapp fa-2x" style="color: #25D366;background-color: #cef5dc;"></i>
+                                  <p>Whatsapp</p> </a>
+                              </div>
+          
+                              <div class="smd ml-2"> <a href="" style="text-decoration:none;color:black" id="fb{{i.id}}"><i class="img-thumbnail fab fa-facebook fa-2x" style="color: #3b5998;background-color: #eceff5;"></i>
+                                  <p>Facebook</p></a>
+                              </div>
+          
+                              <!-- <div class="smd ml-2"> <a href="" style="text-decoration:none;color:black" id="twitter{{i.id}}"><i class=" img-thumbnail fab fa-twitter fa-2x" style="color:#4c6ef5;background-color: aliceblue"></i>
+                                  <p>Twitter</p> </a>
+                              </div> -->
+          
+                              <div class="smd ml-2" onclick="myFunctio{{i.id}}()"> <i class="img-thumbnail fas fa-copy fa-2x" style="color: #cbced6;background-color: aliceblue;"></i>
+                                  <p>Select Link</p>
+                              </div>
+          
+                          </div>
+          
+          <!--                <div class="icon-container2 d-flex">-->
+          <!--                    <div class="smd"> <i class="img-thumbnail fab fa-whatsapp fa-2x" style="color: #25D366;background-color: #cef5dc;"></i>-->
+          <!--                        <p>Whatsapp</p>-->
+          <!--                    </div>-->
+          <!--                    <div class="smd"> <i class="img-thumbnail fab fa-facebook-messenger fa-2x" style="color: #3b5998;background-color: #eceff5;"></i>-->
+          <!--                        <p>Messenger</p>-->
+          <!--                    </div>-->
+          <!--                    <div class="smd"> <i class="img-thumbnail fab fa-telegram fa-2x" style="color: #4c6ef5;background-color: aliceblue"></i>-->
+          <!--                        <p>Telegram</p>-->
+          <!--                    </div>-->
+          <!--                    <div class="smd"> <i class="img-thumbnail fab fa-weixin fa-2x" style="color: #7bb32e;background-color: #daf1bc;"></i>-->
+          <!--                        <p>WeChat</p>-->
+          <!--                    </div>-->
+          <!--                </div>-->
+                      </div>
+          <!--            <div class="modal-footer"> <label style="font-weight: 600">Page Link <span class="message"></span></label><br />-->
+          <!--                <div class="row"> <input class="col-10 ur" type="url" placeholder="https://www.arcardio.app/acodyseyy" id="myInput" aria-describedby="inputGroup-sizing-default" style="height: 40px;"> <button class="cpy" onclick="myFunction()"><i class="far fa-clone"></i></button> </div>-->
+          <!--            </div>-->
+                  </div>
+              </div>
+          
+                                      <script type="text/javascript">
+                                          
+                                          function myFunctio{{i.id}}() {
+/* Get the text field */
+var copyText{{i.id}} = document.getElementById("postodr{{i.id}}");
+var fullLink = document.createElement('input');
+console.log(copyText{{i.id}});
+                        
+
+/* Select the text field */
+copyText{{i.id}}.focus();
+copyText{{i.id}}.select();
+copyText{{i.id}}.setSelectionRange(0, 99999); /* For mobile devices */
+
+/* Copy the text inside the text field */
+document.execCommand("copy");
+
+/* Alert the copied text */
+alert("Post link is: " + copyText{{i.id}}.value);
+}
+
+                                          const facebookbtn{{i.id}} = document.querySelector("#fb{{i.id}}");
+                                          const whatsappbtn{{i.id}} = document.querySelector("#whatsapp{{i.id}}");
+                                          const twitterbtn{{i.id}} = document.querySelector("#twitter{{i.id}}");
+          
+                                          function init(){
+                  
+            let postUrl{{i.id}} = encodeURI('http://www.kaarmy.com/social/post-detail/{{i.id}}');
+            let postTitle = encodeURI("Interesting Post on kaarmy");
+            
+          
+            facebookbtn{{i.id}}.setAttribute(
+              "href",
+              `https://www.facebook.com/sharer.php?u=${postUrl{{i.id}} }`
+            );
+            whatsappbtn{{i.id}}.setAttribute(
+              "href",
+              `https://wa.me/?text=${postTitle} ${postUrl{{i.id}} }`
+            );
+            twitterbtn{{i.id}}.setAttribute(
+              "href",
+              `https://twitter.com/share?url=${postUrl{{i.id}} }&text=${postTitle}`
+            );
+          
+          //  mailbutton.setAttribute(
+          //    "href",
+          //    `https://www.facebook.com/sharer.php?u=${postUrl }`
+          //  );
+          }
+          init();
+                                      </script>
+                                      </div>
+
+
+
+          {% empty %}
+          <p class="mt-5 ml-5">No Posts to view Follow Kaarmy Profile to View Postfeed</p>
+          {% endfor%}
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xm-3 pt-3 p-0 kaarmy-profile">
+          <div class="personal-profile text-center m-3 mt-0 d-block avatar"> <img src="{{request.user.bio.profile_pic}}" class="rounded-circle" width="100" height="100" alt="">
+            <h5>{% if request.user.first_name %}{{request.user.first_name}} {%endif%}   {% if request.user.last_name %} {{request.user.last_name}}{% endif %}</h5>
+            <p>{% if userextend.profession %}{{userextend.profession}}{% else %} {{userextend.group}}{%endif%}</p>
+            <p></p>
+          </div>
+          <div class="personal-profile text-center m-3">
+            <h4>Kaarmy News</h4>
+            <h6>{{ntitle}}</h6>
+            <p>----------------------------</p>
+            <p>{{ndes}}</p>
+            <img src="{{nimg}}" style="width: 13rem;height: 9rem;"><br>
+            <a href="{{nurl}}">readmore...</a>
+          </div>
+          <div class="text-center m-3 p-0"> <img src="{% static 'img/ads.jpg' %}" class="img-fluid p-2" alt="">  </div>
+          <div class=" text-center m-3 p-0"> <a href="#">
+            <p class="text-dark text-decoration-none">About</p>
+            </a> <a href="#">
+            <p class="text-dark text-decoration-none">Privacy & Plicy</p>
+            </a> <a href="#">
+            <p class="text-dark text-decoration-none">Help Center</p>
+            </a> <a href="#">
+            <p class="text-dark text-decoration-none">Contact us</p>
+            </a> </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /#page-content-wrapper --> 
+</div>
+<div class="text-center text-white p-3" style="background-color: #00b1ff;"> Copyright 2021 © <a class="text-white font-weight-bolder text-decoration-none" href="#">Infonics</a> Powered by <a class="text-white font-weight-bolder text-decoration-none" href="http://bluesapphiretek.com/" target="_blank">BlueSapphire Info Solutions Pvt Ltd.</a> </div>
+	<!--Post Modal Start     -->
+<div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-model-content">
+      <div class="modal-header custom-modal-header bg-gradient-blue">
+        <h5 class="modal-title" id="newPostModalLabel">Create Post</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{% url 'post' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <div class="mb-3 col-12 p-0">
+            <div class="d-flex">
+              <div class="d-flex col-8 pl-0 avatar name"> 
+                {% if request.user.bio.profile_pic %}
+                <img src="{{request.user.bio.profile_pic}}" class="rounded-circle " height="50" width="50" alt="" loading="lazy"/>
+                {% else %}
+                <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle " height="50" width="50" alt="" loading="lazy"/>
+                {% endif %}
+                 <h6 class="mt-3 pl-2"><strong>{{ request.user.first_name}}</strong></h6>
+              </div>
+              <select class="privacy-select border-0 text-right" name="privacy" id="privacy">
+                <option value="1">&#xf0ac; Public</option>
+                <option value="2">&#xf0c0; Friends</option>
+                <option value="3">&#xf023; Only Me</option>
+              </select>
+            </div>
+            <textarea class="form-control" placeholder="write something here..." style="height: 2rem; border-radius: 30px;" name="caption"
+            id="caption" maxlength="300" required></textarea>
+            <div class="liveurl-loader"></div>
+            <div class="liveurl">
+              <div class="close" title="Entfernen"></div>
+              <div class="inner">
+                <div class="image"></div>
+                <div class="details">
+                  <div class="info">
+                    <div class="title"></div>
+                    <div class="description"></div>
+                    <div class="url"></div>
+                  </div>
+                  <div class="thumbnail">
+                    <div class="pictures">
+                      <div class="controls">
+                        <div class="prev button inactive"></div>
+                        <div class="next button inactive"></div>
+                        <div class="count"> 
+                          <!-- <span class="current">0</span><span> on </span> -->
+                          <!-- <span class="max">0</span>  -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="video"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="preview"> <img class="img-thumbnail preview w-25 ml-2" src=".." alt=""> </div>
+          <div class="add">
+            <label for="upload-photos"><i class="far fa-image text-blue mr-4"></i></label>
+			   <input type="file" id="upload-photos" name="file" class="hidden" accept="image/*" required>
+			  <label for="upload-videos"><i class="fab fa-youtube text-success"></i></label>
+            <input type="file" id="upload-videos" name="file" class="hidden" accept="video/*">
+          </div>
+        
+         </div>
+        <div class="modal-footer border-0">
+          <button type="button" class="btn border-blue" data-dismiss="modal"> Close </button>
+          
+          <button type="submit" class="btn btn-bg-blue text-white">Post</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--Post Modal Ends-->
+<!--Photos Modal Start     -->
+<div class="modal fade" id="newPostPhotoModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-model-content">
+      <div class="modal-header custom-modal-header bg-gradient-blue">
+        <h5 class="modal-title" id="newPostPhotoModalLabel">Create Post</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{% url 'post' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3 col-12 p-0">
+            <div class="d-flex">
+             <div class="d-flex col-8 pl-0 avatar name"> 
+               {% if request.user.bio.profile_pic %}
+               <img src="{{request.user.bio.profile_pic}}" class="rounded-circle " height="50" width="50" alt="" loading="lazy"/>
+               {% else %}
+               <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle " height="50" width="50" alt="" loading="lazy"/>
+               {% endif %}
+                <h6 class="mt-3 pl-2"><strong>{{ request.user.first_name}}</strong></h6>
+              </div>
+              <select class="privacy-select border-0 text-right" name="privacy" id="privacy-photo">
+                <option value="1">&#xf0ac; Public</option>
+                <option value="2">&#xf0c0; Friends</option>
+                <option value="3">&#xf023; Only Me</option>
+              </select>
+            </div>
+            <textarea class="form-control" placeholder="write something here..." style="height: 2rem; border-radius: 30px;" name="caption"
+            id="caption" maxlength="300" required></textarea>
+            <div class="liveurl-loader"></div>
+            <div class="liveurl">
+              <div class="close" title="Entfernen"></div>
+              <div class="inner">
+                <div class="image"></div>
+                <div class="details">
+                  <div class="info">
+                    <div class="title"></div>
+                    <div class="description"></div>
+                    <div class="url"></div>
+                  </div>
+                  <div class="thumbnail">
+                    <div class="pictures">
+                      <div class="controls">
+                        <div class="prev button inactive"></div>
+                        <div class="count"> 
+                          <!-- <span class="current">0</span><span> on </span> -->
+                          
+                          <!-- <span class="max">0</span>  -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="preview"> <img class="img-thumbnail preview-photo w-25 ml-2" src=".." alt=""> </div>
+          <div class="add">
+            <label for="upload-photo"><i class="far fa-image text-blue"></i>Upload photos</label>
+            <input type="file" id="upload-photo" name="file" class="hidden" accept="image/*" multiple>
+          </div>
+      
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn border-blue" data-dismiss="modal"> Close </button>
+        <a href="#">
+        <button type="submit" class="btn btn-bg-blue text-white">Post</button>
+        </a> </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--Photos Modal Ends--> 
+	<!--Video Modal Start     -->
+<div class="modal fade" id="newPostVideoModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-model-content">
+      <div class="modal-header custom-modal-header bg-gradient-blue">
+        <h5 class="modal-title" id="newPostModalVideoLabel">Create Post</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form method="post" action="{% url 'post' %}" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="mb-3 col-12 p-0">
+            <div class="d-flex">
+             <div class="d-flex col-8 pl-0 avatar name"> 
+              {% if request.user.bio.profile_pic %}
+              <img src="{{request.user.bio.profile_pic}}" class="rounded-circle " height="50" width="50" alt="" loading="lazy"/>
+              {% else %}
+              <img src="{% static 'img/unknown.jpg' %}" class="rounded-circle " height="50" width="50" alt="" loading="lazy"/>
+              {% endif %}
+               <h6 class="mt-3 pl-2"><strong>{{ request.user.first_name }}</strong></h6>
+              </div>
+              <select class="privacy-select border-0 text-right" name="privacy" id="privacyVideo">
+                <option value="1">&#xf0ac; Public</option>
+                <option value="2">&#xf0c0; Friends</option>
+                <option value="3">&#xf023; Only Me</option>
+              </select>
+            </div>
+            <textarea class="form-control" placeholder="write something here..." style="height: 2rem; border-radius: 30px;" name="caption"
+            id="caption" required></textarea>
+            <div class="liveurl-loader"></div>
+            <div class="liveurl">
+              <div class="close" title="Entfernen"></div>
+              <div class="inner">
+                <div class="image"></div>
+                <div class="details">
+                  <div class="info">
+                    <div class="title"></div>
+                    <div class="description"></div>
+                    <div class="url"></div>
+                  </div>
+                  <div class="thumbnail">
+                    <div class="pictures">
+                      <div class="controls">
+                        <div class="prev button inactive"></div>
+                        <div class="next button inactive"></div>
+                        <div class="count"> 
+                          <!-- <span class="current">0</span><span> on </span> -->
+                          <!-- <span class="max">0</span>  -->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="video"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="preview"> <img class="img-thumbnail preview-video w-25 ml-2" src=".." alt=""> </div>
+          <div class="add">
+            <label for="upload-video"><i class="fab fa-youtube text-blue"></i>Upload videos</label>
+            <input type="file" id="upload-video" name="file" class="hidden" accept="video/*">
+          </div>
+        
+      </div>
+      <div class="modal-footer border-0">
+        <button type="button" class="btn border-blue" data-dismiss="modal"> Close </button>
+        <a href="#">
+        <button type="submit" class="btn btn-bg-blue text-white">Post</button>
+        </a> </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!--Video Modal Ends-->
+<!--Event Modal Start     -->
+<div class="modal fade" id="newEventModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-model-content">
+      <div class="modal-header custom-modal-header bg-gradient-blue">
+        <h5 class="modal-title" id="newEventModalLabel">New Event</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="w-100" action="#" method="post" id="create-event">
+          <span class="d-flex m-3"> <i class="fas fa-pen mt-2"></i>
+          <input type="text" class="form-control" placeholder="Event Title">
+          </span> <span class="d-flex m-3"> <i class="fas fa-pen mt-2"></i>
+          <textarea class="form-control" rows="3" placeholder="Description"></textarea>
+          </span>
+          <div class="preview"> <img class="img-thumbnail preview-event w-25 ml-2" src=".." alt=""> </div>
+          <div class="add">
+            <label for="upload-event"><i class="far fa-image text-blue"></i> Upload photos</label>
+            <input type="file" id="upload-event" name="file" class="hidden" accept="image/*" multiple>
+          </div>
+          <div class="modal-footer border-0"> <a href="#">
+            <button type="button" class="btn btn-bg-blue text-white">Post</button>
+            </a>
+            <button type="button" class="btn border-blue" data-dismiss="modal"> Close </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Event Modal Ends--> 
+<!--Enquiry Modal Start     -->
+<div class="modal fade" id="newEnquiryModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content custom-model-content">
+      <div class="modal-header custom-modal-header bg-gradient-blue">
+        <h5 class="modal-title" id="newEnquiryModalLabel">New Enquiry</h5>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="w-100" action="#" method="post" id="create-enquiry">
+          <div class="col-12 mt-3"> <span class="d-flex m-3"> <i class="fas fa-pen mt-2"></i>
+            <input type="text" class="form-control" placeholder="Enquiry Title">
+            </span> <span class="d-flex m-3"> <i class="fas fa-pen mt-2"></i>
+            <textarea class="form-control" rows="3" placeholder="Description"></textarea>
+            </span>
+            <div class="preview"> <img class="img-thumbnail preview-enquiry w-25 ml-2" src=".." alt=""> </div>
+            <div class="add">
+              <label for="upload-enquiry"><i class="far fa-image text-blue"></i> Upload photos</label>
+              <input type="file" id="upload-enquiry" name="file" class="hidden" accept="image/*" multiple>
+            </div>
+          </div>
+          <div class="modal-footer border-0"> <a href="#">
+            <button type="button" class="btn btn-bg-blue text-white">Post</button>
+            </a>
+            <button type="button" class="btn border-blue" data-dismiss="modal"> Close </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!--Enquiry Modal Ends--> 
+<script>
+       	function myFunction(){
+		var x = document.getElementById("sidebar-wrapper");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else{
+			x.style.display = "none";
+		}
+	}
+    </script> 
+<!--
+	<script>
+		var btn = document.getElementById('btn');
+		function Toggle(){
+			if(btn.classList.contains("far")){
+				btn.classList.remove("far");
+				btn.classList.add("fas");
+			}
+			else{
+				btn.classList.remove("fas");
+				btn.classList.add("far");
+			}
+			
+		}
+		</script>
+--> 
+<script>
+
+    $('.comment-btn').on('click', function(){
+       $('#comment-card').toggleClass('hidden')
+    });
+    // Hide submenus
+    $('#body-row .collapse').collapse('hide');
+
+    // Collapse/Expand icon
+    $('#collapse-icon').addClass('fa-angle-double-left');
+
+    // Collapse click
+    $('[data-toggle=sidebar-colapse]').click(function () {
+        SidebarCollapse();
+    });
+
+    function SidebarCollapse() {
+        $('.menu-collapsed').toggleClass('d-none');
+        $('.sidebar-submenu').toggleClass('d-none');
+        $('.submenu-icon').toggleClass('d-none');
+        $('#sidebar-container').toggleClass('sidebar-expanded sidebar-collapsed');
+
+        // Treating d-flex/d-none on separators with title
+        var SeparatorTitle = $('.sidebar-separator-title');
+        if (SeparatorTitle.hasClass('d-flex')) {
+            SeparatorTitle.removeClass('d-flex');
+        } else {
+            SeparatorTitle.addClass('d-flex');
+        }
+
+        // Collapse/Expand icon
+        $('#collapse-icon').toggleClass('fa-angle-double-left fa-angle-double-right');
+
+    }
+	document.getElementById('upload-photos').addEventListener('change', function (event) {
+
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        } 
+    });
+	document.getElementById('upload-videos').addEventListener('change', function (event) {
+
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        } else {
+            fileReader.onload = function () {
+
+                var blob = new Blob([fileReader.result], {type: file.type});
+                var url = URL.createObjectURL(blob);
+                // console.log(url);
+                var video = document.createElement('video');
+                var timeupdate = function () {
+                    if (snapImage()) {
+                        video.removeEventListener('timeupdate', timeupdate);
+                        video.pause();
+                    }
+                };
+                video.addEventListener('loadeddata', function () {
+                    if (snapImage()) {
+                        video.removeEventListener('timeupdate', timeupdate);
+                    }
+                });
+                var snapImage = function () {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                    var image = canvas.toDataURL();
+                    var success = image.length > 100000;
+                    if (success) {
+                        var img = document.createElement('img');
+                        img.src = image;
+                        // document.getElementsByTagName('div')[0].appendChild(img);
+                        $('.preview').attr('src', image);
+                        URL.revokeObjectURL(url);
+                    }
+                    return success;
+                };
+                video.addEventListener('timeupdate', timeupdate);
+                video.preload = 'metadata';
+                video.src = url;
+                // Load video in Safari / IE11
+                video.muted = true;
+                video.playsInline = true;
+                video.play();
+            };
+            fileReader.readAsArrayBuffer(file);
+        }
+    });
+	document.getElementById('upload-photo').addEventListener('change', function (event) {
+
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview-photo').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        } 
+    });
+	document.getElementById('upload-video').addEventListener('change', function (event) {
+
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview-video').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        } else {
+            fileReader.onload = function () {
+
+                var blob = new Blob([fileReader.result], {type: file.type});
+                var url = URL.createObjectURL(blob);
+                // console.log(url);
+                var video = document.createElement('video');
+                var timeupdate = function () {
+                    if (snapImage()) {
+                        video.removeEventListener('timeupdate', timeupdate);
+                        video.pause();
+                    }
+                };
+                video.addEventListener('loadeddata', function () {
+                    if (snapImage()) {
+                        video.removeEventListener('timeupdate', timeupdate);
+                    }
+                });
+                var snapImage = function () {
+                    var canvas = document.createElement('canvas');
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+                    var image = canvas.toDataURL();
+                    var success = image.length > 100000;
+                    if (success) {
+                        var img = document.createElement('img');
+                        img.src = image;
+                        // document.getElementsByTagName('div')[0].appendChild(img);
+                        $('.preview-video').attr('src', image);
+                        URL.revokeObjectURL(url);
+                    }
+                    return success;
+                };
+                video.addEventListener('timeupdate', timeupdate);
+                video.preload = 'metadata';
+                video.src = url;
+                // Load video in Safari / IE11
+                video.muted = true;
+                video.playsInline = true;
+                video.play();
+            };
+            fileReader.readAsArrayBuffer(file);
+        }
+    });
+	 document.getElementById('upload-event').addEventListener('change', function (event) {
+
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview-event').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        } 
+    });
+	document.getElementById('upload-enquiry').addEventListener('change', function (event) {
+
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview-enquiry').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        } 
+               
+    });
+
+</script> 
+<script>
+
+    var curImages = new Array();
+
+    $('textarea').liveUrl({
+        loadStart: function () {
+            $('.liveurl-loader').show();
+        },
+        loadEnd: function () {
+            $('.liveurl-loader').hide();
+        },
+        clear: function () {
+            $('.liveurl').hide();
+        },
+        success: function (data) {
+            var output = $('.liveurl');
+            output.find('.title').text(data.title);
+            output.find('.description').text(data.description);
+            output.find('.url').text(data.url);
+            output.find('.image').empty();
+
+            output.find('.close').one('click', function () {
+                var liveUrl = $(this).parent();
+                liveUrl.hide('fast');
+                liveUrl.find('.video').html('').hide();
+                liveUrl.find('.image').html('');
+                liveUrl.find('.controls .prev').addClass('inactive');
+                liveUrl.find('.controls .next').addClass('inactive');
+                liveUrl.find('.thumbnail').hide();
+                liveUrl.find('.image').hide();
+
+                $('textarea').trigger('clear');
+                curImages = new Array();
+            });
+
+            output.show('fast');
+
+            if (data.video != null) {
+                var ratioW = data.video.width / 350;
+                data.video.width = 350;
+                data.video.height = data.video.height / ratioW;
+
+                var video =
+                    '<object width="' + data.video.width + '" height="' + data.video.height + '">' +
+                    '<param name="movie"' +
+                    'value="' + data.video.file + '"></param>' +
+                    '<param name="allowScriptAccess" value="always"></param>' +
+                    '<embed src="' + data.video.file + '"' +
+                    'type="application/x-shockwave-flash"' +
+                    'allowscriptaccess="always"' +
+                    'width="' + data.video.width + '" height="' + data.video.height + '"></embed>' +
+                    '</object>';
+                output.find('.video').html(video).show();
+
+
+            }
+        },
+        addImage: function (image) {
+            var output = $('.liveurl');
+            var jqImage = $(image);
+            jqImage.attr('alt', 'Preview');
+
+            if ((image.width / image.height) > 7
+                || (image.height / image.width) > 4) {
+                // we dont want extra large images...
+                return false;
+            }
+
+            curImages.push(jqImage.attr('src'));
+            output.find('.image').append(jqImage);
+
+
+            if (curImages.length == 1) {
+                // first image...
+
+                output.find('.thumbnail .current').text('1');
+                output.find('.thumbnail').show();
+                output.find('.image').show();
+                jqImage.addClass('active');
+
+            }
+
+            if (curImages.length == 2) {
+                output.find('.controls .next').removeClass('inactive');
+            }
+
+            output.find('.thumbnail .max').text(curImages.length);
+        }
+    });
+
+
+    $('.liveurl ').on('click', '.controls .button', function () {
+        var self = $(this);
+        var liveUrl = $(this).parents('.liveurl');
+        var content = liveUrl.find('.image');
+        var images = $('img', content);
+        var activeImage = $('img.active', content);
+
+        if (self.hasClass('next'))
+            var elem = activeImage.next("img");
+        else var elem = activeImage.prev("img");
+
+        if (elem.length > 0) {
+            activeImage.removeClass('active');
+            elem.addClass('active');
+            liveUrl.find('.thumbnail .current').text(elem.index() + 1);
+
+            if (elem.index() + 1 == images.length || elem.index() + 1 == 1) {
+                self.addClass('inactive');
+            }
+        }
+
+        if (self.hasClass('next'))
+            var other = elem.prev("img");
+        else var other = elem.next("img");
+
+        if (other.length > 0) {
+            if (self.hasClass('next'))
+                self.prev().removeClass('inactive');
+            else self.next().removeClass('inactive');
+        } else {
+            if (self.hasClass('next'))
+                self.prev().addClass('inactive');
+            else self.next().addClass('inactive');
+        }
+
+
+    });
+</script>
+
+<!-- delete post modal -->
+<script>
+  function deleteClick(item_id)
+  {
+    
+    var token = '{{csrf_token}}';
+    var r = confirm("Do you want to delete this Post");
+    if (r==true){
+      $.ajax(
+    {
+      headers: { "X-CSRFToken": token },
+      'url': "{% url 'postDelete' %}",
+      'type': 'POST',
+      'data': {"id":item_id},
+      'success': function ( response ) {
+      document.location.reload();
+      }
+    })
+    }
+    else{
+      return false
+    }
+    
+  }
+
+  
+</script>
+
+
+</body>
+</html>
+{% endblock %}
+
+
+<!-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '{your-app-id}',
+      cookie     : true,
+      xfbml      : true,
+      version    : '{api-version}'
+    });
+      
+    FB.AppEvents.logPageView();   
+      
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script> -->
+
+
+
+<!-- FB.getLoginStatus(function(response) {
+  statusChangeCallback(response);
+}); -->
+
+
+
+<!-- {
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+} -->
+
+
+<!-- <fb:login-button 
+  scope="public_profile,email"
+  onlogin="checkLoginState();">
+</fb:login-button> -->
+
+
+<!-- function checkLoginState() {
+  FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+  });
+} -->

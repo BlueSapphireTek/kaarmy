@@ -1,0 +1,61 @@
+{% load static %}
+{% load socialaccount %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+<title>LOGIN</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/byhand.css' %}">
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.js' %}"></script> 
+<script	type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+<body>
+<div class="container-fluid w-100 row login-height">
+  <div class="col-xl-9 col-lg-8 col-md-7 col-sm-6 banner p-0">
+    <div id="carousel" class="col-md-12 carousel slide w-100 p-0" data-ride="carousel" data-pause="true" data-interval="false">
+      <div class="carousel-inner w-100" role="listbox">
+        <div class="carousel-item row no-gutters active"> <img src="{% static 'img/8403.jpg' %}" alt="" class="img-fluid"> </div>
+        <div class="carousel-item row no-gutters"> <img src="{% static 'img/6308.jpg' %}" alt="" class="img-fluid"> </div>
+        <div class="carousel-item row no-gutters"> <img src="{% static 'img/8402.png' %}" alt="" class="img-fluid"> </div>
+      </div>
+      <a class="carousel-control-prev text-black-50" style="width: 5%;" href="#carousel" role="button" data-slide="prev"> <span class="fa fa-chevron-left left-arrow" aria-hidden="true"></span> <span class="sr-only">Previous</span> </a> <a class="carousel-control-next text-black-50" style="width: 5%;" href="#carousel" role="button" data-slide="next"> <span class="fa fa-chevron-right right-arrow" aria-hidden="true"></span> <span class="sr-only">Next</span> </a> </div>
+  </div>
+  <div class="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-12 login-form">
+    <div class="card login-card border-0">
+      <div class="p-2 mb-0 w-100 login-logo text-center"> <img class="card-img-top " src="{% static 'img/logoNEW1.png' %}" alt=""/> </div>
+      <div class="card-body">
+        <form method="post">
+          {%csrf_token%}
+          
+          <div class="form-group text-center">
+            <input type="text" class="form-control bg-gray rounded" id="username" name="username" value="" placeholder="Enter mobile no/email">
+            <input type="password" class="form-control mt-3 bg-gray rounded" id="password" name="password" placeholder="Enter Password">
+            <input type="submit" class="btn btn-primary mt-4 rounded-pill login-btn pl-4 pr-4" value="Log in">
+          </div>
+          
+        </form>
+        <!-- <b style="color: rgba(187, 0, 0, 0.877)">{% if messages %} {% for msg in messages %} &nbsp;
+          {{ msg }} {% endfor %}
+          {% endif %}
+        </b> -->
+        <div class="text-center"> <a href="{% url 'reset_passwordc' %}"><span class="text-dark">Forget Password?</span></a> </div>
+        <div class="text-center">
+          <a href="{% url 'register' %}">
+          <button type="button" class="btn btn-primary mt-4 rounded-pill login-btn"  data-bs-toggle="modal" data-bs-target="#verificationModal">Create New Account</button>
+        </a>
+         
+        </div>
+        <div class="d-flex mt-5 mb-5 text-center"> <a href="{% provider_login_url 'google' %}" class="ml-auto mr-auto text-danger"> <i class="fab fa-google fs-30"></i> </a> 
+           <a href="{% provider_login_url 'facebook' %}" class="ml-auto mr-auto text-success"> <i class="fas fa-phone-alt fs-30"></i></a> 
+         <!-- <a href="" class="ml-auto mr-auto text-info"> <i class="fab fa-facebook fs-30"></i></a>  -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

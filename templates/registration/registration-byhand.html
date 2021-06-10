@@ -1,0 +1,258 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REGISTRATION | KAARMY</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/byhand.css' %}">
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.js' %}"></script> 
+<script	type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+<div class="container-fluid w-100">
+  <div class="row d-block">
+    
+      <nav class="navbar navbar-expand-lg navbar-light w-100 login-header">
+        <form class="form-inline my-2 my-lg-0" method="post" action="{% url 'login' %}">
+          {% csrf_token %}
+       <div class="navbar-brand"><img src="{% static 'img/logoresize.png' %}" alt="">
+      <p class="text-blue" style="font-size: 8px;
+  margin-left: 3rem;
+  margin-top: -.5rem;
+  color:#00b1ff">Work is Worship</p>
+    </div>
+       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+       <div class="collapse navbar-collapse pb-2" id="navbarSupportedContent" style="margin-left: 400px;">
+         <input type="text" class="form-control m-2 width" id="email" placeholder="Email or Phone Number" name="username">
+         <div class="width m-2 pswd">
+           <input type="password" class="form-control top width-pass" id="password" placeholder="Password" name="password">
+           <a href="{% url 'reset_passwordc' %}"><p>Forgot Password ?</p></a>
+         </div>
+           <a href="">
+           <button class="btn btn-primary my-2 my-sm-0 m-2 btn1" type="submit">Login</button>
+           </a>
+       </div>
+     </nav>
+     </form>
+     
+    <div class="col-12 w-100 row login-height login-height-2">
+      <div class="col-xl-9 col-lg-8 col-md-6 banner-1 p-0"> <img src="{% static 'img/6308.jpg' %}" alt="" class="card-img-top"> </div>
+      <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-12 login-form">
+        <form action="#" method="post" autocomplete="off">
+            {% csrf_token %}
+          <div class="card reg pt-0 border-0">
+            <div class="p-2 mb-0 w-100 login-logo-reg text-center"> <img class="card-img-top " src="{% static 'img/logo149.png' %}" alt=""/> </div>
+            <input type="email" class="form-control mt-3 ml-4 mr-4 email" id="email2" name="email" placeholder="Email" required autocomplete="off">
+            <input type="tel" class="form-control mt-3 ml-4 mr-4 email" id="phoneno" name="phoneno" placeholder="Phone Number" minlength="10" maxlength="15" required>
+            <input type="password" class="form-control mt-3 ml-4 mr-4 email" id="password1" name="password1" placeholder="Password" required minlength="6">
+            <input type="password" class="form-control mt-3 ml-4 mr-4 email" id="password2" name="password2" placeholder="Confirm Password" required>
+            <div class="form-check pl-5 pt-3">
+              <input class="form-check-input" type="checkbox" value="" id="inputchecked"  required>
+              <label class="form-check-label" for="flexCheckChecked">
+                I agree to <a href="" data-toggle="modal" data-target="#myModal">terms of condition</a>
+              </label>
+            </div>
+            <div class="col-12 buttons mt-4 mb-3 login">
+              <button type="submit" class="btn btn-primary btn1 mb-3 w-75 create-btn" id="submit-btn">Create Account</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!-- <script>
+  $('#inputchecked').click(function () {
+    if ($(this).attr('checked')) {
+
+      console.log('if')
+      $("#submit-btn").removeAttr("disabled")  
+    }
+
+    else  {
+      
+      console.log('else')
+      $("#submit-btn").attr("disabled", true)
+
+    }
+})
+
+</script> -->
+
+<script>
+  $('#password2').keyup(function(){
+      $(".errorcpsw").hide()
+
+
+      var password  = $('#password1').val();
+      var cpassword  = $('#password2').val();
+
+      if (password != cpassword){
+
+
+          $('#password2').after('<span class="errorcpsw pl-5" style="color:red">password mismatch</span>');
+          $("#submit-btn").attr("disabled", true)
+
+
+          return false;
+
+
+      }
+      else 
+      {
+        $("#submit-btn").removeAttr("disabled")
+      }
+
+
+  })
+
+
+$('#email2').keyup(function(){
+
+
+      var email= $('#email2').val();
+      
+
+          if(email!=""){
+
+                  $.ajax({
+
+                      url : '{% url 'check_email_exist' %}',
+                      type : 'POST',
+                      data : {email:email},
+                  })
+                  .done(function(response){
+
+                       if(response == 'True'){
+                        console.log(response);
+                       $('.email-error').hide();
+                       $( "#email2" ).after( '<span class="email-error pl-5" style="color:red">email already used</span>' );
+                       $("#submit-btn").attr("disabled", true)
+                       console.log('hi');
+                       }else{
+                        console.log(response);
+                         $('.email-error').hide();
+                         $("#submit-btn").removeAttr("disabled")
+                       }
+
+              })
+
+                  }
+
+
+})
+
+$('#phoneno').keyup(function(){
+      $(".phoneno-error").hide()
+
+  
+
+      var phoneno= $('#phoneno').val();
+
+          if(phoneno!=""){
+
+
+                  $.ajax({
+
+
+                      url : '{% url 'check_phone_exist' %}',
+                      type : 'POST',
+                      data : {phoneno:phoneno},
+                  })
+                  .done(function(response){
+                  console.log(response);
+
+                       if(response == 'True'){
+                       $('.phoneno-error').hide();
+                       $("#phoneno" ).after( '<span class="phoneno-error pl-5" style="color:red">phone already used</span>' );
+                       $("#submit-btn").attr("disabled", true)
+                       }else{
+                         $('.phoneno-error').hide();
+                         $("#submit-btn").removeAttr("disabled")
+                       }
+
+              })
+
+                  }
+
+
+})
+
+
+</script>
+
+<script>
+  $('#email2').click(function(){
+
+
+var email= $('#email2').val();
+
+
+    if(email!=""){
+
+            $.ajax({
+
+                url : '{% url 'check_email_exist' %}',
+                type : 'POST',
+                data : {email:email},
+            })
+            .done(function(response){
+
+                 if(response == 'True'){
+                  console.log(response);
+                 $('.email-error').hide();
+                 $( "#email2" ).after( '<span class="email-error pl-5" style="color:red">email already used</span>' );
+                 $("#submit-btn").attr("disabled", true)
+                 console.log('hi');
+                 }else{
+                  console.log(response);
+                   $('.email-error').hide();
+                   $("#submit-btn").removeAttr("disabled")
+                 }
+
+        })
+
+            }
+
+
+})
+</script>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title ml-0" id="myModalLabel">Terms and Conditions</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        
+      </div>
+      <div class="modal-body">
+        Welcome to <b>Kaarmy! </b><br><br>
+
+Kaarmy builds technologies and services that enable people to connect with each other, build communities, and grow businesses. These Terms govern your use of Kaarmy, Kaarmy Messenger, and the other products, features, apps, services, technologies, and software we offer , except where we expressly state that separate terms (and not these) apply. These Products are provided to you by Kaarmy, Inc.
+
+We don’t charge you to use Kaarmy or the other products and services covered by these Terms. Instead, businesses and organizations pay us to show you ads for their products and services. By using our Products, you agree that we can show you ads that we think will be relevant to you and your interests. We use your personal data to help determine which ads to show you.
+
+We don’t sell your personal data to advertisers, and we don’t share information that directly identifies you (such as your name, email address or other contact information) with advertisers unless you give us specific permission. Instead, advertisers can tell us things like the kind of audience they want to see their ads, and we show those ads to people who may be interested. We provide advertisers with reports about the performance of their ads that help them understand how people are interacting with their content. 
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary ml-1" data-dismiss="modal">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

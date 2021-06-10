@@ -1,0 +1,290 @@
+{% extends 'base.html' %}
+
+{% block top %}
+{% load static %}
+{% load humanize %}
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verfiy-Achievement</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/byhand-all.css' %}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css' %}" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous"/>
+<link href="{% static 'css/mdb.min.css' %}" rel="stylesheet"/>
+<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+<link href="{% static 'css/responsive.css' %}" rel="stylesheet"/>
+<link href="{% static 'fontawesome-pro-5.13.0/css/all.css' %}" rel="stylesheet"/>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script> 
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script> 
+<script	type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/jquery.liveurl.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'fontawesome-pro-5.13.0/js/all.js' %}"></script>
+</head>
+<body>
+
+  {% endblock %}
+
+
+  <!-- /#sidebar-wrapper -->
+  <!-- Page Content -->
+
+  {% block down%}
+
+<!-- <nav class="navbar navbar-expand-sm navbar-light bg-gradient-blue d-flex fixed-top">
+  <div class="col-xl-8 col-lg-8 col-md-7 col-sm-6 col-12 d-flex">
+    <div class="mt-2">
+      <button class="btn btn-outline-info btn-sm openbtn" onclick="myFunction()" id="menu-toggle"> <span class="dark-blue-text"><i class="fas fa-bars fa-1x"></i></span> </button>
+    </div>
+    <div class="navbar-brand"><img src="img/logo149.png" alt=""></div>
+    <form action="#" method="post">
+      <div class="container row">
+        <div class="input-group search">
+          <input class="form-control py-2 border-right-0 border" type="search" id="search-input" placeholder="Search">
+          <span class="input-group-append">
+          <button class="btn btn-outline-secondary border-left-0 border bg-white" id="btn-icon" type="button"> <i class="fa fa-search text-blue"></i></button>
+          </span> </div>
+      </div>
+    </form>
+  </div>
+  <div class="col-xl-2 col-lg-2 col-md-5 col-sm-6 col-12 float-right d-flex">
+    <button class="navbar-toggler navv" type="button" data-toggle="collapse" data-target="#navbarSupportedContents"
+            aria-controls="navbarSupportedContents" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContents">
+      <ul class="navbar-nav disp">
+        <li class="nav-item dropdown drop-noti d-flex"> <a href="#" class="btn btn-clean notification-btn" data-toggle="tooltip" title="chat"><span class="badge badge-danger badge-chat" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-comment text-blue"></i> </a> <a href="#" class="btn btn-clean notification-btn" data-toggle="tooltip" title="certificate notification"><span class="badge badge-danger badge-certificate" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-file-alt text-blue"></i> </a> <a href="#" class="btn btn-clean notification-btn"  data-toggle="tooltip" title="notification"> <span class="badge badge-danger badge-corner" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-bell text-blue"></i> </a> </li>
+        <div class="d-flex">
+          <div class="timeline-headernav-profile"> <img src="img/g1.jpg" alt="" class="rounded-circle"> </div>
+          <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle mr-5" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item text-blue logout-dropbox" href=" #">Annie Fab</a> <a class="dropdown-item logout-dropbox" href=" #">View Profile</a> <a class="dropdown-item logout-dropbox" href="#">Help</a> <a class="dropdown-item logout-dropbox" href="#">Logout</a> </div>
+          </li>
+        </div>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="border-bottom bordclass"> </div>
+<div class="d-flex w-100" style="margin-top: 5rem;"  id="wrapper"> 
+  <!-- Sidebar -->
+  <!-- <div class="border-right sidepanel" id="sidebar-wrapper">
+    <div class="col-12 my-profile mt-4">
+      <div class="avatar"> <img src="img/g1.jpg" alt="" class="rounded-circle" width="50" height="50" style="border-radius: 50%;"> </div>
+      <div class="dropdown show leftside-dropdown"> <a class="btn btn-secondary dropdown-toggle border-0 text-dark bg-white btn-outline-light" style="background-color: transparent;" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Annie Fab </a>
+        <div class="dropdown-menu text-left" aria-labelledby="dropdownMenuLink"> <a class="dropdown-item" href="#">View Profile</a> <a class="dropdown-item" href="#">Help</a> <a class="dropdown-item" href="#">Logout</a> </div>
+      </div>
+    </div>
+    <div class="notify-left col-12">
+      <div class="nav-item dropdown drop-noti d-flex"> <a href="#" class="btn btn-clean notification-btn text-dark bg-white" data-toggle="tooltip" title="chat"><span class="badge badge-danger badge-chat" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-comment text-blue"></i> </a> <a href="#" class="btn btn-clean notification-btn text-dark bg-white" data-toggle="tooltip" title="certificate notification"><span class="badge badge-danger badge-certificate" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-file-alt text-blue"></i> </a> <a href="#" class="btn btn-clean notification-btn text-dark bg-white"  data-toggle="tooltip" title="notification"> <span class="badge badge-danger badge-corner" style="padding-top: 2px; border-radius: 50%;">8</span> <i class="far fa-bell text-blue"></i> </a> </div>
+    </div>
+    <form action="#" method="post">
+      <div class="search-leftnav col-12">
+        <input type="text" name="search" placeholder="SEARCH.." class="search2">
+        <button type="submit" class="scrhbtn"><i class="fa fa-search text-blue"></i></button>
+      </div>
+    </form>
+    <div class="list-group list-group-flush mt-4 left-nav"> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3570.png" alt="" > <span class="px-4 py-1 items ">Home</span> </a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3571.png" alt="" > <span class="px-4 py-1 items ">Profile</span></a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3572.png" alt="" > <span class="px-4 py-1 items ">Activities</span></a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3573.png" alt="" > <span class="px-4 py-1 items">Settings</span> </a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3569.png" alt="" > <span class="px-4 py-1 items ">Verifications</span></a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3578.png" alt="" > <span class="px-4 py-1 items ">Share</span></a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3575.png" alt="" > <span class="px-4 py-1 items">Help</span> </a> <a href="#" class="list-group-items list-group-item-action d-flex"><img src="img/Group 3576.png" alt="" > <span class="px-4 py-1 items">FAQ</span> </a> </div>
+  </div> -->
+  <div class="d-flex w-100" id="page-content-wrapper"> 
+    <!-- Sidebar -->
+    <div class="container-fluid">
+      <div class="row m-0">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xm-12 center-scroll row-height pt-3">
+          <div class="row m-0">
+            <div class="post-heading w-100"> <img src="img/Group 3569.png" alt="" style="width: 30px;" > <span class="px-4 items">Verification</span> </div>
+           <div class="mt-3 p-0 border-bottom text-center"> 
+            <a href="{% url 'verifycertificate' %}">
+              <div class="text-center d-inline-block post post-event">
+                <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fas fa-medal"></i> </button>
+                <p class="text-dark">Certificate</p>
+              </div>
+              </a> 
+              <a href="{% url 'verifytestimonial' %}">
+                <div class="text-center d-inline-block post post-event">
+                  <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="fas fa-comment-smile"></i> </button>
+                  <p class="text-dark">Testimonial</p>
+                </div>
+                </a> <a href="{% url 'verifyclient' %}">
+                <div class="text-center d-inline-block post post-event">
+                  <button class="btn btn-default btn-rounded connect-btn border-blue"><i class="far fa-user"></i> </button>
+                  <p class="text-dark">Client</p>
+                </div>
+                </a>
+			  <a href="{% url  'verifyexperience' %}">
+              <div class="text-center d-inline-block post post-event">
+                <button class="btn btn-default btn-rounded connect-btn border-blue" ><i class="far fa-file-alt"></i> </button>
+                <p class="text-blue">Experience</p>
+              </div>
+              </a>
+			  <a href="{% url 'verifyexpertise' %}">
+              <div class="text-center d-inline-block post post-event">
+                <button class="btn btn-default btn-rounded connect-btn border-blue" ><i class="fas fa-user-graduate"></i> </button>
+                <p class="text-dark">Expertise</p>
+              </div>
+              </a>
+			  <a href="{% url 'verifyachievements' %}">
+              <div class="text-center d-inline-block post post-event">
+                <button class="btn btn-default btn-rounded connect-btn border-blue" ><i class="fas fa-award"></i></button>
+                <p class="text-dark">Achievements</p>
+              </div>
+              </a>
+			  <a href="{% url 'verifyprojects' %}">
+              <div class="text-center d-inline-block post post-event">
+                <button class="btn btn-default btn-rounded connect-btn border-blue" ><i class="fab fa-product-hunt"></i> </button>
+                <p class="text-dark">Projects/Products</p>
+              </div>
+              </a></div>
+            <div class="w-100 m-0 mt-3 col-12 pl-0 pr-0">
+              <div class="col-12 tab-content py-3 pl-0 px-sm-0" id="nav-tabContent">
+               <div class="col-12 tab-pane active show fade px-0" id="nav-appointment" role="tabpanel" aria-labelledby="nav-home-tab">
+                  <ul class="nav nav-pills mb-3" id="pills-inner-tab" role="tablist">
+                    <li class="nav-item" role="presentation"> <a class="nav-link active border-0" id="pills-pending-tab" data-toggle="pill" href="#nav-pending" role="tab" aria-controls="pills-home" aria-selected="true">Pending</a> </li>
+                    <li class="nav-item" role="presentation"> <a class="nav-link border-0" id="pills-active-tab" data-toggle="pill" href="#navApprove" role="tab" aria-controls="pills-profile" aria-selected="false">Approve</a> </li>
+					   
+                  </ul>
+                  <div class="col-12 tab-content py-3 px-0 px-sm-0" id="nav-inside-tabContent">
+                    <div class="tab-pane fade show active" id="nav-pending" role="tabpanel" aria-labelledby="nav-mycards-tab">
+
+                        {% for i in pending %}
+
+					   <div class="enquiry appointments col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
+					  <div class="enquiry-1 col-xl-7 col-lg-7 col-md-7 col-sm-6 col-12">
+					  <h5>Name:  {{i.user.first_name}} </h5>
+					 <p>Achievement Title: {{i.title}}</p>
+					  <!-- <p>Certificate ID:</p> -->
+						  <p>Achievement Description: {{i.description}} </p>
+					  </div>
+                   <div class="enquiry-2 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-12">
+					   <!-- <img src="img/g1.jpg" alt="" class="img-fluid border p-2 rounded-circle" style="border-radius: 12px; width: 40%;">  -->
+					   <div class="d-flex mt-5 appointment-btns">
+					   <a href="{% url 'approveachievements' i.id %}"><button class="btn btn-success m-1 appointment-btn" style="border-radius:12px; ">Approve</button></a>
+						   <button class="btn btn-primary m-1 appointment-btn" style="border-radius:12px;" data-toggle="modal" data-target="#modifyCertification-Modal">Modify</button>
+						  <a href="{% url 'deleteachievements' i.id %}"> <button class="btn btn-danger m-1 appointment-btn" style="border-radius:12px;">Delete</button></a>
+						   </div>
+					   </div>
+                  </div>
+                  	<!--Modify achievement-->
+<div class="modal fade" id="modifyCertification-Modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
+    <div class="modal-content modal-radius">
+      <div class="d-flex w-100 mt-3 testimonial-heading" style="border-bottom: 1px solid #808080;">
+        <h5>Edit Certificate</h5>
+      </div>
+      <form class="w-100" action="{% url 'editverificationachievements' i.id %}" method="post" id="edit-certification">
+        {% csrf_token %}
+        <div class="d-flex col-12 mt-3">
+          <div class="form-group col-10 cmpny-addrs">
+            
+            
+            <div class="form-group d-flex">
+              <label class="col-form-label  col-5">Achievement Title</label>
+              <input type="text" class="form-control w-100" name="achtitle" value="{{i.title}}">
+            </div>
+             <!-- <div class="preview"> <img class="img-thumbnail preview w-25 ml-2" src="img/DENTOL black.png" alt=""> </div> -->
+          
+            <div class="form-group d-flex">
+              <label class="col-form-label col-5">Achievement Description</label>
+              <textarea class="w-100 form-control" name="achdesc" rows="5">{{i.description}}</textarea>
+            </div>
+
+          </div>
+        </div>
+        <div class="d-flex pb-3 certification-btns justify-content-center"> 
+          <a href="" class="m-2" data-dismiss="modal">
+          <button type="button" class="btn border cancel-certbtn" style="border-color: black!important; border-radius: 15px;">Cancel</button>
+          </a> 
+          <a href="#" class="m-2">
+          <button type="submit" class="btn btn-bg-blue border save-certbtn" >Save</button>
+          </a> 
+          <!-- <a href="#" class="m-2">
+          <button type="button" class="btn btn-primary send-certbtn" style="border-radius: 15px;">Send verification request</button>
+          </a>  -->
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+	<!-- /Modify Certificate-->
+                  {% endfor %}
+
+						
+						
+
+                  
+
+
+                </div>
+				  <div class="tab-pane fade" id="navApprove" role="tabpanel" aria-labelledby="nav-profile-tab">
+                 {% for i in approved %}
+					  <div class="enquiry appointments col-xl-10 col-lg-10 col-md-12 col-sm-12 col-12">
+					  <div class="enquiry-1 col-xl-7 col-lg-7 col-md-7 col-sm-6 col-12">
+              <h5>Name:  {{i.user.first_name}} </h5>
+              <p>Achievement Title: {{i.title}}</p>
+               <!-- <p>Certificate ID:</p> -->
+                 <p>Achievement Description: {{i.description}} </p>
+					  </div>
+                   <div class="enquiry-2 col-xl-5 col-lg-5 col-md-5 col-sm-6 col-12">
+					   <img src="img/g1.jpg" alt="" class="img-fluid border p-2 rounded-circle" style="border-radius: 12px; width: 40%;"> 
+					  <div class="d-flex mt-5">
+              <a href="{% url 'deleteachievements' i.id %}">
+						   <button class="btn btn-danger m-2 appointment-btn" style="border-radius:12px;">Delete</button>
+              </a>
+						   </div>
+					   </div>
+                  </div>
+
+					 
+             {% endfor %}
+					 
+                </div>
+              </div>
+          </div>
+				  	  
+        </div>
+      </div>
+    </div>
+    <!-- /#Sidebar --> 
+  </div>
+</div>
+		</div>
+	  </div>
+	</div>
+
+<script>
+	function myFunction(){
+		var x = document.getElementById("sidebar-wrapper");
+		if (x.style.display === "none") {
+			x.style.display = "block";
+		} else{
+			x.style.display = "none";
+		}
+	}
+//        $("#menu-toggle").click(function (e) {
+//            e.preventDefault();
+//            $("#sidebar-wrapper").show();
+//            $("#wrapper").toggleClass("toggled");
+//        });
+//    </script>
+	<script>
+  document.getElementById('upload').addEventListener('change', function (event) {
+
+        var file = event.target.files[0];
+        var fileReader = new FileReader();
+        if (file.type.match('image')) {
+            fileReader.onload = function (event) {
+                $('.preview').attr('src', event.target.result);
+            };
+            fileReader.readAsDataURL(file);
+        } 
+               
+    });
+	
+//    </script>
+</body>
+</html>
+{% endblock %}

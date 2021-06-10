@@ -1,0 +1,359 @@
+{% extends 'longprofile/home.html' %}
+{% load static %}
+{% block cards %}
+<div class="col-12 tab-pane fade show active" id="nav-card" role="tabpanel" aria-labelledby="nav-home-tab">
+    <div class="col-12 py-2 cards-info">
+      <ul class="nav nav-pills mb-3" id="pills-inner-tab" role="tablist">
+        <li class="nav-item" role="presentation"> <a class="nav-link active" id="pills-mycard-tab" data-toggle="pill" href="#nav-mycard" role="tab" aria-controls="pills-home" aria-selected="true">My Cards</a> </li>
+        <li class="nav-item" role="presentation"> <a class="nav-link" id="pills-savedcard-tab" data-toggle="pill" href="#nav-saved-card" role="tab" aria-controls="pills-profile" aria-selected="false">Saved Cards</a> </li>
+      </ul>
+      <div class="col-12 tab-content py-3 px-sm-0" id="nav-inside-tabContent">
+        <div class="col-12 tab-pane fade show active pl-0" id="nav-mycard" role="tabpanel" aria-labelledby="nav-mycards-tab">
+          <div class="col-12 pl-0 py-2 cards-info">
+            <div class="display-cards">
+              <div class="card mycards">
+                <div class="card-body mycards-body">
+                  <div class="col-12 d-flex p-0">
+                    <div class="col-7 company"> <img src="{% static 'img/gallery.png' %}" style="width: 20%;" alt="">
+                      <h6 class="text-white ">Company Name</h6>
+                      <p class="text-white">Address Line 3</p>
+                      <p class="text-white">Website Link</p>
+                    </div>
+                    <div class="col-5 cadress"> <span class="d-flex"><i class="far fa-user text-white"></i>
+                      <p class="text-white">Name</p>
+                      </span> <span class="d-flex"><i class="fas fa-envelope text-white"></i>
+                      <p class="text-white">Email@ab.com</p>
+                      </span> <span class="d-flex"><i class="fas fa-user text-white"></i>
+                      <p class="text-white">Designer</p>
+                      </span> </div>
+                  </div>
+                  <br>
+                  <div class="col-12 d-flex p-0">
+                    <div class="col-7 mycards-addline"> <span class="d-flex"><i class="fas fa-city text-white"></i>
+                      <p class="text-white">Address Line 1, Address Line 2</p>
+                      </span> </div>
+                    <div class="col-5 mycards-phn"> <span class="d-flex"><i class="fas fa-mobile-alt text-white"></i>
+                      <p class="text-white">Phone 1</p>
+                      </span>
+                      <p class="text-white phn">Phone 2</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="blue">
+                  <p class="text-white">Company Card</p>
+                </div>
+                <div class="card-footer d-flex mycards-footer"> <a href="#"><span class="d-flex"><i class="fas fa-star checked"></i>
+                  <p>Save</p>
+                  </span> </a> <span class="d-flex pen-edit m-auto" data-toggle="modal" data-target="#companycard-modal"><i class="fas fa-pen"></i>
+                  <p>Edit</p>
+                  </span> <a href="#"><span class="d-flex"><i class="fas fa-trash"></i>
+                  <p>Delete</p>
+                  </span> </a></div>
+              </div>
+              <div class="card mycards">
+                <div class="card-body mycards-companybody">
+                  <div class="col-12 d-flex pl-0 pr-0">
+                    <div class="col-2 p-0 user"><img src="{% static 'img/gallery.png' %}"  alt=""></div>
+                    <div class="col-6 company"> <img src="{% static 'img/gallery.png' %}" style="width: 25%;" alt="">
+                      <h6 class="text-white">Company Name</h6>
+                      <p class=" text-white">Address Line 3</p>
+                      <p class="text-white">Website Link</p>
+                    </div>
+                    <div class="col-4 cadress"> <span class="d-flex"><i class="far fa-user text-white"></i>
+                      <p class=" text-white">Name</p>
+                      </span> <span class="d-flex"><i class="fas fa-envelope text-white"></i>
+                      <p class=" text-white">Email@ab.com</p>
+                      </span> <span class="d-flex"><i class="fas fa-user text-white"></i>
+                      <p class=" text-white">Designer</p>
+                      </span> </div>
+                  </div>
+                  <br>
+                  <div class="col-12 d-flex p-0">
+                    <div class="col-8 mycards-addline"> <span class="d-flex"><i class="fas fa-city text-white"></i>
+                      <p class="text-white">Address Line 1, Address Line 2</p>
+                      </span> </div>
+                    <div class="col-4 mycards-phn"> <span class="d-flex"><i class="fas fa-mobile-alt text-white"></i>
+                      <p class="text-white">Phone 1</p>
+                      </span>
+                      <p class="text-white phn">Phone 2</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="blue">
+                  <p class="text-white">Personal Card</p>
+                </div>
+                <div class="card-footer d-flex mycards-footer w-100"> <a href=""><span class="d-flex float-left"><i class="far fa-star"></i>
+                  <p>Save</p>
+                  </span> </a> <span class="d-flex pen-edit m-auto" data-toggle="modal" data-target="#personalcard-modal"><i class="fas fa-pen"></i>
+                  <p>Edit</p>
+                  </span> <a href=""><span class="d-flex float-right"><i class="fas fa-trash"></i>
+                  <p>Delete</p>
+                  </span> </a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 tab-pane fade pl-0" id="nav-saved-card" role="tabpanel" aria-labelledby="nav-savedcards-tab">
+          <div class="display-cards">
+            <div class="card savedcards">
+              <div class="card-body savedcard-body">
+                <div class="col-12 d-flex p-0">
+                  <div class="col-2 p-0"><img src="{% static 'img/gallery.png' %}" style="width: 10vh;" alt=""></div>
+                  <div class="col-6 saved-company">
+                    <h6 class="text-white">Company Name</h6>
+                    <p class="text-white">Address Line 3</p>
+                  </div>
+                  <div class="col-4 cadress"> <span class="d-flex"><i class="far fa-user text-white"></i>
+                    <p class="text-white">Name</p>
+                    </span> <span class="d-flex"><i class="fas fa-envelope text-white"></i>
+                    <p class="text-white">Email@ab.com</p>
+                    </span> <span class="d-flex"><i class="fas fa-user text-white"></i>
+                    <p class="text-white">Designer</p>
+                    </span> </div>
+                </div>
+                <br>
+                <div class="col-12 d-flex p-0">
+                  <div class="col-8 mycards-addline"> <span class="d-flex"><i class="fas fa-city text-white"></i>
+                    <p class="text-white">Address Line 1</p>
+                    </span>
+                    <p class="text-white float-left pl-4">Address Line 2</p>
+                  </div>
+                  <div class="col-4 mycards-phn"> <span class="d-flex"><i class="fas fa-mobile-alt text-white"></i>
+                    <p class="text-white">Phone 1</p>
+                    </span>
+                    <p class="text-white float-left phn">Phone 2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer d-flex mycards-footer"> <span class="d-flex"><i class="fas fa-star checked"></i>
+                <p>Save Card</p>
+                </span> <span class="d-flex pen-edit"><i class="far fa-comment-alt"></i>
+                <p>Chat</p>
+                </span> <span class="d-flex"><i class="fas fa-minus-square"></i>
+                <p>Remove</p>
+                </span> </div>
+            </div>
+            <div class="card savedcards">
+              <div class="card-body savedcard-body">
+                <div class="col-12 d-flex p-0">
+                  <div class="col-2 p-0"><img src="{% static 'img/gallery.png' %}" style="width: 10vh;" alt=""></div>
+                  <div class="col-6 saved-company">
+                    <h6 class="text-white">Company Name</h6>
+                    <p class="text-white">Address Line 3</p>
+                  </div>
+                  <div class="col-4 cadress"> <span class="d-flex"><i class="far fa-user text-white"></i>
+                    <p class="text-white">Name</p>
+                    </span> <span class="d-flex"><i class="fas fa-envelope text-white"></i>
+                    <p class="text-white">Email@ab.com</p>
+                    </span> <span class="d-flex"><i class="fas fa-user text-white"></i>
+                    <p class="text-white">Designer</p>
+                    </span> </div>
+                </div>
+                <br>
+                <div class="col-12 d-flex p-0">
+                  <div class="col-8 mycards-addline"> <span class="d-flex"><i class="fas fa-city text-white"></i>
+                    <p class="text-white">Address Line 1</p>
+                    </span>
+                    <p class="text-white float-left pl-4">Address Line 2</p>
+                  </div>
+                  <div class="col-4 mycards-phn"> <span class="d-flex"><i class="fas fa-mobile-alt text-white"></i>
+                    <p class="text-white">Phone 1</p>
+                    </span>
+                    <p class="text-white float-left phn">Phone 2</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer d-flex mycards-footer"> <span class="d-flex"><i class="fas fa-star checked"></i>
+                <p>Save Card</p>
+                </span> <span class="d-flex pen-edit"><i class="far fa-comment-alt"></i>
+                <p>Chat</p>
+                </span> <span class="d-flex"><i class="fas fa-minus-square"></i>
+                <p>Remove</p>
+                </span> </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Company Card Modal-->
+  <div class="modal fade" id="companycard-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content modal-radius">
+        <div class="modal-header company-Card">
+          <h5>Edit Company Card</h5>
+        </div>
+        <form class="w-100" action="#" method="post" id="edit-cmpny-card">
+          <div class="d-flex mt-3">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="name" class="col-form-label col-5">Name</label>
+              <input type="text" class="form-control col-7" name="name">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Email</label>
+              <input type="email" class="form-control col-7" name="email">
+            </div>
+          </div>
+            <div class="d-flex">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="pcode" class="col-form-label col-5">Job</label>
+              <input type="text" class="form-control col-7" name="gname">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Company Name</label>
+              <input type="text" class="form-control col-7" name="gamt">
+            </div>
+          </div>
+            <div class="d-flex">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="pcode" class="col-form-label col-5">Address 1</label>
+              <input type="text" class="form-control col-7" name="gname">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Address 2</label>
+              <input type="text" class="form-control col-7" name="gamt">
+            </div>
+          </div>
+            <div class="d-flex">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="pcode" class="col-form-label col-5">Address 3</label>
+              <input type="text" class="form-control col-7" name="gname">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Phone No 1</label>
+              <input type="text" class="form-control col-7" name="gamt">
+            </div>
+          </div>
+            <div class="d-flex">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="pcode" class="col-form-label col-5">Phone 2</label>
+              <input type="text" class="form-control col-7" name="gname">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Company Logo</label>
+              <input type="file" class="col-7 file" name="gamt">
+            </div>
+          </div>
+          <!--
+          <table class="table table-borderless text-center">
+            <thead>
+            <th></th>
+              <th></th>
+              </thead>
+            <tbody>
+              <tr class="edit-cmpny form-group">
+                <td><label class="col-form-label">Name</label></td>
+                <td><input type="text" class="form-control w-auto"></td>
+                <td><label class="col-form-label">Email</label></td>
+                <td><input type="text" class="form-control w-auto"></td>
+              </tr>
+              <tr class="edit-cmpny form-group">
+                <td><label class="col-form-label">Job</label></td>
+                <td><input type="text" class="form-control"></td>
+                <td><label class="col-form-label">Company Name</label></td>
+                <td><input type="text" class="form-control w-auto"></td>
+              </tr>
+              <tr class="edit-cmpny form-group">
+                <td><label class="col-form-label">Address 1</label></td>
+                <td><input type="text" class="form-control"></td>
+                <td><label class="col-form-label">Address 2</label></td>
+                <td><input type="text" class="form-control w-auto"></td>
+              </tr>
+              <tr class="edit-cmpny form-group">
+                <td><label class="col-form-label">Address 3</label></td>
+                <td><input type="text" class="form-control"></td>
+                <td><label class="col-form-label">Phone No 1</label></td>
+                <td><input type="text" class="form-control w-auto"></td>
+              </tr>
+              <tr>
+                <td><label class="col-form-label">Phone No 2</label></td>
+                <td><input type="text" class="form-control"></td>
+                <td><label class="col-form-label w-auto">Company Logo</label></td>
+                <td><input type="file"></td>
+              </tr>
+            </tbody>
+          </table>
+-->
+          <div class="d-flex pb-3"> <a href="home.html" class="m-2" style="margin: 0 2px 0 auto!important;">
+            <button type="button" class="btn btn-primary cancelbtn">Cancel</button>
+            </a><a href="#" class="m-2" style="margin: 0 auto 0 2px!important;">
+            <button type="button" class="btn btn-primary savebtn">Save</button>
+            </a> </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--/Company Card Modal-->
+  <!--Personal Card Modal-->
+  <div class="modal fade" id="personalcard-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content modal-radius">
+        <div class="modal-header company-Card">
+          <h5>Edit 	Personal Card</h5>
+        </div>
+        <form class="w-100" action="#" method="post" id="edit-personal-card">
+            <div class="d-flex mt-3">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="name" class="col-form-label col-5">Name</label>
+              <input type="text" class="form-control col-7" name="name">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Email</label>
+              <input type="email" class="form-control col-7" name="email">
+            </div>
+          </div>
+            <div class="d-flex">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="pcode" class="col-form-label col-5">Job</label>
+              <input type="text" class="form-control col-7" name="gname">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Company Name</label>
+              <input type="text" class="form-control col-7" name="gamt">
+            </div>
+          </div>
+            <div class="d-flex">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="pcode" class="col-form-label col-5">Address 1</label>
+              <input type="text" class="form-control col-7" name="gname">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Address 2</label>
+              <input type="text" class="form-control col-7" name="gamt">
+            </div>
+          </div>
+            <div class="d-flex">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="pcode" class="col-form-label col-5">Address 3</label>
+              <input type="text" class="form-control col-7" name="gname">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Phone No 1</label>
+              <input type="text" class="form-control col-7" name="gamt">
+            </div>
+          </div>
+            <div class="d-flex">
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label for="pcode" class="col-form-label col-5">Phone 2</label>
+              <input type="text" class="form-control col-7" name="gname">
+            </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Company Logo</label>
+              <input type="file" class="col-7 file" name="gamt">
+            </div>
+                </div>
+            <div class="form-group col-6 d-flex cmpny-addrs">
+              <label class="col-form-label col-5" for="pcode">Photo</label>
+              <input type="file" class="col-7 file" name="gamt">
+            </div>
+          <div class="d-flex pb-3"> <a href="home.html" class="m-2" style="margin: 0 2px 0 auto!important;">
+            <button type="button" class="btn btn-primary cancelbtn">Cancel</button>
+            </a><a href="#" class="m-2" style="margin: 0 auto 0 2px!important;">
+            <button type="button" class="btn btn-primary savebtn">Save</button>
+            </a> </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!--/Personal Card Modal-->
+  {% endblock %}

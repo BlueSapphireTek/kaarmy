@@ -1,0 +1,193 @@
+@media (max-width: 1200px) {
+  .timeline-post textarea {
+    width: 68%;
+  }
+  .personal-profile {
+    margin: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+  .personal-profile p {
+    font-size: 14px;
+  }
+  .timeline-post p {
+    margin-left: 12%;
+  }
+  .comment-input {
+    margin-left: 25px;
+  }
+  .comment-send {
+    margin-top: .99rem;
+    width: 10%;
+  }
+		.timeline-body{
+		height: 24rem!important;
+	}
+	.fit-image{
+		height: 18rem!important;
+	}
+}
+@media (max-width: 992px) {
+		.timeline-body{
+		height: 22rem!important;
+	}
+	.fit-image{
+		height: 16rem!important;
+	}
+}
+@media (max-width: 768px) {
+  .notif-mob {
+    margin-left: 5.5rem;
+  }
+  .user-mob {
+    margin-left: 1rem;
+  }
+  .login-btn {
+    border-bottom-left-radius: 0px !important;
+    border-top-right-radius: 25px !important;
+    width: 108px;
+  }
+  .border-mob {
+    display: none;
+  }
+  .front-img {
+    margin-left: 30px;
+  }
+  .text-col {
+    padding: 0px 90px 0 40px !important;
+    margin-top: 0px !important;
+  }
+  .write-post-btn {
+    margin-left: 7rem !important;
+  }
+  .comment-input {
+    margin-left: 30px;
+    width: 70%;
+  }
+  .comment-send {
+    margin-top: .97rem;
+    width: 14%;
+  }
+  .timeline-post textarea {
+    width: 85%;
+    height: 2.5rem;
+  }
+  .personal-profile {
+    margin: 0 0 10px !important;
+  }
+  .personal-profile p {
+    margin-bottom: 0 !important;
+    font-size: 12px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  .timeline-post p {
+    margin-left: 7%;
+  }
+		.timeline-body{
+		height: 20rem!important;
+	}
+	.fit-image{
+		height: 15rem!important;
+	}
+}
+@media (max-width: 575.98px) {
+  .timeline-head {
+    margin-left: .8rem;
+  }
+  .timeline-post textarea {
+    width: 80%;
+    margin-left: 2%;
+  }
+  .timeline-post p {
+    margin-left: 9%;
+  }
+  .comment-text {
+    margin: 5px;
+  }
+  .btn {
+    text-transform: inherit !important;
+  }
+  .kaarmy-profile {
+    display: none;
+  }
+	.timeline-body{
+		height: 20rem!important;
+	}
+	.fit-image{
+		height: 15rem!important;
+	}
+}
+@media (max-width: 475px) {
+  .timeline-post textarea {
+    width: 85%;
+    /*    margin-left: 35%;*/
+  }
+  .timeline-post p {
+    /*    margin-left: 35%;*/
+    font-size: 12px;
+  }
+  .timeline-post img {
+    margin-left: 0 !important;
+  }
+  .comment-input {
+    margin-left: 5px;
+    font-size: 12px;
+  }
+  .card-comment {
+    padding: 0;
+  }
+  .card-comment h6 {
+    font-size: 15px;
+  }
+  .card-footer {
+    padding: 10px;
+  }
+  .comment-send {
+    width: 17%;
+  }
+  .input-group .btn {
+    z-index: 0;
+  }
+  .timeline-post p {
+    margin-left: 6%;
+  }
+	.name{
+    width: 65%;
+    flex-wrap: wrap;
+	}
+	.timeline-body{
+		height: 15rem!important;
+	}
+	.fit-image{
+		height: 10rem!important;
+	}
+	.timeline-footer{
+		padding: 7px!important;
+	}
+	.timeline-footer, .timeline-footer svg{
+		font-size: 12px!important;
+	}
+}
+@media (max-width: 320px) {
+  .timeline-post textarea {
+    width: 97%;
+  }
+  .timeline-post p {
+    margin-left: 3%;
+  }
+  .comment-send {
+    width: 20%;
+  }
+	.post-name h6, .post-name small, .report a{
+		font-size: 12px!important;
+	}
+	.card-header{
+		padding: 0;
+	}
+	.timeline-body{
+		height: 10rem!important;
+	}
+	.fit-image{
+		height: 4rem!important;
+	}
+}

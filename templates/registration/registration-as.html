@@ -1,0 +1,62 @@
+{% load static %}
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>REGISTER AS</title>
+<link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/byhand.css' %}">
+<script type="text/javascript" src="{% static 'js/jquery-3.5.1.js' %}"></script> 
+<script	type="text/javascript" src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+</head>
+
+<body>
+<div class="container-fluid w-100">
+  <div class="row d-block">
+	  <form class="form-inline my-2 my-lg-0">
+	   <nav class="navbar navbar-expand-lg navbar-light w-100 login-header">
+      <div class="navbar-brand w-50"><img src="{% static 'img/logo149.png' %}" alt=""></div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse pb-2" id="navbarSupportedContent">
+        <input type="text" class="form-control m-2 width" id="email" placeholder="Email or Phone Number">
+        <div class="width m-2 pswd">
+          <input type="password" class="form-control top width-pass" id="password" placeholder="Password">
+          <a href="{% url 'reset_passwordc' %}"><p>Forgot Password ?</p></a>
+        </div>
+          <a href="">
+          <button class="btn btn-primary my-2 my-sm-0 m-2 btn1" type="submit">Login</button>
+          </a>
+      </div>
+    </nav>
+	  </form>
+    <div class="container register text-center"> 
+      <h4>Register As</h4>
+      <div class="col-12 register-as mt-4">
+       <a href="{% url 'register_company' %}"><div class="col-md-12 col-4 text-center com"> <img src="{% static 'img/company-1.png' %}" class="img-fluid" alt="">
+          <h2>Company</h2>
+		  </div></a>
+        <a href="{% url 'register_professional'%}"><div class="col-md-12 col-4 text-center com pro"> <img src="{% static 'img/proffessional-1.png' %}" class="img-fluid" alt="">
+          <h2>Professional</h2>
+        </div></a>
+        <a href="{% url 'register_freelancer' %}"><div class="col-md-12 col-4 text-center com pro"> <img src="{% static 'img/freelancer-1.png' %}" class="img-fluid" alt="">
+          <h2>Freelancer</h2>
+        </div></a>
+      </div>
+      <div class="col-12 register-as2">
+       <a href="{% url 'register_student' %}"> <div class="col-md-12 col-4 text-center com pro"> <img src="{% static 'img/student-1.png' %}" class="img-fluid" alt="">
+          <h2>Student</h2>
+        </div></a>
+        <a href="{% url 'register_public' %}"><div class="col-md-12 col-4 text-center com pro"> <img src="{% static 'img/member-1.png' %}" class="img-fluid" alt="">
+          <h2>Member</h2>
+        </div></a>
+		  <a href="{% url 'register_enterprenur' %}"><div class="col-md-12 col-4 text-center com pro"> <img src="{% static 'img/entrepreneur-1.png' %}" class="img-fluid" alt="">
+          <h2>Entrepreneur</h2>
+        </div></a>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

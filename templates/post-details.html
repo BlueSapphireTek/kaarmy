@@ -1,0 +1,11 @@
+<html>
+<body>
+<div><p>{{post.user.first_name}} shared with fiends</p></div>
+<div><p>{{post.caption}}</p></div>
+<img src="{{post.image.url}}" width="175" height="175">
+{% for i in comment%}
+<p> {{i.user.first_name}} on {{i.date}}</p><br>
+<input type="text" value="{{i.comment}}" readonly>
+{% endfor %}
+</body>
+</html>

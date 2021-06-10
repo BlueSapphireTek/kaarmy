@@ -1,0 +1,110 @@
+
+{% extends 'longprofile/base.html' %}
+
+{% block content %}
+{% load static %}
+<div class="container-fluid">
+    <div class="row m-0 center-scroll row-height">
+        <div class="col-12">
+            <h5 class="p-3">Search Result</h5>
+            <div class="card m-2 search-card">
+                {% for i in searching %}
+                <div class="card-body d-flex search-cardbody">
+                    <div class="col-2 search-profilepic">
+                    <img src="{{ i.bio.profile_pic }}" class="img-fluid rounded-circle" alt="">
+                    </div>
+                    <div class="col-4 search-profileadd">
+                        <a href="{% url 'activitypostalluser' i.pk %}">
+                            <h5>{{i.first_name}}</h5>
+                            {% if i.email %}
+                                <p>{{i.email}}</p>
+                            {% endif %}
+                        </a>
+                        <!-- <p class="search-pro">Professional</p> -->
+                    </div> 
+                    <div class="col-6 search-btns">
+                        {% if i in followed %}
+                            <a type="button" class="btn btn-primary btn-bg-blue m-1 follow_btn" id="follow{{i.id}}" href="{% url 'follow' i.id %}">Unfollow</a>
+                        {% else %}
+                            <a type="button" class="btn btn-primary btn-bg-blue m-1 follow_btn" id="follow{{i.id}}" href="{% url 'follow' i.id %}">Follow</a>
+                        {% endif %}
+                        {% if i in connectionaccept %}
+                            <a type="button" class="btn btn-primary btn-bg-blue m-1 connect_btn" id="connect_btn{{i.id}}" href="{% url 'connection' i.pk %}">Connected</a>
+                        {% elif i in connectionrequest %}
+                            <a type="button" class="btn btn-primary btn-bg-blue m-1 connect_btn" id="connect_btn{{i.id}}" href="{% url 'connection' i.pk %}">Requested</a>
+                        {%else%}
+                            <a type="button" class="btn btn-primary btn-bg-blue m-1 connect_btn" id="connect_btn{{i.id}}" href="{% url 'connection' i.pk %}">Connect+</a>
+                        {% endif %}
+                        {% if i in endorsed %}
+                            <a type="button" class="btn btn-primary btn-bg-blue m-1 endorse_btn" id="endorse_btn{{i.id}}" href="{% url 'endorse' i.id %}">Endorsed</a>
+                        {% else %}
+                            <a type="button" class="btn btn-primary btn-bg-blue m-1 endorse_btn" id="endorse_btn{{i.id}}" href="{% url 'endorse' i.id %}">Endorse</a>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(".connect_btn").click(function(e){
+        e.preventDefault();
+        var href = this.href;
+        $.ajax({
+            url : href,
+            success : function(response){
+                if(response["isconnection"]=="notConnected"){
+                    $("#connect_btn"+response["othreuser"]).html("Connect+")
+                }
+                else if(response["isconnection"]=="connected"){
+                    $("#connect_btn"+response["othreuser"]).html("Connected")
+                }
+                else{
+                    $("#connect_btn"+response["othreuser"]).html("Requested")
+                }
+            }
+        })
+    })
+</script>
+<script>
+    $(".follow_btn").click(function(e){
+        e.preventDefault();
+        var href = this.href;
+        $.ajax({
+            url : href,
+            success : function(response){
+                if(response["following"]){
+                    $("#follow"+response["othreuser"]).html("Unfollow")
+                    
+                }
+                else{
+                    $("#follow"+response["othreuser"]).html("Follow")
+                    
+                }
+            }
+        })
+    })
+</script>
+<script>
+    $(".endorse_btn").click(function(event){
+        event.preventDefault();
+        var href = this.href;
+        $.ajax({
+            url : href,
+            success : function(response){
+                console.log(response)
+                if(response["endorsing"]){
+                    $("#endorse_btn"+response["othreuser"]).html("Endorsed")
+                }
+                else{
+                    $("#endorse_btn"+response["othreuser"]).html("Endorse")
+                }
+            }
+        })
+    });
+</script>
+{% endblock %}
+        
+            
+        
